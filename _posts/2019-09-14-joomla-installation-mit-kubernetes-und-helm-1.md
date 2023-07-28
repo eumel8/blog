@@ -2,7 +2,7 @@
 layout: post
 tag: cloud-computing
 title: Joomla Installation mit Kubernetes und Helm
-subtitle: "Kubernetes ist in aller Munde. Genau wie OpenStack ist es ein Oekosystem zur Verwaltung von Resourcen fuer die Cloud. Es hat den Anspruch, der Standard zur Verwaltung von Infrastruktur schlechthin zu werden. Vor einiger Zeit hatte ich mich mit Juju&hellip;"
+subtitle: "Kubernetes ist in aller Munde. Genau wie OpenStack ist es ein Oekosystem zur Verwaltung von Resourcen fuer die Cloud. Es hat den Anspruch, der Standard zur Verwaltung von Infrastruktur schlechthin zu werden."
 date: 2019-09-14
 author: eumel8
 ---
@@ -19,37 +19,36 @@ Minikube ist eine Minimalversion von Kubernetes, die alle wichtigen APIs zur Ver
 
 System aktualisieren, Docker installieren, um dies als Infrastruktur fuer Kubernetes zu verwenden:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 apt update &amp;&amp; apt upgrade &amp;&amp; apt install docker.io socat
-</code></pre><!-- /codeblock -->
+```
 
 Minikube herunterladen
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
- &amp;&amp; chmod +x minikube
-</code></pre><!-- /codeblock -->
+```bash
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
+```
 
 Minikube starten. Mit dem Node-Port-Parameter erlauben wir spaeter das Herausfuehren von Diensten:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 ./minikube start --vm-driver=none --extra-config=apiserver.service-node-port-range=80-35000
-</code></pre><!-- /codeblock -->
+```
 
 <strong>Kubectl</strong>
 Kubectl ist das Kommandozeilenwerkzeug fuer Kubernetes. wir installieren es mit curl:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &amp;&amp; chmod +x kubectl &amp;&amp; cp kubectl /usr/local/bin/
-</code></pre><!-- /codeblock -->
+```
 
 Minikube hat schon eine passende Konfigurationsdatei in `.kube/config` bereitgestellt. War die Installation bis hierhin erfolgreich, sollte die Programmausgabe so aussehen:
 
-<pre>
+```bash
 # kubectl get nodes -o wide
 NAME STATUS ROLES AGE VERSION INTERNAL-IP EXTERNAL-IP OS-IMAGE KERNEL-VERSION CONTAINER-RUNTIME
 minikube Ready master 3m15s v1.15.2 192.168.1.170 <none> Ubuntu 18.04.3 LTS 4.15.0-58-generic docker://18.9.7
-</none></pre>
+```
 
 
 <strong>
@@ -59,20 +58,21 @@ Helm
 Helm ist ein Werkzeug zur Programmverwaltung. Notwendige Resourcen fuer Kubernetes sind in Vorlagen (`templates`) definiert und koennen mit Werten (`Values.yaml`) gefuellt werden. Die Installation von Programmen erfolgt versioniert (`Chart.yaml`). 
 Zuerst installieren wir wieder das Kommandozeilenwerkzeug:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 curl -L https://git.io/get_helm.sh | bash
-</code></pre><!-- /codeblock -->
+```
 
-<strong>Tiller
+<strong>
+Tiller
 </strong>
 
 Tiller ermoeglicht die Bereitstellung von Kubenetes-Resourcen mit Helm, verbindet also beides:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 kubectl --namespace kube-system create serviceaccount tiller
 kubectl create clusterrolebinding tiller --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
 helm init --service-account tiller
-</code></pre><!-- /codeblock -->
+```
 
 <strong>
 Helm Charts
@@ -80,10 +80,10 @@ Helm Charts
 
 Charts sind jetzt Applikationsbeschreibungen innerhalb etwa eines Katalogs. Wir laden so einen Katalog local herunter:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 git clone https://github.com/helm/charts.git
 cd charts/stable/
-</code></pre><!-- /codeblock -->
+```
 
 Hier befinden sich eine Vielzahl von Applikationen, wie etwa auch Joomla. 
 
@@ -93,21 +93,21 @@ Joomla Installation
 
 Als LAMP Anwendung benoetigt Joomla eine MySQL Datenbank. Diese ist als Requirement im Joomla Chart deklariert und muss als Vorbedingung der Joomla-Installation bereitgestellt werden:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 cd joomla
 helm dep update
 cd ..
-</code></pre><!-- /codeblock -->
+```
 
 Nun wollen wir endlich Joomla mit Helm installieren - im eigenen Namespace und dem Applikationsnamen joomla:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 helm install --namespace joomla -n joomla joomla
-</code></pre><!-- /codeblock -->
+```
 
 Die Ausgabe sieht etwa so aus:
 
-<pre>
+```bash
 NAME: joomla
 LAST DEPLOYED: Sat Sep 14 19:17:19 2019
 NAMESPACE: joomla
@@ -166,25 +166,25 @@ NOTES:
  echo Username: user
  echo Password: $(kubectl get secret --namespace joomla joomla -o jsonpath="{.data.joomla-password}" | base64 --decode)
 
-</none></pending></pre>
+```
 
 Man kann den Status von Joomla auch jederzeit neu abrufen:
 
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
+```bash
 helm status joomla
-</code></pre><!-- /codeblock -->
+```
 
 Das generierte Adminpasswort laesst sich wie beschrieben abrufen.
 
 Schauen wir uns die Resourcen fuer Joomla in Kubernetes an:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 kubectl get all -n joomla
-</code></pre><!-- /codeblock -->
+```
 
 Die Ausgabe sieht etwa so aus:
 
-<pre>
+```
 NAME READY STATUS RESTARTS AGE
 pod/joomla-56f6f9d644-6b8jf 1/1 Running 0 72s
 pod/joomla-mariadb-0 1/1 Running 0 72s
@@ -203,53 +203,54 @@ replicaset.apps/joomla-56f6f9d644 1 1 1 72s
 
 NAME READY AGE
 statefulset.apps/joomla-mariadb 1/1 72s
-</none></pending></pre>
+```
 
 Wie man sieht, haben wir 2 PODs und 2 Services. Die EXTERNAL_IP steht fuer den Joomla-Service auf Pending, weil Minikube keinen Ingress-Service zur Bereitstellung externer Dienste anbietet. Hier koennen wir die Floating-IP unserer VM eintragen:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>kubectl edit service joomla -n joomla
-</code></pre><!-- /codeblock -->
+```bash
+kubectl edit service joomla -n joomla
+```
 
 Wir ergaenzen nach dem Loadbalancer Eintrag die IP-Adresse:
 
-<pre>
+```
  type: LoadBalancer
  externalIPs:
  - 80.158.23.58
-</pre>
+```
 
 Ergebnis:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 kubectl get services joomla -n joomla
-</code></pre><!-- /codeblock -->
+```
 
-<pre>
+```
 NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE
 joomla LoadBalancer 10.98.249.206 80.158.36.239 80:14305/TCP,443:8733/TCP 9m41s
-</pre>
+```
 
 Unser Joomla ist jetzt im Internet verfuegbar, jedoch auf dem ungewoehnlichen Port 14305. Um diesen auf Port 80 verfuegbar zu machen, editieren wir erneut den Service:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 kubectl edit services joomla -n joomla
-</code></pre><!-- /codeblock -->
+```
 
 Den `nodePort` aendern wir auf `80`. 
 Joomla sollte unter http://80.158.36.239/ verfuegbar sein. Login-Credentials haben wir weiter oben bekommen. HIer nochmal zur Wiederholung:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 kubectl get secret --namespace joomla joomla -o jsonpath="{.data.joomla-password}" | base64 --decode
-</code></pre><!-- /codeblock -->
+```
 
 In der `values.yaml`des Helm Charts ist zu sehen, dass Joomla von Bitnami bereitgestellt wird:
 
-<pre>
+```
 image:
  registry: docker.io
  repository: bitnami/joomla
  tag: 3.9.11-debian-9-r25
-</pre>
+```
 
 Die Beschreibung des Docker-Images findet man <a href="https://github.com/bitnami/bitnami-docker-joomla/blob/master/3/debian-9/Dockerfile">hier</a>. Bitnami hat seine eigene Installations-Infrastruktur entwickelt, welche gut funktioniert. Jedoch moechte man vielleicht sein eigenes Image entwickeln?
 

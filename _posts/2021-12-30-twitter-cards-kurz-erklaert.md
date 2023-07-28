@@ -19,7 +19,7 @@ Dann dachte ich, dass die Social Media Sharing Dienste wie Shareaholic und Share
 
 Das Feature nennt sich Twitter Cards und ist auch in der <a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started">Developer Dokumentation</a> beschrieben. Im Prinzip werden im HTML-Header des Blogposts META-Anweisungen hinterlegt, die Twitter beim Einfügen der URL im Tweet abruft und auswertet. Bei B2Evolution oder Wordpress gibt es Social Media Plugins. Wenn man Github Pages mit Jekyll oder Hugo verwendet, kann man sich das auch plain zusammenbasteln:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```html
 <meta property="og:url" content="https://blog.eumelnet.de/blogs/blog8.php/kubernetes-ipv6-jetzt-gehts-los" />
 <meta property="og:description" content="Hurra! Kubernetes 1.21 ist da! Und damit endlich eine Implementierung von IPv6 DualStack in K3S. IPv6 kann also zusammen mit IPv4 betrieben werden. Nun, was bedeutet das genau? Schauen wir uns das in der Praxis unseres Heimnetzwerkes an." />
 <meta property="og:site_name" content="blog.eumel.de" />
@@ -27,7 +27,7 @@ Das Feature nennt sich Twitter Cards und ist auch in der <a href="https://develo
 <meta property="og:image:height" content="851" />
 <meta property="og:image:width" content="315" />
 <meta property="twitter:card" content="summary_large_image" />
-</code></pre><!-- /codeblock -->
+```
 
 Es gibt also eine Meta Property "twitter:card", welches das grundsaetzliche Aussehen des Tweets bestimmt (siehe Dokumentation).
 Die anderen sind <a href="https://ogp.me/">Open Graph Tags (og)</a>, auch eine Entwicklung, die an mir vorbeigegangen ist. Dieser <a href="https://support.sendible.com/hc/en-us/articles/115000159366-How-are-link-previews-handled-by-the-different-social-sites-">englischsprachige Blogpost</a> erklärt das in Tiefe und auch für andere Social Media Dienste.

@@ -15,7 +15,7 @@ Bei Software von Drittanbietern hatte ich immer Pech. Lange Zeit war Acronis im 
 AOMEI Backuper konnte keine einzelnen Files zurueckspielen ... herrje! Dabei ist es keine Frage des Geldes. Fuer ein ordentliches Programm wuerde ich auch ordentlich bezahlen.
 Bevor man jetzt in Go etwas selber programmiert, habe ich <a href="https://restic.net/">Restic</a> ausprobiert. Ein Command Line Tool, was in der Powershell zu bedienen ist. Man kann das WD MyCloud mit Netzwerklaufwerk einbinden, ein neues Backup mit Passwort initialisieren und dann werden einzelne Backupsets (Snapshots) angelegt. In einer internen Datenbank wird aehnlich wie im Git verglichen, welche Files schon gesichert sind und welche nicht. Das initiale Backup mag 6-8 Stunden dauern, das Delta ist deutlich kuerzer. Und so kann man es installieren:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```
 New-SmbMapping -LocalPath 'T:' -RemotePath '\\MYCLOUD-16708\Public'
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
@@ -23,11 +23,11 @@ scoop install restic
 [Environment]::SetEnvironmentVariable('RESTIC_PASSWORD','A12345678+')
 restic init --repo T:\Backup\restic mycloud
 restic -r T:\Backup\restic --verbose backup C:\
-</code></pre><!-- /codeblock -->
+```
 
 Backups listen:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```
 restic -r T:\Backup\restic snapshots
 repository 220c4fde opened successfully, password is correct
 ID Time Host Tags Paths
@@ -36,12 +36,12 @@ e2373fb1 2022-06-17 09:26:19 LAPTOP-A65JAK0U C:\
 48061035 2022-06-17 21:31:44 LAPTOP-A65JAK0U C:\
 -----------------------------------------------------------------
 2 snapshots
-</code></pre><!-- /codeblock -->
+```
 
 Restore einer einzelnen Datei von einem bestimmten Snapshot auf ein neues Ziel:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```
 restic -r T:\Backup\restic restore 48061035 -t T:\Backup\restore -i "C\Users\user\Documents\migrationsplan.pdf"
-</code></pre><!-- /codeblock -->
+```
 
 Dokumentation: https://restic.readthedocs.io/

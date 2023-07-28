@@ -2,7 +2,7 @@
 layout: post
 tag: general
 title: Bahnprojekt Brieselang - Big Data on the Village
-subtitle: "Bahnfahren ist wieder in. Wegen der Umwelt. Knapp 4,7% der Berrufspendler fahren jeden Tag mit Bahn oder S-Bahn. Es sollen noch voel mehr werden, denn knapp 70% der Pendler fahren derzeit mit dem Auto. Wie stehts also mit der Qualitaet des Bahnverkehr&hellip;"
+subtitle: "Bahnfahren ist wieder in. Wegen der Umwelt. Knapp 4,7% der Berrufspendler fahren jeden Tag mit Bahn oder S-Bahn. Es sollen noch voel mehr werden, denn knapp 70% der Pendler fahren derzeit mit dem Auto. Wie stehts also mit der Qualitaet des Bahnverkehr"
 date: 2020-02-15
 author: eumel8
 ---
@@ -14,11 +14,11 @@ Die Bahn ist auch im Internet moderner geworden. Die Portale https://developer.d
 <strong>Bahn-API</strong>
 Bevor es richtig losgeht, brauchen wir erstmal die EVA Nummer vom Bahnhof Brieselang. Die gibts auf https://developer.deutschebahn.com. Nach der Registerierung muss man die StaDa-Station_Data - v2 API abonnieren. Mit einem erstellten Bearer-Token kann man die Daten abrufen:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 curl -X GET --header "Accept: application/json" --header "Authorization: Bearer 34fffsa2f792e5b779b3432432wd1f3d071d" "https://api.deutschebahn.com/stada/v2/stations?searchstring=Brieselang"
-</code></pre><!-- /codeblock -->
+```
 
-<pre>
+```
 ...
  "evaNumbers": [
  {
@@ -34,7 +34,7 @@ curl -X GET --header "Accept: application/json" --header "Authorization: Bearer 
  }
  ],
 ...
-</pre>
+```
 
 Der EVA Code ist 8013472,
 
@@ -43,7 +43,7 @@ Der EVA Code ist 8013472,
 Die Reise beginnt bei <a href="https://requests.readthedocs.io/en/master/">Python Requests</a>. in Zeile 80 von 
 <a href="https://github.com/eumel8/trainqa/blob/master/apps/schiene2.py#L80">schiene2.py</a>
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```python
 def departures(origin, dt=datetime.now()):
 
  query = {
@@ -61,7 +61,9 @@ def departures(origin, dt=datetime.now()):
  rsp = requests.get('http://mobile.bahn.de/bin/mobil/bhftafel.exe/dox?', params=query)
  return parse_departures1(rsp.text,dt)
 
-</code></pre><!-- /codeblock -->
+```
+
+<pre>
 origin = EVA
 bt = Departure (Abfahrt)
 date/ti = Date/Timestamp
@@ -70,6 +72,7 @@ max = maximale Anzahl Fahrten (4...8)
 rt/use_realtime = Echtzeitplan
 start = incl .bereits gestartete Zuege
 L = Ausgabeformat (xml) 
+</pre>
 
 Tatsaechlich sieht die Seite so aus:
 
@@ -77,7 +80,7 @@ Tatsaechlich sieht die Seite so aus:
 
 Als naechstes muss der Output geparsed werden in parse_departures. Dazu verwenden wir die <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Bibliothek BeautifulSoup</a>. 
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```python
 def parse_departures1(html,dt):
 
  soup = BeautifulSoup(html, "html.parser")
@@ -91,19 +94,18 @@ def parse_departures1(html,dt):
  traindelay, traintext, trainnote = traindetails(date,trainnumber,trainurl)
  gspread_data(date,trainnumber,traindeparture,traintarget,traindelay,traintext,trainnote)
  return
-
-</code></pre><!-- /codeblock -->
+```
 
 Es ist sehr gut zu sehen, wie man mitz find_all nach bestimmten Tags suchen kann, um da die Informationen rauszuziehen. Die brauchen wir auch, denn um Informationen ueber einen Zug zu bekommen, brauchen wir eine weitere Abfrage.
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```python
 def traindetails(date,trainnumber,trainurl):
 
  trainurl = trainurl.replace('dox','dn')
  rsp = requests.get(trainurl)
  traindelay, traintext, trainnote = parse_train(rsp.text)
  return traindelay,traintext, trainnote
-</code></pre><!-- /codeblock -->
+```
 
 Also fast dieselbe Abfrage, aber auf einem anderen Endpunkt. Die Seite sieht dann so aus:
 
@@ -115,8 +117,7 @@ Wir sind interessiert an den Besonderheiten des Zuges. Das sind entweder fehlend
 
 Auch diese Ausgabe wird mit BeautifulSoup geparsed. Wir haben jetzt aich alle Informationen zusammen und koennen diese in einer Google-Exceltabelle abspeichern. DIe Tabelle koennen wir bei Google Drive von Hand erstellen. Dann brauchen wir einen <a href="https://console.developers.google.com/apis/api/sheets.googleapis.com/">Service-Account von der Google Spreadsheet API</a>, der Schreibrechte in die Tabelle hat.
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
-
+```python
 def gspread_data(date,trainnumber,traindeparture,traintarget,traindelay,traintext,trainnote):
  row = [date,trainnumber,traindeparture,traintarget,traindelay,traintext,trainnote]
  scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
@@ -126,7 +127,7 @@ def gspread_data(date,trainnumber,traindeparture,traintarget,traindelay,traintex
  sheet.insert_row(row)
  removeDuplicates(sheet)
  return
-</code></pre><!-- /codeblock -->
+```
 
 Eigentlich ganz einfach. Der Service-Account meldet sich bei der API an. Das Secret-File mit den Credentials liefert Google fuer cut&amp;paste. Ins Arbeitsblatt 1 der Exceltabelle werde die Daten geschrieben. 
 
@@ -134,7 +135,7 @@ Eigentlich ganz einfach. Der Service-Account meldet sich bei der API an. Das Sec
 
 Nun ist es aber so, dass wir den Fahrplan ohne gesten Bezugspunkt aufrufen. Wenn wir das Programm stuendlich laufen lassen, wissen wir nur ungefaehr, wieviel Datensaetze also Fahrten zurueckgeliefert werden. Die Gefahr fuer doppelte Datensaetze ist also ziemlich gross. DIese koennen wir durch removeDuplicates loeschen:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```python
 def removeDuplicates(sheet):
  data = sheet.get_all_values()
  datalen = len(data)
@@ -148,19 +149,17 @@ def removeDuplicates(sheet):
  sheet.delete_row(i)
  return
 
-</code></pre><!-- /codeblock -->
+```
 
 Das vollstaendige Programm befindet sich hier: https://github.com/eumel8/trainqa/blob/master/apps/schiene2.py
 
-[pagebreak]
 
 <strong>Android Studio</strong>
 
-DIe technischen Daten, also der Echtzeitfahrplan, ist natuerlich nur die eine Seite, um die Qualitaet der Zugverbindung zu messen. Was sagen aber die Fahrgaeste? "Eine App muesste man haben"; kam schnell der Wunsch auf. Wie kann man sowas bewerkstelligen?
+Die technischen Daten, also der Echtzeitfahrplan, ist natuerlich nur die eine Seite, um die Qualitaet der Zugverbindung zu messen. Was sagen aber die Fahrgaeste? "Eine App muesste man haben"; kam schnell der Wunsch auf. Wie kann man sowas bewerkstelligen?
 Mit <a href="https://developer.android.com/studio">Android Studio</a> geht das relativ einfach. Das Entwicklertool fuer Android-App erinnert ein bischen an Visual Basic, es handelt sich aber tatsaechlich um Java-Code. Es gibt auch eine Menge Anleitungen im Netz. Am besten gefaellt mir https://abhiandroid.com/, um so Grundfunktionen auszuprobieren. Auch ein interessantes Projekt ist <a href="https://www.crazycodersclub.com/android/how-to-use-google-sheet-as-database-for-android-app-1-insert-operation/">hier </a>beschrieben. Der Plan waere also eine App, mit der man den Zug auswaehlen kann und diesen nach Puenktlichkeit, Auslastung und Platzangebot bewerten kann. Die Daten sollen in eine Excel-Tabelle geschrieben werden. Da kommt auch schon das erste Problem: Damit die App Daten in die Exceltabelle schreiben kann, braucht sie den Serviceaccount mit Schreibrechten. Nun wird die App, wenn sie erstmal im AppStore zur Verfuegung gestellt wird, auf jedermanns Handy installiert, der diese App haben moechte - incl. dem Service-Account nebst Credentials. Auch wenn Java-Klassen kompiliert sind, koennen sie wieder dekompiliert werden, um solche Informationen rauszuziehen. Dazu bietet Google Webformulare an, die die Antworten in Exceltabellen abspeichert. Die Formulare sind oeffentlich zugaenglich, nix Service-Account. Wir brauchen nur einen Webservice in der App, der dieses Formular mit den Appdaten fuer uns ausfuellt
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
-
+```java
 public interface QuestionsSpreadsheetWebService {
 
  @POST("1FAIpQLSeyBr1tJ3y7SjX2c107B92yv2P600WRxmlJyAWzrPt59Bvf7g/formResponse")
@@ -173,7 +172,7 @@ public interface QuestionsSpreadsheetWebService {
  @Field("entry.1543695788") Float feld6,
  @Field("entry.51849126") Boolean feld7
  );
-</void></code></pre>k -->
+```
 
 Die Feld-ID bekommen wir aus dem HTML-Sourccode des Webformulars. DIe Post-ID ist die Formular-ID aus der URL desselbigen.
 Aequivalente Felder bekommen wir in Android mit <a href="https://github.com/eumel8/trainqa/blob/master/android/app/src/main/res/layout-v17/questions_activity.xml#L92">dieser xml</a>. Dazu gehoert dann eine <a href="https://github.com/eumel8/trainqa/blob/master/android/app/src/main/java/com/eumelnet/bahn/spreadsheetinput/QuestionsActivity.java#L42">onCreate-class</a>, in der dann auch das onClick des Webformulars verarbeitet wird und zu dem Webservice oben weiterleitet.
@@ -187,7 +186,6 @@ DIe App wird im Android Studio kompiliert, signiert und dann im https://play.goo
 
 <img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/bahnapp2.png" width="585" height="386"/>
 
-[pagebreak]
 
 <strong>Public Tableau</strong>
 
@@ -200,14 +198,14 @@ Mit der Zeit (Stand 02/2020) werden sich eine Menge Daten dort ansammeln. So las
 Projektlinks
 
 <ul>
- <li>https://github.com/eumel8/trainqa</li>
- <li>https://bahn-brieselang.github.io/</li>
+ <li>[https://github.com/eumel8/trainqa](https://github.com/eumel8/trainqa)</li>
+ <li>[https://bahn-brieselang.github.io/](https://bahn-brieselang.github.io/)</li>
 </ul>
 
 Credits:
 <ul>
-<li>https://github.com/posixpascal/optimusbahn (Python Bahn API)</li>
-<li>https://abhiandroid.com (Android Tutorials)</li>
-<li>https://www.crazycodersclub.com/android/using-google-spread-sheet-as-database-for-android-application-part-1/ (Google Excel Json)</li>
-<li>http://jmcglone.com/guides/github-pages/ (Github Pages)</li>
+<li>[Python Bahn API](https://github.com/posixpascal/optimusbahn)</li>
+<li>[Android Tutorials](https://abhiandroid.com)</li>
+<li>[Google Excel Json](https://www.crazycodersclub.com/android/using-google-spread-sheet-as-database-for-android-application-part-1/)</li>
+<li>[Github Pages](http://jmcglone.com/guides/github-pages/)</li>
 </ul>
