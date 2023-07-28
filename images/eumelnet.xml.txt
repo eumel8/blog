@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <deploy_image>
+    <image_installation config:type="boolean">false</image_installation>
+  </deploy_image>
+  <firewall>
+    <enable_firewall config:type="boolean">false</enable_firewall>
+    <start_firewall config:type="boolean">false</start_firewall>
+  </firewall>
+  <general>
+    <ask-list config:type="list"/>
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+      <final_halt config:type="boolean">false</final_halt>
+      <final_reboot config:type="boolean">true</final_reboot>
+      <halt config:type="boolean">false</halt>
+      <second_stage config:type="boolean">true</second_stage>
+    </mode>
+    <proposals config:type="list"/>
+    <signature-handling>
+      <accept_file_without_checksum config:type="boolean">false</accept_file_without_checksum>
+      <accept_non_trusted_gpg_key config:type="boolean">false</accept_non_trusted_gpg_key>
+      <accept_unknown_gpg_key config:type="boolean">false</accept_unknown_gpg_key>
+      <accept_unsigned_file config:type="boolean">false</accept_unsigned_file>
+      <accept_verification_failed config:type="boolean">false</accept_verification_failed>
+      <import_gpg_key config:type="boolean">false</import_gpg_key>
+    </signature-handling>
+    <storage/>
+  </general>
+  <groups config:type="list"/>
+  <keyboard>
+    <keymap>german</keymap>
+  </keyboard>
+  <login_settings/>
+  <networking>
+    <dns>
+      <dhcp_hostname config:type="boolean">false</dhcp_hostname>
+      <domain>eumel.local</domain>
+      <hostname>karibui</hostname>
+      <nameservers config:type="list">
+        <nameserver>192.168.0.10</nameserver>
+      </nameservers>
+      <resolv_conf_policy>auto</resolv_conf_policy>
+      <write_hostname config:type="boolean">false</write_hostname>
+    </dns>
+    <interfaces config:type="list">
+      <interface>
+        <bootproto>dhcp</bootproto>
+        <device>eth0</device>
+        <dhclient_set_default_route>yes</dhclient_set_default_route>
+        <startmode>auto</startmode>
+      </interface>
+    </interfaces>
+    <ipv6 config:type="boolean">true</ipv6>
+    <keep_install_network config:type="boolean">false</keep_install_network>
+    <managed config:type="boolean">false</managed>
+    <routing>
+      <ipv4_forward config:type="boolean">false</ipv4_forward>
+      <ipv6_forward config:type="boolean">false</ipv6_forward>
+    </routing>
+  </networking>
+  <ntp-client>
+    <ntp_policy/>
+    <peers config:type="list"/>
+    <start_at_boot config:type="boolean">false</start_at_boot>
+    <start_in_chroot config:type="boolean">true</start_in_chroot>
+    <sync_interval config:type="integer">5</sync_interval>
+    <synchronize_time config:type="boolean">false</synchronize_time>
+  </ntp-client>
+  <partitioning config:type="list">
+    <drive>
+      <device>/dev/hda</device>
+      <disklabel>msdos</disklabel>
+      <enable_snapshots config:type="boolean">true</enable_snapshots>
+      <initialize config:type="boolean">true</initialize>
+      <partitions config:type="list">
+        <partition>
+          <create config:type="boolean">true</create>
+          <crypt_fs config:type="boolean">false</crypt_fs>
+          <filesystem config:type="symbol">swap</filesystem>
+          <filesystem_id config:type="integer">130</filesystem_id>
+          <format config:type="boolean">true</format>
+          <fstopt>defaults</fstopt>
+          <loop_fs config:type="boolean">false</loop_fs>
+          <mount>swap</mount>
+          <mountby config:type="symbol">uuid</mountby>
+          <partition_id config:type="integer">130</partition_id>
+          <partition_nr config:type="integer">1</partition_nr>
+          <resize config:type="boolean">false</resize>
+          <size>1569881600</size>
+        </partition>
+        <partition>
+          <create config:type="boolean">true</create>
+          <crypt_fs config:type="boolean">false</crypt_fs>
+          <filesystem config:type="symbol">ext4</filesystem>
+          <filesystem_id config:type="integer">131</filesystem_id>
+          <format config:type="boolean">true</format>
+          <fstopt>acl,user_xattr</fstopt>
+          <loop_fs config:type="boolean">false</loop_fs>
+          <mount>/boot</mount>
+          <mountby config:type="symbol">uuid</mountby>
+          <partition_id config:type="integer">131</partition_id>
+          <partition_nr config:type="integer">2</partition_nr>
+          <resize config:type="boolean">false</resize>
+          <size>156401152</size>
+        </partition>
+        <partition>
+          <create config:type="boolean">true</create>
+          <crypt_fs config:type="boolean">false</crypt_fs>
+          <filesystem config:type="symbol">btrfs</filesystem>
+          <filesystem_id config:type="integer">131</filesystem_id>
+          <format config:type="boolean">true</format>
+          <fstopt>defaults</fstopt>
+          <loop_fs config:type="boolean">false</loop_fs>
+          <mount>/</mount>
+          <mountby config:type="symbol">uuid</mountby>
+          <partition_id config:type="integer">131</partition_id>
+          <partition_nr config:type="integer">3</partition_nr>
+          <resize config:type="boolean">false</resize>
+          <size>15159426560</size>
+          <subvolumes config:type="list">
+            <listentry>home</listentry>
+            <listentry>opt</listentry>
+            <listentry>srv</listentry>
+            <listentry>tmp</listentry>
+            <listentry>var/crash</listentry>
+            <listentry>var/lib/named</listentry>
+            <listentry>var/log</listentry>
+            <listentry>var/spool</listentry>
+            <listentry>var/tmp</listentry>
+            <listentry>usr</listentry>
+          </subvolumes>
+        </partition>
+      </partitions>
+      <type config:type="symbol">CT_DISK</type>
+      <use>all</use>
+    </drive>
+    <drive>
+      <device>/dev/hdb</device>
+      <initialize config:type="boolean">false</initialize>
+      <partitions config:type="list">
+        <partition>
+          <create config:type="boolean">false</create>
+          <crypt_fs config:type="boolean">false</crypt_fs>
+          <filesystem config:type="symbol">btrfs</filesystem>
+          <filesystem_id config:type="integer">131</filesystem_id>
+          <format config:type="boolean">false</format>
+          <fstopt>defaults</fstopt>
+          <loop_fs config:type="boolean">false</loop_fs>
+          <mount>/data</mount>
+          <mountby config:type="symbol">uuid</mountby>
+          <partition_id config:type="integer">131</partition_id>
+          <partition_nr config:type="integer">1</partition_nr>
+          <resize config:type="boolean">false</resize>
+          <size>19049643520</size>
+          <usepart config:type="integer">1</usepart>
+        </partition>
+      </partitions>
+      <type config:type="symbol">CT_DISK</type>
+      <use>all</use>
+    </drive>
+  </partitioning>
+  <proxy>
+    <enabled config:type="boolean">false</enabled>
+    <ftp_proxy/>
+    <http_proxy/>
+    <https_proxy/>
+    <no_proxy>localhost</no_proxy>
+    <proxy_password/>
+    <proxy_user/>
+  </proxy>
+  <samba-server>
+    <accounts config:type="list"/>
+    <backend/>
+    <config config:type="list"/>
+    <service>Disabled</service>
+    <trustdom/>
+    <version>2.11</version>
+  </samba-server>
+  <scripts>
+    <init-scripts config:type="list">
+      <script>
+        <debug config:type="boolean">false</debug>
+        <filename>eumelnet_conf</filename>
+        <location><![CDATA[]]></location>
+	<source><![CDATA[zypper up; zypper -n -q install puppet; rpm -ivh http://192.168.0.60:82/eumelnet-conf-reference_latest.rpm]]></source>
+      </script>
+      <script>
+        <debug config:type="boolean">false</debug>
+        <filename>eumelnet_install</filename>
+        <location><![CDATA[]]></location>
+	<source><![CDATA[puppet apply -l /tmp/manifest.log --modulepath /etc/puppet/modules /etc/puppet/manifests/site.pp]]></source>
+      </script>
+    </init-scripts>
+    <post-scripts config:type="list">
+      <script>
+        <debug config:type="boolean">true</debug>
+        <feedback config:type="boolean">false</feedback>
+        <feedback_type/>
+        <filename>add_repos</filename>
+        <interpreter>shell</interpreter>
+        <location><![CDATA[]]></location>
+        <network_needed config:type="boolean">false</network_needed>
+        <notification>Add Repositories</notification>
+        <param-list config:type="list"/>
+        <source><![CDATA[cd /etc/zypp/repos.d
+
+cat >opensuse-13.2-oss.repo <<EOF
+[opensuse-13.2-oss]
+baseurl=http://ftp.hosteurope.de/mirror/ftp.opensuse.org/distribution/13.2/repo/oss/suse/
+enabled=1
+gpgcheck=0
+priority=90
+autorefresh=1
+keeppackages=1
+type=rpm-md
+EOF
+
+cat >opensuse-13.2-non-oss.repo <<EOF
+[opensuse-13.2-non-oss]
+baseurl=http://ftp.hosteurope.de/mirror/ftp.opensuse.org/distribution/13.2/repo/non-oss/suse/
+enabled=1
+gpgcheck=0
+priority=85
+autorefresh=1
+keeppackages=1
+type=rpm-md
+EOF
+]]></source>
+      </script>
+      <script>
+        <debug config:type="boolean">true</debug>
+        <feedback config:type="boolean">false</feedback>
+        <feedback_type/>
+        <filename>start_ssh</filename>
+        <interpreter>shell</interpreter>
+        <location><![CDATA[]]></location>
+        <network_needed config:type="boolean">false</network_needed>
+        <notification>Enable and Start ssh</notification>
+        <param-list config:type="list"/>
+        <source><![CDATA[systemctl enable sshd
+systemctl start sshd]]></source>
+      </script>
+    </post-scripts>
+  </scripts>
+  <software>
+    <packages config:type="list">
+      <package>autoyast2-installation</package>
+      <package>aaa_base</package>
+      <package>yast2-bootloader</package>
+      <package>yast2-ncurses</package>
+      <package>iputils</package>
+      <package>zypper</package>
+      <package>kernel-default</package>
+      <package>rsync</package>
+      <package>less</package>
+      <package>wget</package>
+      <package>ruby</package>
+      <package>vim</package>
+      <package>strace</package>
+      <package>sudo</package>
+    </packages>
+    <patterns config:type="list">
+      <pattern>base</pattern>
+    </patterns>
+    <post-packages config:type="list">
+      <package>puppet</package>
+    </post-packages>
+  </software>
+  <timezone>
+    <hwclock>UTC</hwclock>
+    <timezone>Europe/Berlin</timezone>
+  </timezone>
+  <user_defaults>
+    <group>100</group>
+    <groups/>
+    <home>/home</home>
+    <inactive>-1</inactive>
+    <no_groups config:type="boolean">true</no_groups>
+    <shell>/bin/bash</shell>
+    <skel>/etc/skel</skel>
+    <umask>022</umask>
+  </user_defaults>
+  <users config:type="list">
+    <user>
+      <encrypted config:type="boolean">true</encrypted>
+      <fullname>admin</fullname>
+      <gid>100</gid>
+      <home>/home/admin</home>
+      <password_settings>
+        <inact>-1</inact>
+        <max>99999</max>
+        <min>0</min>
+        <warn>7</warn>
+      </password_settings>
+      <shell>/bin/bash</shell>
+      <uid>1000</uid>
+      <user_password>$6$5GjQ5Vn58Ivm$xOcP/x5bCeQiqPg58IJWit.IKxWH6z8Y.CMJLJ0V57pEgLj3WDEzPEajnaVE4ADv4b7N8uu5O7cJQYsWOluQm/</user_password>
+      <username>admin</username>
+    </user>
+    <user>
+      <encrypted config:type="boolean">true</encrypted>
+      <fullname/>
+      <gid>100</gid>
+      <home>/root</home>
+      <password_settings>
+        <inact>-1</inact>
+        <max>99999</max>
+        <min>0</min>
+        <warn>7</warn>
+      </password_settings>
+      <shell>/bin/bash</shell>
+      <uid>0</uid>
+      <user_password>$6$5GjQ5Vn58Ivm$xOcP/x5bCeQiqPg58IJWit.IKxWH6z8Y.CMJLJ0V57pEgLj3WDEzPEajnaVE4ADv4b7N8uu5O7cJQYsWOluQm/</user_password>
+      <username>root</username>
+    </user>
+  </users>
+</profile>

@@ -1,0 +1,11 @@
+<![CDATA[ 
+echo "Install puppet" > /tmp/install_puppet.txt 
+/etc/init.d/sshd restart
+/usr/bin/wget http://192.168.0.113/puppet-2.7.6-1.4.1.i586.rpm
+/usr/bin/wget http://192.168.0.113/facter-1.6.0-11.1.2.i586.rpm
+/bin/rpm -Uhv facter-1.6.0-11.1.2.i586.rpm
+/bin/rpm -Uhv puppet-2.7.6-1.4.1.i586.rpm
+/sbin/chkconfig puppet on
+/usr/bin/puppet agent --test
+/etc/init.d/puppet start
+]]>

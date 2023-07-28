@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <bootloader>
+  <device_map config:type="list">
+     <device_map_entry>
+       <firmware>hd0</firmware>
+       <linux>/dev/sda</linux>
+     </device_map_entry>
+  </device_map>
+    <loader_type>grub</loader_type>
+    <sections config:type="list">
+    </sections>
+  </bootloader>
+  <deploy_image>
+    <image_installation config:type="boolean">false</image_installation>
+  </deploy_image>
+  <firewall>
+    <FW_DEV_DMZ></FW_DEV_DMZ>
+    <FW_DEV_EXT></FW_DEV_EXT>
+    <FW_DEV_INT></FW_DEV_INT>
+    <enable_firewall config:type="boolean">false</enable_firewall>
+    <start_firewall config:type="boolean">false</start_firewall>
+  </firewall>
+  <general>
+    <ask-list config:type="list"/>
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+      <forceboot config:type="boolean">true</forceboot> 
+      <final_halt config:type="boolean">false</final_halt>
+      <final_reboot config:type="boolean">true</final_reboot>
+      <halt config:type="boolean">false</halt>
+      <second_stage config:type="boolean">true</second_stage>
+    </mode>
+    <mouse>
+      <id>none</id>
+    </mouse>
+    <proposals config:type="list"/>
+    <signature-handling>
+      <accept_file_without_checksum config:type="boolean">true</accept_file_without_checksum>
+      <accept_non_trusted_gpg_key config:type="boolean">false</accept_non_trusted_gpg_key>
+      <accept_unknown_gpg_key config:type="boolean">true</accept_unknown_gpg_key>
+      <accept_unsigned_file config:type="boolean">true</accept_unsigned_file>
+      <accept_verification_failed config:type="boolean">false</accept_verification_failed>
+      <import_gpg_key config:type="boolean">false</import_gpg_key>
+    </signature-handling>
+    <storage/>
+  </general>
+  <keyboard>
+    <keyboard_values>
+      <capslock config:type="boolean">false</capslock>
+      <delay></delay>
+      <discaps config:type="boolean">false</discaps>
+      <numlock></numlock>
+      <rate></rate>
+      <scrlock config:type="boolean">false</scrlock>
+      <tty>tty1 tty2 tty3 tty4 tty5 tty6 tty8 tty9 tty10 tty11 tty12 tty13 tty14 tty15 tty16 tty17 tty18 tty19 tty20</tty>
+    </keyboard_values>
+    <keymap>german</keymap>
+  </keyboard>
+  <networking>
+    <dhcp_options>
+      <dhclient_client_id></dhclient_client_id>
+      <dhclient_hostname_option>AUTO</dhclient_hostname_option>
+    </dhcp_options>
+    <dns>
+      <dhcp_hostname config:type="boolean">true</dhcp_hostname>
+      <resolv_conf_policy></resolv_conf_policy>
+      <write_hostname config:type="boolean">false</write_hostname>
+    </dns>
+    <interfaces config:type="list">
+      <interface>
+        <bootproto>dhcp</bootproto>
+        <device>eth1</device>
+        <startmode>auto</startmode>
+        <usercontrol>no</usercontrol>
+      </interface>
+    </interfaces>
+    <ipv6 config:type="boolean">true</ipv6>
+    <managed config:type="boolean">false</managed>
+    <routing>
+      <ip_forward config:type="boolean">false</ip_forward>
+    </routing>
+  </networking>
+  <partitioning config:type="list">
+    <drive>
+      <device>/dev/sda</device>
+      <initialize config:type="boolean">true</initialize>
+      <partitions config:type="list">
+        <partition>
+          <create config:type="boolean">true</create>
+          <crypt_fs config:type="boolean">false</crypt_fs>
+          <filesystem config:type="symbol">ext4</filesystem>
+          <format config:type="boolean">true</format>
+          <loop_fs config:type="boolean">false</loop_fs>
+          <mount>/</mount>
+          <mountby config:type="symbol">device</mountby>
+          <partition_id config:type="integer">131</partition_id>
+          <partition_nr config:type="integer">1</partition_nr>
+          <raid_options/>
+          <resize config:type="boolean">false</resize>
+          <size>5500M</size>
+        </partition>
+        <partition>
+          <create config:type="boolean">true</create>
+          <crypt_fs config:type="boolean">false</crypt_fs>
+          <filesystem config:type="symbol">swap</filesystem>
+          <format config:type="boolean">true</format>
+          <loop_fs config:type="boolean">false</loop_fs>
+          <mount>swap</mount>
+          <mountby config:type="symbol">device</mountby>
+          <partition_id config:type="integer">130</partition_id>
+          <partition_nr config:type="integer">2</partition_nr>
+          <raid_options/>
+          <resize config:type="boolean">false</resize>
+          <size>512M</size>
+        </partition>
+      </partitions>
+      <pesize></pesize>
+      <type config:type="symbol">CT_DISK</type>
+      <use>all</use>
+    </drive>
+  </partitioning>
+  <ntp-client>
+    <ntp_policy>auto</ntp_policy>
+    <peers config:type="list">
+      <peer>
+        <address>de.pool.ntp.org</address>
+        <options>iburst</options>
+        <type>server</type>
+      </peer>
+    </peers>
+    <start_at_boot config:type="boolean">true</start_at_boot>
+    <start_in_chroot config:type="boolean">false</start_in_chroot>
+    <sync_interval config:type="integer">5</sync_interval>
+    <synchronize_time config:type="boolean">false</synchronize_time>
+  </ntp-client>
+  <runlevel>
+    <default>3</default>
+  </runlevel>
+  <timezone>
+    <hwclock>UTC</hwclock>
+    <timezone>Europe/Berlin</timezone>
+  </timezone>
+  <software>
+    <image/>
+    <instsource>http://192.168.88.1/mnt/</instsource>
+    <packages config:type="list">
+      <package>aaa_base</package>
+      <package>yast2-bootloader</package>
+      <package>yast2-ncurses</package>
+      <package>iputils</package>
+      <package>zypper</package>
+      <package>kernel-default</package>
+      <package>apache2</package>
+      <package>php5-mysql</package>
+      <package>mysql-community-server</package>
+      <package>rsync</package>
+      <package>less</package>
+      <package>wget</package>
+      <package>ruby</package>
+      <package>vim-base</package>
+      <package>vim-data</package>
+      <package>vim</package>
+      <package>sudo</package>
+      <package>createrepo</package>
+      <package>apache2-mod_php5</package>
+      <package>perl-DBD-mysql</package>
+    </packages>
+  </software>
+  <user_defaults>
+    <expire></expire>
+    <group>100</group>
+    <groups>users</groups>
+    <home>/home</home>
+    <inactive>-1</inactive>
+    <shell>/bin/bash</shell>
+    <skel>/etc/skel</skel>
+    <umask>022</umask>
+  </user_defaults>
+  <users config:type="list">
+    <user>
+      <encrypted config:type="boolean">false</encrypted>
+      <user_password>eSmErAlDa</user_password>
+      <username>root</username>
+    </user>
+  </users>
+<scripts>
+<post-scripts config:type="list">
+<script>
+<source>
+<![CDATA[ 
+/etc/init.d/sshd start 
+chkconfig sshd on
+]]>
+</source>
+<filename>myPostScript8.sh</filename>
+<debug config:type="boolean">false</debug>
+</script>
+<script>
+<source>
+<![CDATA[ 
+/etc/init.d/mysqld start 
+chkconfig mysqld on
+]]>
+</source>
+<filename>myPostScript7.sh</filename>
+<debug config:type="boolean">false</debug>
+</script>
+<script>
+<source>
+<![CDATA[ 
+/etc/init.d/apache2 start 
+chkconfig apache2 on
+]]>
+</source>
+<filename>myPostScript6.sh</filename>
+<debug config:type="boolean">false</debug>
+</script>
+<script>
+<location>http://192.168.0.113/myPostScript.sh</location>
+<network_needed config:type="boolean">true</network_needed>
+<filename>myPostScript5.sh</filename>
+<debug config:type="boolean">false</debug>
+</script>
+</post-scripts>
+</scripts> 
+</profile>
