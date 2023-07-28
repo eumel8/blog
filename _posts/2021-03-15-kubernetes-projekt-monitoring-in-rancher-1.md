@@ -19,11 +19,11 @@ The Prometheus instance can also <a href="https://github.com/prometheus-operator
 
 If the connection is successful, you should find the instance of the app in the Prometheus UI under "Service Discovery" or "Targets". Otherwise you should check whether the Prometheus is really running and whether all labels are set correctly.
 
-<img src="/blog/media/quick-uploads/kubernetes-projekt-monitoring-in-rancher/2021-03-15_3_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-projekt-monitoring-in-rancher/2021-03-15_3_.png" width="585" height="386"/>
 
 What comes with the Prometheus operator is the alert manager. This has two main functions. One is the receiver, it can be a Slack channel or it can be sent by e-mail. The other is the router. There it is decided which alarms are sent to which receiver. The main router/receiver is the alert manager itself. All alarms can be seen on their website.
 
-<img src="/blog/media/quick-uploads/kubernetes-projekt-monitoring-in-rancher/rancheralert.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-projekt-monitoring-in-rancher/rancheralert.png" width="585" height="386"/>
 
 And what's not included in the Prometheus operator is Grafana. If there is a need, an instance must be deployed independently, again with the proxy functionality used by Rancher.
 
@@ -39,7 +39,7 @@ https://<rancher -server>/api/v1/namespaces/gnuu/services/http:gnuu-monitoring-g
 
 Other services such as Prometheus or Alertmanager can also be reached in this way.
 
-<img src="/blog/media/quick-uploads/kubernetes-projekt-monitoring-in-rancher/2021-03-15_2_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-projekt-monitoring-in-rancher/2021-03-15_2_.png" width="585" height="386"/>
 
 Happy Monitoring
 

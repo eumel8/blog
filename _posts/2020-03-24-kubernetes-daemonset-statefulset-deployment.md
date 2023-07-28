@@ -1,8 +1,8 @@
 ---
 layout: post
 tag: kubernetes
-title: Kubernetes: DaemonSet, StatefulSet, Deployment
-subtitle: "Neues Jahr, neuer Kubernetes Blogeintrag. Heute wollen wir gleich zwei nuetzliche Sache in unserer Kubernetes-Reihe besprechen. Zum einen lernen wir 3 weitere wichtige Bestandteile von Kubernetes kennen. Zum anderen ist auch gleich ein praktisches&hellip;"
+title: Kubernetes - DaemonSet, StatefulSet, Deployment
+subtitle: "Neues Jahr, neuer Kubernetes Blogeintrag. Heute wollen wir gleich zwei nuetzliche Sache in unserer Kubernetes-Reihe besprechen. Zum einen lernen wir 3 weitere wichtige Bestandteile von Kubernetes kennen. Zum anderen ist auch gleich ein praktisches Beispiel"
 date: 2020-03-24
 author: eumel8
 ---

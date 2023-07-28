@@ -135,7 +135,7 @@ Verwirrt? Hier ist ein interessanter Blogbeitrag zu <a href="https://medium.com/
 
 Wenn unser Dashboard-Service dann per Ingress oder Node-Port das Licht der Welt erblickt hat, sollten wir den Startbildschirm sehen:
 
-<img src="/blog/media/quick-uploads/kubernetes-in-bunt-dashboard-installation-als-einzeiler/2019-10-02_9_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-in-bunt-dashboard-installation-als-einzeiler/2019-10-02_9_.png" width="585" height="386"/>
 
 Zum Login brauchen wir eine Kube-Config, was aber bei fern installierten Rechnern und dort laufenden Minikube kompliziert sein kann, wenn nicht alle Informationen in einer Datei vorhanden sind.
 Oder wir benutzen einen Bearer-Token. Den koennen wir uns selbst erstellen oder einen bereits vorhanden nutzen, wie etwa den von Tiller, der im Cluster weitreichende Rechte zwecks Softwareinstallation hat:
@@ -158,14 +158,14 @@ Hinweis: Deployment-Files aus dem Internet sollte man sich immer vorher im Brows
 
 Startbildschirm nach dem Login:
 
-<img src="/blog/media/quick-uploads/kubernetes-in-bunt-dashboard-installation-als-einzeiler/2019-10-02_8_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-in-bunt-dashboard-installation-als-einzeiler/2019-10-02_8_.png" width="585" height="386"/>
 
 Einige Informationen zu unserer Joomla-Installation:
 
-<img src="/blog/media/quick-uploads/kubernetes-in-bunt-dashboard-installation-als-einzeiler/2019-10-02_2_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-in-bunt-dashboard-installation-als-einzeiler/2019-10-02_2_.png" width="585" height="386"/>
 
 Editieren von Resourcen im Browser:
 
-<img src="/blog/media/quick-uploads/kubernetes-in-bunt-dashboard-installation-als-einzeiler/2019-10-02_7_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-in-bunt-dashboard-installation-als-einzeiler/2019-10-02_7_.png" width="585" height="386"/>
 
 Mit <code>minikube dashboard</code> gaebe es zwar einen weiteren Einzeiler zur Dashboard Installation. Jedoch setzt diese die Installation auf dem eigenen Rechner mit X-Windows o.ae. voraus.

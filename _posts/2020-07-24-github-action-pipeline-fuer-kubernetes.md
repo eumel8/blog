@@ -11,7 +11,7 @@ Github bietet seit einiger Zeit jetzt schon das Feature "Action" an - ein CI/CD-
 <br/>
 Github Action ist in jedem Github-Repo zu finden und wird automatisch im Menue mit angezeigt, wenn man ein Repo erstellt. 
 
-<img src="/blog/media/quick-uploads/github-action-pipeline-fuer-kubernetes/2020-07-23_2_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/github-action-pipeline-fuer-kubernetes/2020-07-23_2_.png" width="585" height="386"/>
 
 Man kann sich GitHub Action ein bischen wie <a href="https://blog.eumelnet.de/blogs/blog8.php/schwarzer-guertel-dan-5-kubernetes-operator">Kubernetes Operator</a> vorstellen: Da ist irgendwo hinten eine Business-Logik, die das umsetzt, was weiter vorne in einer Metasprache und einer Instanz beschrieben ist. Letztlich liegt dort ein <a href="https://github.com/gnuu-de/kubectl/blob/master/Dockerfile">Dockerfile</a>, welches ein Ubuntu-Image startet und kubectl installiert und ueber den Entrypoint aufruft. Eine action.yml
 beschreibt, welche Aktionen vom Github-Worker ausgefuehrt werden sollen. Ganz stumpfsinnig ist das hier: Starte docker.
@@ -24,7 +24,7 @@ cat /opt/k3s-clients/gen/kube/github.kubeconfig | base64
 
 Den Inhalt kopieren wir in die Zwischenablage, gehen zu Settings/Secrets in unserem Repo:
 
-<img src="/blog/media/quick-uploads/github-action-pipeline-fuer-kubernetes/2020-07-24_3_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/github-action-pipeline-fuer-kubernetes/2020-07-24_3_.png" width="585" height="386"/>
 
 Dort legen wir das neue Secret KUBE_CONFIG_DATA an und fuegen den Inhalt der Zwischenablage, als die base64 codierte KubeConfig ein.
 
@@ -63,7 +63,7 @@ Was passiert hier?
 Bei Pushs in das Verzeichnis html wird der Job "Deploy to Cluster" angeschmissen. Der laeuft auf Ubuntu (momentan wird auch nur Ubuntu als Linux-Betriebssystem unterstuetzt - deswegen brauchen wir auch ein Ubuntu-Docker-Image).
 Als Environment-Variable wird KUBE_CONFIG_DATA uebergeben. Der Inhalt wird im Docker-Container dekodiert und als KUBECONFIG-Variable abgelegt. Der Entrypoint von dem Container, dessen Manifest als Dockerfile im Github Reopo gnuu-de/kubectl liegt, ist "kubectl". Demnach reicht als Argument "rollout restart deployment/nginx", um auf meinem Kubernetes-Cluster ein Redeployment von Nginx anzustossen, um meine Aenderungen der HTML-Seiten sichtbar zu machen, da das Deployment das Repo im <a href="https://github.com/gnuu-de/k8s/blob/master/nginx/deployment.yaml#L37-L44">InitContainer</a> auscheckt und lokal im POD abspeichert. Ein zweiter Job zeigt mit "get pods" an, ob da wirklich was passiert ist:
 
-<img src="/blog/media/quick-uploads/github-action-pipeline-fuer-kubernetes/2020-07-24_2_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/github-action-pipeline-fuer-kubernetes/2020-07-24_2_.png" width="585" height="386"/>
 
 Fertig! Bei jeder Aenderung im Repo im Verzeichnis html wird die Github Action ausgefuehrt.
 Ein paar Fallstricke:

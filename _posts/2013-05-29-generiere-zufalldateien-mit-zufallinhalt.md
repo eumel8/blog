@@ -2,7 +2,7 @@
 layout: post
 tag: general
 title: Generiere Zufalldateien mit Zufallinhalt
-subtitle: "Ein Shellscript, mit dem man Dateien in zufaelliger Anzahl, Groesse und Namen erstellen kann. nnnn#!/bin/bashn#generate random filesnnif [ ! $# -gt 0 ]; thennecho "usage: $0 &lt;numfiles&gt; [&lt;blocksize&gt; &lt;maxblocks&gt;]"necho " &lt;num&hellip;"
+subtitle: "Ein Shellscript, mit dem man Dateien in zufaelliger Anzahl, Groesse und Namen erstellen kann."
 date: 2013-05-29
 author: eumel8
 ---

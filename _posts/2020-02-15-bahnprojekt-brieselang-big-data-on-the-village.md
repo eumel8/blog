@@ -73,7 +73,7 @@ L = Ausgabeformat (xml)
 
 Tatsaechlich sieht die Seite so aus:
 
-<img src="/blog/media/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan3-2.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan3-2.png" width="585" height="386"/>
 
 Als naechstes muss der Output geparsed werden in parse_departures. Dazu verwenden wir die <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Bibliothek BeautifulSoup</a>. 
 
@@ -107,11 +107,11 @@ def traindetails(date,trainnumber,trainurl):
 
 Also fast dieselbe Abfrage, aber auf einem anderen Endpunkt. Die Seite sieht dann so aus:
 
-<img src="/blog/media/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan2.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan2.png" width="585" height="386"/>
 
 Wir sind interessiert an den Besonderheiten des Zuges. Das sind entweder fehlende Wagen, fehlendes Mehrzweckabteil, fehlende Einsteigehilfe fuer Rollstuhlfahrer ... es ist ein Freitext, dort kann alles moegliche drinstehen. Wir definieren das spaeter einfach als Stoerung:
 
-<img src="/blog/media/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan4.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan4.png" width="585" height="386"/>
 
 Auch diese Ausgabe wird mit BeautifulSoup geparsed. Wir haben jetzt aich alle Informationen zusammen und koennen diese in einer Google-Exceltabelle abspeichern. DIe Tabelle koennen wir bei Google Drive von Hand erstellen. Dann brauchen wir einen <a href="https://console.developers.google.com/apis/api/sheets.googleapis.com/">Service-Account von der Google Spreadsheet API</a>, der Schreibrechte in die Tabelle hat.
 
@@ -130,7 +130,7 @@ def gspread_data(date,trainnumber,traindeparture,traintarget,traindelay,traintex
 
 Eigentlich ganz einfach. Der Service-Account meldet sich bei der API an. Das Secret-File mit den Credentials liefert Google fuer cut&amp;paste. Ins Arbeitsblatt 1 der Exceltabelle werde die Daten geschrieben. 
 
-<img src="/blog/media/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan1.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan1.png" width="585" height="386"/>
 
 Nun ist es aber so, dass wir den Fahrplan ohne gesten Bezugspunkt aufrufen. Wenn wir das Programm stuendlich laufen lassen, wissen wir nur ungefaehr, wieviel Datensaetze also Fahrten zurueckgeliefert werden. Die Gefahr fuer doppelte Datensaetze ist also ziemlich gross. DIese koennen wir durch removeDuplicates loeschen:
 
@@ -183,9 +183,9 @@ DIe App wird im Android Studio kompiliert, signiert und dann im https://play.goo
 
 
 
-<img src="/blog/media/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/bahnapp1.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/bahnapp1.png" width="585" height="386"/>
 
-<img src="/blog/media/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/bahnapp2.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/bahnapp2.png" width="585" height="386"/>
 
 [pagebreak]
 

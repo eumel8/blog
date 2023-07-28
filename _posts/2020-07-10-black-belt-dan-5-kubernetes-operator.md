@@ -1,7 +1,7 @@
 ---
 layout: post
 tag: kubernetes
-title: Black Belt, Dan 5: Kubernetes Operator
+title: Black Belt, Dan 5 - Kubernetes Operator
 subtitle: "Automation in the IT landscape is a long-term goal. With tools such as Puppet, Chef or Ansible, the operator takes the approach of leaving recurring processes to the computer. Or roll out predefined states of environments in the data center. Since DevOps at the latest, however, the entire value chain and the life cycle of an application must always be considered."
 date: 2020-07-10
 author: eumel8
@@ -21,6 +21,6 @@ Level 4 has metrics ready for monitoring and alarming. Log file evaluation can a
 
 It ends in level 5 with the evaluation of the data from the previous level in order to be able to scale the application or to repair it in the event of a failure. So the application should do it itself. There are just a handful of them on the <a href="https://operatorhub.io"> operatorhub.io </a> marketplace, but be careful: the list is not exhaustive there. There is also a <a href="https://github.com/operator-framework/awesome-operators"> extensive collection </a> listed on Github. The quality can always be checked according to the criteria of the <a href="https://sdk.operatorframework.io/operator-capability-level.png"> Operator Capability Level </a>.
 
-<img src="/blog/media/quick-uploads/schwarzer-guertel-dan-5-kubernetes-operator/operator-capability-level.png" width="585" height="386"/>
+<img src="/images/quick-uploads/schwarzer-guertel-dan-5-kubernetes-operator/operator-capability-level.png" width="585" height="386"/>
 
 A somewhat deeper introduction with practical instructions can be found in <a href="https://github.com/eumel8/ansible-otc-operator"> ansible-otc-operator </a>. <a href="https://github.com/eumel8/ansible-otc/releases"> ansible-otc </a> is an earlier toolset by me to create resources in the Open Telekom Cloud with Ansible-Playbooks. The approach was event-based and is certainly outdated today. I still used it to build a Kubernetes Operator for that. If you are familiar with Ansible, you will quickly find your way around with the associated operator, especially since the <a href="https://sdk.operatorframework.io/"> operator-sdk </a> can automatically generate the code. More on this in my example on ansible-otc-operator. Enjoy the <a href="https://github.com/eumel8/ansible-otc-operator/blob/master/README.md"> reading </a> and tryi it out.

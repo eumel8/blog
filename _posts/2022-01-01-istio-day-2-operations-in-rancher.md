@@ -256,7 +256,7 @@ dashboard menu in the UI
 $ kubectl apply -f https://raw.githubusercontent.com/mcsps/use-cases/master/istio/navlinks.yaml
 </code></pre><!-- /codeblock -->
 
-<img src="/blog/media/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-7.png" width="585" height="386"/>
+<img src="/images/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-7.png" width="585" height="386"/>
 
 
 UI views:
@@ -264,21 +264,21 @@ UI views:
 Kiali verified your Istio installation, shows problems and errors. At the end traffic flows
 are shown in graphs, requests are listed in details.
 
-<img src="/blog/media/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-1.png" width="585" height="386"/>
+<img src="/images/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-1.png" width="585" height="386"/>
 
-<img src="/blog/media/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-2.png" width="585" height="386"/>
+<img src="/images/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-2.png" width="585" height="386"/>
 
-<img src="/blog/media/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-3.png" width="585" height="386"/>
+<img src="/images/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-3.png" width="585" height="386"/>
 
 Data are provided by Jaeger which logs requests and network traffic in detail,
 based on the source interface and the commands.
 
 
-<img src="/blog/media/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-4.png" width="585" height="386"/>
+<img src="/images/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-4.png" width="585" height="386"/>
 
-<img src="/blog/media/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-5.png" width="585" height="386"/>
+<img src="/images/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-5.png" width="585" height="386"/>
 
-<img src="/blog/media/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-6.png" width="585" height="386"/>
+<img src="/images/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-6.png" width="585" height="386"/>
 
 <strong>Prometheus</strong>
 
@@ -348,7 +348,7 @@ istio-component-monitor 3d11h
 
 <strong>Service Endpoints</strong>
 
-<img src="/blog/media/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-8.png" width="585" height="386"/>
+<img src="/images/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-8.png" width="585" height="386"/>
 
 <strong>Grafana</strong>
 
@@ -356,6 +356,6 @@ There are many Grafana dashboard available for Istio. Want to mention here
 the [Istio Control Plan Dashboard](https://grafana.com/grafana/dashboards/7645)
 which works out of the box. Easy to add as explained in [Rancher Docs](https://rancher.com/docs/rancher/v2.5/en/monitoring-alerting/guides/customize-grafana/):
 
-<img src="/blog/media/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-9.png" width="585" height="386"/>
+<img src="/images/quick-uploads/istio-day-2-operations-in-rancher/2021-12-15-9.png" width="585" height="386"/>
 
 Happy [Istio!](https://istio.io/)</strong>

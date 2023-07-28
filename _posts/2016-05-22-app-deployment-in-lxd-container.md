@@ -108,6 +108,6 @@ lxc remote add prod 5.104.106.106
 lxc copy s2 prod:
 </code></pre><!-- /codeblock -->
 
-<img src="/blog/media/quick-uploads/p571/lxd_container.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p571/lxd_container.jpg" width="585" height="386"/>
 
 Deswegen ist es eine schlechte Idee, die Nutzdaten wie Webcontent und Datenbanken ausserhalb der Container zu lagern und ueber Device-Mapping einzubinden wie in dieser kleinen Studie. Um sich die Flexibiitaet zu bewahren, gehoeren die Daten in die Container und sind somit schnell versandfaehig.

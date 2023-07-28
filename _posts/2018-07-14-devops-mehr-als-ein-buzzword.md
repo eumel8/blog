@@ -9,7 +9,7 @@ author: eumel8
 
 Mein letzter Blogartikel zum Thema DevOps ist jetzt ueber 6 Jahre her. Damals gings noch um Schatten-IT und dem steten Grabenkampf zwischen Entwicklung und Betrieb. Mittlerweile bin ich selt einiger Zeit Mitglied in einem DevOps-Team, was ein Paradoxum an sich ist, denn sowas wie DevOps-Teams gibt es gar nicht. Stattdessen geht es um den Flow.
 <br/>
-<img src="/blog/media/quick-uploads/p614/flow.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p614/flow.jpg" width="585" height="386"/>
 Heutzutage soll IT sowas sein wie ein Fluss, ein Fluss an Arbeit. So wird der <strong>erste von drei Wegen</strong> aus dem "<strong>Phoenix Project</strong>" beschrieben. Continuous Integration, Continuous Delivery und Continuous Deployment sind hier die Schlagwörter. Entwickler sollen also ihren Code immer in ein Repository einchecken, damit die Software staendig in einem auslieferbaren Zustand ist und letztlich nach Durchfuehrung diverser Tests automatisch ausgerollt werden kann. Alles ist also schoen im Fluss.
 Der <strong>zweite Weg</strong> heisst Feedback. Feedback erhaelt man zum Beispiel durch die automatisierten Tests. Durchlaufen diese fehlerfrei, gibts ein OK zurueck. Sonst gibts eine Fehlermeldung. Monitoring oder Auswertung von Logfiles gehoeren aber auch zum Feedback. Peer Reviews beim Programmieren sind Feedbacks. Viele Bestandteile von ITIL wie Change-, Incident- und Problemmanagement beschreiben Feedbackloops, genau wie etwa Knowledge Management.
 Der <strong>dritte Weg</strong> ist dann schon die Koenigsklasse: Continuous Experimentation and Learning. Lebenslanges Lernen, hoert man heutzutage immer oefters. In diesem Weg soll immer nach Verbesserungen gesucht werden. <strong>Deming-Cycle</strong> ist hier ein Schlagwort (Plan-Do-Check-Act). <strong>Improvement Kata</strong> ist auch so ein Schlagwort hier. Ich wuerde es als Weg der kleinen Ziele beschreiben. Man soll immer erst ein kleineres Ziel vor Augen haben und nicht monate- oder jahrelang an irgendwas ganz Grossem basteln. Dafuer hilft zum Beispiel eine Vision, was man eigentlich erreichen will. Die sollte man am Anfang vom dritten Weg definieren.
@@ -26,7 +26,7 @@ Kultur ist fuer mich vor allem Vertrauen. Vertrauen und Respekt. Transparenz geh
 Team-Building steht wieder auf der Tagesordnung, denn nur wer sich kennt, wird sich moegen. Interne DevOps Tage helfen fuer einen Austausch und ein gemeinsames Verstaendnis, genauso wie Job Shadowing, Hackathons und Simulationen. One Team, One IT sind noch weitere Schlagwoerter, aber wie schon erwaehnt: Die Leute muessen das auch wollen, sonst wird das nichts und den naechsten Schritt kann man sich sparen.
 Zu <strong>Automatisierung</strong> haben wir weiter oben schon gelesen. Zu CI/CD gibt es diese schoene Infografik von Gitlab, ein Automatisierungs-Tool zur Codeverwaltung:
 
-<img src="/blog/media/quick-uploads/p614/cicd_pipeline_infograph.png" width="585" height="386"/>
+<img src="/images/quick-uploads/p614/cicd_pipeline_infograph.png" width="585" height="386"/>
 
 Sehr schoen ist der Flow zu sehen, vom Schreiben des Codes bis zum Abheben der Rakete.
 Welche anderen Tools noch dabei helfen, hat Xebialabs in einem <a href="https://xebialabs.com/periodic-table-of-devops-tools/">Periodensystem</a> dargestellt:

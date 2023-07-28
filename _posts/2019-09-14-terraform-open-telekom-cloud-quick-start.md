@@ -8,7 +8,7 @@ author: eumel8
 ---
 
 <a href="https://www.terraform.io/">Terraform</a> bietet eine Moeglichkeit, den Zustand von Cloud Infrastruktur zu beschreiben und jederzeit den Wunschzustand wiederherzustellen, zu erweitern oder alles wieder zu zerstoeren. Zur besseren Bedienung in verschiedenen Clouds gibt es Provider. Hier erklaert der <a href="https://www.terraform.io/docs/providers/opentelekomcloud/index.html">OpenTelekomCloud Provider</a> und der Erstellung einer VM (ECS) mit allen erforderlichen Resourcen.
-<img src="/blog/media/quick-uploads/terraform-open-telekom-cloud-quick-start/terraform.png" width="585" height="386"/>
+<img src="/images/quick-uploads/terraform-open-telekom-cloud-quick-start/terraform.png" width="585" height="386"/>
 <br/>
 Terraform erwartet eine bestimmte Dateistruktur, um seine Funktion zu entfalten.
 

@@ -73,4 +73,4 @@ Nachteile:
 Der Vorteil bei beiden Methoden ist das "One-Binary"-Konzept. Es bedarf also nicht allzugrosser Vorbereitungen auf dem Betriebssystemlevel. Genausoleicht wie die Installation verlaeuft auch das Loeschen, es wird auch ein Binary zum Loeschen der Umgebung mitgeliefert. Der Gesamteindruck bei beiden ist auch die unkomplizierte Handhabung.
 Als Nachteil kann man das Vendor-Lock-In sehen. Beide Projekte sind zwar OpenSource, aber die Entwicklung wird von Rancher gefuehrt, die nun zu SUSE gehoeren. Der neue Produktname ist <strong>SUSE Rancher</strong>
 
-<img src="/blog/media/quick-uploads/kubernetes-an-rancher-k3s-und-rke2-auf-otc/rancher-rke2.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-an-rancher-k3s-und-rke2-auf-otc/rancher-rke2.png" width="585" height="386"/>

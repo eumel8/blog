@@ -11,7 +11,7 @@ Manche Sachen passieren einfach so. Man hält sie schon für selbstverständlich
 <br/>
 Was ist Twitter Cards? Normalerweise sind Twitternachrichten reine Textnachrichten. Deswegen heisst er auch Textnachrichtendienst. Die Anzahl der Zeichen ist auch noch begrenzt - 140, glaube ich. Wurde auch vor paar Jahren mal erhöht, was einer Revolution gleich kam, weil vorher waren es noch weniger. Die Kunst besteht also dadrin, soviel wie möglich Informationen auf kleinstem Raum unterzubringen. Erinnert so ein bischen an <a href="https://de.wikipedia.org/wiki/V.90#V.92">56k Modem</a>. Mittlerweile erlaubt Twitter auch Bilder in Tweets, sogar mehrere (ganze 3 Stueck!). Ein Bild sagt bekanntlich mehr als Worte und so ist so ein Hinweis auf einen kürzlich verfassten Blogpost gleich viel ansprechender:
 
-<img src="/blog/media/quick-uploads/twitter-cards-kurz-erklaert/2021-12-30_2_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/twitter-cards-kurz-erklaert/2021-12-30_2_.png" width="585" height="386"/>
 
 Bislang erlag ich der Annahme, dass Twitter einfach das erste Bild (Teaser) heranzieht, um das im Tweet einzubetten. Nee, ist es nicht.
 

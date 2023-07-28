@@ -7,7 +7,7 @@ date: 2014-01-03
 author: eumel8
 ---
 
-<img src="/blog/media/quick-uploads/p390/wp_20170127_08_29_29_rich_2_.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p390/wp_20170127_08_29_29_rich_2_.jpg" width="585" height="386"/>
 
 <strong>1987</strong> feierte das Bw Leipzig Hbf-Sued sein 150-jaehriges Bestehen als aeltestes Bahnbetriebswerk der Deutschen Reichsbahn. 
 
@@ -20,7 +20,7 @@ Ich besuchte meine langjaehrige Arbeitsstaette im Januar 2014. Dabei stand schon
 
 Hier ein paar Fotos aus gluecklicheren Tagen. Die meisten Maschinen sind entweder im Bw Sued beheimatet oder wurden von Bw Sued Personal gefahren:
 
-<img src="/blog/media/quick-uploads/p390/suedloks.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p390/suedloks.jpg" width="585" height="386"/>
 
 Ehemals beheimatete DR-Loks Bw Leipzig-Süd (Auswahl):
 110 031

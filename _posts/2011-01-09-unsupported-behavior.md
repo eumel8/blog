@@ -2,7 +2,7 @@
 layout: post
 tag: general
 title: Unsupported Behavior
-subtitle: "Eigentlich haette das auch der Beitrag Nr. 7875 zum Thema "Vorsicht Kunde" sein können, jedoch würde sich da eine gewisse Eintönigkeit in der Berichterstattung zum Leben breitmachen. Anlass des Artikels ist diesmal meine lokale Autowerkstatt, die zu ein&hellip;"
+subtitle: "Eigentlich haette das auch der Beitrag Nr. 7875 zum Thema Vorsicht Kunde sein können, jedoch würde sich da eine gewisse Eintönigkeit in der Berichterstattung zum Leben breitmachen. Anlass des Artikels ist diesmal meine lokale Autowerkstatt"
 date: 2011-01-09
 author: eumel8
 ---

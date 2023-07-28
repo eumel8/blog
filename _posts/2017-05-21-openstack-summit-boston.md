@@ -10,20 +10,20 @@ author: eumel8
 OpenStack Summit Boston
 (english version page 2)
 
-<img src="/blog/media/quick-uploads/p588/wp_20170510_18_35_52_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170510_18_35_52_rich.jpg" width="585" height="386"/>
 
 Gerade ist er zu Ende gegangen - der "neue" OpenStack Summit. Diesmal ohne Design Summit, der fand schon einige Wochen vorher als Project Team Gatering (PTG) in Atlanta statt. Es gab Diskussionen, ob der OpenStack Summit so zur reinen Marketingveranstaltung verkommt. Aber Jonathan Bryce, Executive Director der OpenStack Foundation, hoerte nicht auf zu betonen, dass es eine Konferenz fuer die Entwickler war, ist und bleibt. Und so kamen sie dann alle: Mehr als 5000 angemeldete Teilnehmer aus 63 Laendern. Ueber 1000 verschiedene Organisation, ein Heer von Firmen als Sponsoren. 
 
 <br/>
 Die Deutsche Telekom zum zweiten Mal als Gold Sponsor dabei. 
 
-<img src="/blog/media/quick-uploads/p588/c_zb_wqw0aabtau.jpg" width="585" height="386"/>
-<img src="/blog/media/quick-uploads/p588/wp_20170511_16_37_39_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/c_zb_wqw0aabtau.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170511_16_37_39_rich.jpg" width="585" height="386"/>
 
 Und wie wars? Teuer wars! Diese Schelte musste sich die Foundation im Community Feedback schon gefallen lassen, den Summit in einen der teuersten Staedte der USA stattfinden zu lassen. Bei Hotelpreisen um 300-500 Dollar die Nacht sah das Budget in Euro nicht gerade ueppiger aus. 
 Was bekam man dafuer geboten? im Hynes Convention Center fand ein Grossteil der Veranstalung statt. Das Konferenzzentrum wird von 4 grossen Hotels umringt, unter anderem den Sheraton Twin-Tower, und alle Gebaeude sind miteinander verbunden. So konnte man trockenen Fusses bei dem 8 Grad kalten und regnerischem Wetter zwischen den Veranstaltungen wechseln.
 
-<img src="/blog/media/quick-uploads/p588/wp_20170510_22_59_01_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170510_22_59_01_rich.jpg" width="585" height="386"/>
 
 Alle Vortraege sind natuerlich wieder bei Youtube oder der OpenStack Webseite online zu finden: 
 https://www.openstack.org/videos/summits/boston-2017
@@ -52,7 +52,7 @@ Mein Schwerpunkt war allerdings Ansible bzw. OpenStack-Ansible und deren Anwendu
 
 Und so traf ich mich auf dem Forum mit Ian Y. Choi (PTL I18n), Rob Cresswell (PTL Horizon) und Andy McCrae (PTL OSA), um einen gemeinsamen Schlachtplan zu entwickeln 
 
-<img src="/blog/media/quick-uploads/p588/c_lybmfxkaiz-ls.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/c_lybmfxkaiz-ls.jpg" width="585" height="386"/>
 
 Andy ist wirklich ein smarter Typ, der das Problem schnell durchblickt hat - etwa in der Geschwindigkeit, wie das ganze Projekt nach vorne schnellt. 
 
@@ -66,14 +66,14 @@ OpenStack Forum ist eine neue Veranstaltungsform auf dem OpenStack Summit. In et
 
 "The Next Generation of Contributor" - so soll die OpenStack Community weiter wachsen. Auch aus Deutschland waren zahlreiche Teilnehmer angereist. In der Liste der meisten Besucher des Summits standen wir auf Platz 6. Das deckt sich mit der Herkunft der Benutzer, die http://docs.openstack.org, dem Dokumentationssystem von OpenStack, benutzen: ebenfalls Deutschland auf Platz 6. Nicht verwunderlich, dass deutsche Dokumentation auf Platz 7 der meistgelesenen Dokumentationen steht (nach englisch, chinesisch, japanisch, franzoesisch und koreanisch). Diese Zahlen praesentierte <a href="https://twitter.com/dewsday">Alexandra Settle</a>, PTL Documentation Team beim Teammeeting von I18n.
 
-<img src="/blog/media/quick-uploads/p588/c_lzgdrxcaaibhj.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/c_lzgdrxcaaibhj.jpg" width="585" height="386"/>
 
 Und wer weiss, vielleicht findet ja doch einer der naechsten Summits in Deutschland statt, wenn man eine geeignete Lokation finden wuerde.
 
 Am selben Tag fand auch unsere Praesentation "Participating in Translation Makes You an Internationalized OpenStacker and Developer" statt:
 https://www.openstack.org/videos/boston-2017/participating-in-translation-makes-you-an-internationalized-openstacker-and-developer
 
-<img src="/blog/media/quick-uploads/p588/wp_20170511_20_11_44_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170511_20_11_44_rich.jpg" width="585" height="386"/>
 
 Ian Y. Choi, Jean-François Taltavull, Frank Kloeker (v.r.n.l.)
 
@@ -85,7 +85,7 @@ https://www.openstack.org/project-mascots/
 
 In der Foundation Lounge gab es nun zahlreiche Aufkleber mit den Team-Maskottchen und so erkennt man jetzt jedes Team an seinem gewaehltem Logo, Tier oder Pflanze.
 
-<img src="/blog/media/quick-uploads/p588/c_8zb5buaaauqgk.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/c_8zb5buaaauqgk.jpg" width="585" height="386"/>
 
 Aber auch sonst hat sich natuerlich in zahlreichen Projekten etwas getan, weswegen zahlreiche Sessions die Project Updates als Thema hatten:
 
@@ -93,7 +93,7 @@ https://www.youtube.com/user/OpenStackFoundation/search?query=Project+Update&amp
 
 Die Interop-Projektgruppe konnte sich mit der zweiten Interop Challenge wieder besonders gut in Szene setzen. Mark Collier hatte sich wieder besondere "Gemeinheiten" einfallen lassen, die die Ops auf ihren jeweiligen Cloud zum Laufen bringen mussten:
 
-<img src="/blog/media/quick-uploads/p588/wp_20170510_16_20_30_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170510_16_20_30_rich.jpg" width="585" height="386"/>
 [video:youtube:nBXXLNIwAoo]
 [video:youtube:Xo22mqWM4Xo]
 
@@ -138,25 +138,25 @@ https://www.openstack.org/assets/enterprise/OpenStack-AppDevMigration8x10Booklet
 
 Etwas zu Lesen und die Zeit zu Verkuerzen bis zum naechsten Summit!
 
-<img src="/blog/media/quick-uploads/p588/51jv-t9d-vl._sx398_bo1_204_203_200_.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/51jv-t9d-vl._sx398_bo1_204_203_200_.jpg" width="585" height="386"/>
 
 [pagebreak]
 
 OpenStack Summit Boston
 
-<img src="/blog/media/quick-uploads/p588/wp_20170510_18_35_52_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170510_18_35_52_rich.jpg" width="585" height="386"/>
 
 It has just come to end - the "new" OpenStack Summit. Without Design Summit, it took place before some weeks ago as Project Team Gatering (PTG) in Atlanta. There were discussions if the OpenStack Summit is now a purely marketing event. But Jonathan Bryce, Executive Director OpenStack Foundation, didn't stop to emphasize that the summit was, is and will for developers. And so they came: more then 5000 registered attendees from 63 countries. More then 1000 organizations, an army of companies as sponsors.
 
 <br/>
 Deutsche Telekom the second time as Gold Sponsor:. 
 
-<img src="/blog/media/quick-uploads/p588/c_zb_wqw0aabtau.jpg" width="585" height="386"/>
-<img src="/blog/media/quick-uploads/p588/wp_20170511_16_37_39_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/c_zb_wqw0aabtau.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170511_16_37_39_rich.jpg" width="585" height="386"/>
 And how was it? Expensive was it! In the community feedback, the Foundation had already had to accept this scolding as the Summit was to be one of the most expensive cities in the USA. At hotel prices around 300-500 dollars the night saw the budget in euros not just even better.
 What did they offer? A large part of the event took place at the Hynes Convention Center. The conference center is surrounded by 4 major hotels, including the Sheraton Twin Tower, and all buildings are interconnected. So you could change dry foot in the 8 degrees cold and rainy weather between the sessions
 .
-<img src="/blog/media/quick-uploads/p588/wp_20170510_22_59_01_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170510_22_59_01_rich.jpg" width="585" height="386"/>
 
 All the talks can be found online at Youtube or the OpenStack website:
 https://www.openstack.org/videos/summits/boston-2017
@@ -189,7 +189,7 @@ https://review.openstack.org/#/c/440825/
 
 And so I met on the forum with <a href="https://twitter.com/ianychoi">Ian Y. Choi</a> (PTL I18n), <a href="https://twitter.com/robcresswell">Rob Cresswell</a> (PTL Horizon) and <a href="https://twitter.com/andymccrae">Andy McCrae</a> (PTL OSA) to develop a common battle plan 
 
-<img src="/blog/media/quick-uploads/p588/c_lybmfxkaiz-ls.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/c_lybmfxkaiz-ls.jpg" width="585" height="386"/>
 
 Andy is really a smart guy who has bounced the problem quickly - with speed how the whole project is moving forward.
 On some sessions, he presented the project and what should be done in the near future:
@@ -202,7 +202,7 @@ OpenStack Forum is a new event form at the OpenStack Summit. In about 10 differe
 "The Next Generation of Contributor" - the OpenStack community is set to grow. Numerous participants from Germany were also present. In the list of most visitors to Summits, we were ranked at 6th. This coincides with the origin of the users who use http://docs.openstack.org, the documentation system of OpenStack: Germany also ranked at 6th. Not surprisingly, German documentation is ranked 7th among the most-read documentaries (after English, Chinese, Japanese, French and Korean). 
 These metrics were presented by <a href="https://twitter.com/dewsday">Alexandra Settle</a>, PTL Documentation Team at Teammeeting of I18n.
 
-<img src="/blog/media/quick-uploads/p588/c_lzgdrxcaaibhj.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/c_lzgdrxcaaibhj.jpg" width="585" height="386"/>
 
 And who knows, maybe one of the next summits in Germany will take place if we find a suitable location.
 
@@ -210,7 +210,7 @@ On the same day we held our presentation "Participating in Translation Makes You
 
 https://www.openstack.org/videos/boston-2017/participating-in-translation-makes-you-an-internationalized-openstacker-and-developer
 
-<img src="/blog/media/quick-uploads/p588/wp_20170511_20_11_44_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170511_20_11_44_rich.jpg" width="585" height="386"/>
 
 <a href="https://twitter.com/ianychoi">Ian Y. Choi</a>,<a href="https://twitter.com/jftalta"> Jean-François Taltavull</a>, <a href="https://twitter.com/eumel_8">Frank Kloeker</a> (f.r.t.l.)
 
@@ -222,7 +222,7 @@ https://www.openstack.org/project-mascots/
 
 In the Foundation Lounge there were now numerous stickers with the team mascots and so you can now recognize each team at their chosen logo, animal or plant.
 
-<img src="/blog/media/quick-uploads/p588/c_8zb5buaaauqgk.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/c_8zb5buaaauqgk.jpg" width="585" height="386"/>
 
 But also in other projects, something has happened, which is why numerous sessions had the project updates as a topic:
 
@@ -230,7 +230,7 @@ https://www.youtube.com/user/OpenStackFoundation/search?query=Project+Update&amp
 
 With the second Interop Challenge, the Interop project group was able to put itself in a particularly good position again. Mark Collier had once again come up with some "bad things" that had to make the Ops work on their respective Cloud:
 
-<img src="/blog/media/quick-uploads/p588/wp_20170510_16_20_30_rich.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/wp_20170510_16_20_30_rich.jpg" width="585" height="386"/>
 [video:youtube:nBXXLNIwAoo]
 [video:youtube:Xo22mqWM4Xo]
 
@@ -274,7 +274,7 @@ https://www.openstack.org/assets/enterprise/OpenStack-AppDevMigration8x10Booklet
 
 Something the read and cutting the time until the next Summit!
 
-<img src="/blog/media/quick-uploads/p588/51jv-t9d-vl._sx398_bo1_204_203_200_.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p588/51jv-t9d-vl._sx398_bo1_204_203_200_.jpg" width="585" height="386"/>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Links:

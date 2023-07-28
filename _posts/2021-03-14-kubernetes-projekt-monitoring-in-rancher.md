@@ -19,11 +19,11 @@ Auch die Prometheus-Instanz kann <a href="https://github.com/prometheus-operator
 
 Bei erfolgreicher Verbindung sollte man im Prometheus-UI unter "Service-Discovery" oder auch "Targets" die Instanz der App finden. Ansonsten sollte man schauen, ob der Prometheus wirklich läuft und auch alle Labels richtig gesetzt sind.
 
-<img src="/blog/media/quick-uploads/kubernetes-projekt-monitoring-in-rancher/2021-03-15_3_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-projekt-monitoring-in-rancher/2021-03-15_3_.png" width="585" height="386"/>
 
 Was beim Prometheus-Operator mitgeliefert wird, ist der Alert-Manager. Dieser hat zwei Hauptfuntionen. Das eine ist der Receiver, das kann ein Slack-Channel sein oder auch E-Mail-Versand ist möglich. Das andere ist der Router. Dort wird entschieden, welche Alarme an welchen Receiver geschickt werden. Haupt-Router/Receiver ist der Alert-Manager selber. Auf dessen Webseite kann man alle Alarme sehen.
 
-<img src="/blog/media/quick-uploads/kubernetes-projekt-monitoring-in-rancher/rancheralert.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-projekt-monitoring-in-rancher/rancheralert.png" width="585" height="386"/>
 
 Und was nicht im Prometheus-Operator mitgeliefert wird, ist Grafana. Wenn es dafuer Bedarf gibt, muss eine Instanz eigenständig deployt werden, gerne auch wieder mit der genutzen Proxy-Funktionalität von Rancher.
 
@@ -39,7 +39,7 @@ https://<rancher -server>/api/v1/namespaces/gnuu/services/http:gnuu-monitoring-g
 
 Andere Dienste wie Prometheus oder Alertmanager sind ebenfalls so erreichbar.
 
-<img src="/blog/media/quick-uploads/kubernetes-projekt-monitoring-in-rancher/2021-03-15_2_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/kubernetes-projekt-monitoring-in-rancher/2021-03-15_2_.png" width="585" height="386"/>
 
 Happy Monitoring
 

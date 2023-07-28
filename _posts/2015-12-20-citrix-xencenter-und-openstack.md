@@ -121,13 +121,13 @@ durch die Screens durchblaettern. mit CTRL-C kann man Dienste abbrechen und den 
 
 Wenn man im XenCenter bzw. XenServer, wie es jetzt ja richtiger heisst, das StorageRepository (SR) mit NFS neu angelegt hat, kann man im OpenStack Dashboard die Verbindung ueberpruefen:
 
-<img src="/blog/media/quick-uploads/p561/openstack2.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p561/openstack2.jpg" width="585" height="386"/>
 
 Als Hypervisor-Host fungiert unser XenServer-Host, waehrend als Compute-Node die DevStack-VM herhaelt. 
 
 Jetzt kann man versuchen eine Instanz mit einen der vorinstallierten Images zu starten:
 
-<img src="/blog/media/quick-uploads/p561/openstack1.jpg" width="585" height="386"/>
+<img src="/images/quick-uploads/p561/openstack1.jpg" width="585" height="386"/>
 
 Das hat geklappt! 
 Fassen wir noch einmal zusammen. XenServer verwaltet die physikalischen Resourcen wie CPU, RAM und Festplatte. Im XenServer selber kann man virtuelle Maschinen (VMs) starten. Auf einer VM laeuft ein NFS-Server als Storage Repository und in einer anderen DevStackOSDomU alle OpenStack-Dienste

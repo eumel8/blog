@@ -125,11 +125,11 @@ Die Credentials zum Login erhalten wir mit
 # juju show-controller --show-password
 </code></pre><!-- /codeblock -->
 
-<img src="/blog/media/quick-uploads/p584/2017-03-01_1_.png" width="585" height="386"/>
+<img src="/images/quick-uploads/p584/2017-03-01_1_.png" width="585" height="386"/>
 
 Nach Eingabe der AWS-Credentials und dem Klicken auf Deploy, werden diese auf den Units ausgerollt. Danach sollte unsere Applikation laufen:
 
-<img src="/blog/media/quick-uploads/p584/2017-03-01.png" width="585" height="386"/>
+<img src="/images/quick-uploads/p584/2017-03-01.png" width="585" height="386"/>
 
 Man koennte jetzt noch mehrere Units der Applikation starten oder eine ganz andere Cloud benutzen (juju switch). Weiteres Highlight der Juju Charms sind Relations. Entweder ueber die GUI oder mit <code>juju add-relation</code> lassen sich Verbindungen herstellen - etwa eine Webanwendung mit einer Datenbank oder einem Proxy. Will man Dienste nach draussen freigeben, geht dies mit <code>juju expose</code>.
 

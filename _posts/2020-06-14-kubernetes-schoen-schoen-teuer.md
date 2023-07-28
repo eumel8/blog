@@ -2,7 +2,7 @@
 layout: post
 tag: kubernetes
 title: Kubernetes schoen, schoen teuer
-subtitle: "Nachdem man sich schon etwas mit Kubernetes vertraut gemacht hat, fallen einem vielleicht schon sinnvolle Anwendungsbeispiele ein. Zeit sich einen Kubernetes Cluster zu beschaffen, gern als "Managed Kubernetes", wie das Angebot heutzutage heisst. Als&hellip;"
+subtitle: "Nachdem man sich schon etwas mit Kubernetes vertraut gemacht hat, fallen einem vielleicht schon sinnvolle Anwendungsbeispiele ein. Zeit sich einen Kubernetes Cluster zu beschaffen, gern als Managed Kubernetes, wie das Angebot heutzutage heisst."
 date: 2020-06-14
 author: eumel8
 ---

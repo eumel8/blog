@@ -13,7 +13,7 @@ One thing is certain: #OTC #RunsOnOpenstack
 Technology is provided by Huawei, one of the Top 4 contributor in OpenStack [2]. So you have core technology with slightly different services in OTC. Now there are different ways to connect to the cloud:
 <br/>
 
-<img src="/blog/media/quick-uploads/p590/otc-connect.png" width="585" height="386"/>
+<img src="/images/quick-uploads/p590/otc-connect.png" width="585" height="386"/>
 
 <h1>1. The openstack client</h1>
 
