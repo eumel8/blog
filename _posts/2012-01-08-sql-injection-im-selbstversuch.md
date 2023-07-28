@@ -10,7 +10,7 @@ author: eumel8
 <p>Dynamische Webseiten sind eine tolle Sache. Der Besucher kann interaktiv am Geschehen teilnehmen und bekommt die Ergebnisse in Echtzeit praesentiert. Das macht die Webpraesenz agil und interessant - sei es wie hier beim Schreiben eines Blogbeitrages, ein Webformular zum Versenden von Daten oder eine Webanwendung, die auf Abruf Content erstellt.</p>
 <br/>
 <p>Ein Standardkonzept zur technischen Umsetzung solcher Webanwendungen heisst LAMP - Linux Apache MySQL PHP. Ich habe also einen Linuxrechner beliebiger Distribution (SuSE, RedHat, Ubuntu, Debia...), ein Apache-Webserver zur Darstellung im Web, eine MySQL-Datenbank zur Vorhaltung der Daten und eine Skriptsprache PHP, um die Daten aus der Datenbank zu holen und per Web darzustellen. An den Administrator solcher Anwendungen werden heutzutage keine grossen Ansprueche gestellt. Linuxserver mit fertigen LAMP-Umgebungen gibt es ueberall zu kaufen. Fast alle Blogs oder CMSs wie Joomla funktionieren "out of the box" - es gibt ein Programmpaket und ein webgestuetztes Installationsmenue, was keinerlei Programmierkenntnisse mehr voraussetzt, wenn die Installation in 99% der Faelle sauber verlaeuft. In weniger als 15 Minuten habe ich meine fertige interaktive Webanwendung. Weniger als 15 Minuten dauert es auch, um Daten aus dieser Anwendung zu stehlen...</p>
-<p><img style="float: right;" src="/blogs/media/blogs/eumel/injection.png?mtime=1326023715" alt="" width="48" height="48" /></p>
+<p><img style="float: right;" src="/images/injection.png?mtime=1326023715" alt="" width="48" height="48" /></p>
 <p>Bei der Verarbeitung von Daten in dynamischen Webanwendungen zaehlt die alte Regel: Nimm nichts von Fremden. Nun ist es aber in der Sache, genau von Fremden etwas anzunehmen: Eingabewerte von Parametern, die vom Browser an die Webanwendung uebergeben und vom PHP-Interpreter ausgewertet werden.</p>
 <p>Ich bin im Lab. In meiner alten Musikdatenbank moechte ich zum Beispiel nach dem Medium "MCD" suchen. Der von der Webanwendung erstellte Request heisst</p>
 <p><code>http://web.eumel.de.local/cgi-bin/music.cgi?select=cdmedium&amp;search=MCD</code></p>
@@ -31,6 +31,6 @@ author: eumel8
 <p>Wer seine Daten strenger kontrollieren will, goennt sich eine Datenbank-Firewall. Da die meisten Webanwendungen auf MySQL basieren, sollte man sich mal http://www.greensql.net/ ansehen. Greensql haengt zwischen Applikationsserver und Datenbank und untersucht staendig den SQL-Verkehr. Bei gefaehrlichen Queries wird der Befehl rausgefiltert und es wird ein leeres Ergebnis oder ein Fehler zurueckgeliefert. Es gibt auch einen Lernmode, um die Firewall auf seiner Applikation zu "trainieren". Und es loggt alle Aktivitaeten. Das sollte sowieso zum Schluss der letzte Tipp sein: Applikations- und Datenbank-Logs staendig auf ungewoehnliche Ereignisse untersuchen. Oder einen Nagios-Alarm als Event generieren. Ich habe fertig :-)</p>
 <p> </p>
 
-<div class="image_block"><img style="float: right;" src="/blogs/media/blogs/eumel/dbplus.png?mtime=1326023769" alt="" width="48" height="48" /></div>
+<div class="image_block"><img style="float: right;" src="/images/dbplus.png?mtime=1326023769" alt="" width="48" height="48" /></div>
 
 <p> </p>

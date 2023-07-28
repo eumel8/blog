@@ -15,23 +15,23 @@ author: eumel8
 <p> </p>
 Auf der Startseite unseres Git-Projekts im Gitlab finden wir rechts den Reiter "Settings":
 <br />
-<div class="image_block"><a href="/blogs/media/blogs/eumel/gitlab1.jpg?mtime=1385415903"><img src="/blogs/media/blogs/eumel/gitlab1.jpg?mtime=1385415903" alt="" width="683" height="290" /></a></div>
+<div class="image_block"><a href="/images/gitlab1.jpg?mtime=1385415903"><img src="/images/gitlab1.jpg?mtime=1385415903" alt="" width="683" height="290" /></a></div>
 <br />
 In den Settings gibt es einen weiteren Unterpunkt "Services". Dort kommt dann ein Token und die Service-URL vom Gitlab CI. Entweder hat man es auf einem anderen Hostnamen desselben Rechners konfiguriert oder einem anderen Port:
 <br />
-<div class="image_block"><a href="/blogs/media/blogs/eumel/gitlab2.jpg?mtime=1385415916"><img src="/blogs/media/blogs/eumel/gitlab2.jpg?mtime=1385415916" alt="" width="677" height="298" /></a></div>
+<div class="image_block"><a href="/images/gitlab2.jpg?mtime=1385415916"><img src="/images/gitlab2.jpg?mtime=1385415916" alt="" width="677" height="298" /></a></div>
 <br />
 Im Webfrontend des Gitlab CI muessen wir erstmal einen Runner konfiguriert. Das ist auch nicht sonderlich schwer. Im Prinzip geht es auch wieder bloss drum, Security-Token auszutauschen (genau wie bei der Verbindung von Gitlab und Gitlab CI)
 <br />
-<div class="image_block"><a href="/blogs/media/blogs/eumel/gitlab3.jpg?mtime=1385415930"><img src="/blogs/media/blogs/eumel/gitlab3.jpg?mtime=1385415930" alt="" width="675" height="273" /></a></div>
+<div class="image_block"><a href="/images/gitlab3.jpg?mtime=1385415930"><img src="/images/gitlab3.jpg?mtime=1385415930" alt="" width="675" height="273" /></a></div>
 <br />
 Wenn man die Projekt-URL vom Gitlab ins Gitlab CI eingetragen hat, hat man auch ein entsprechendes Projekt-Menu im Gitlab CI:
 <br /> 
-<div class="image_block"><a href="/blogs/media/blogs/eumel/gitlab4.jpg?mtime=1385415943"><img src="/blogs/media/blogs/eumel/gitlab4.jpg?mtime=1385415943" alt="" width="669" height="273" /></a></div>
+<div class="image_block"><a href="/images/gitlab4.jpg?mtime=1385415943"><img src="/images/gitlab4.jpg?mtime=1385415943" alt="" width="669" height="273" /></a></div>
 <br />
 Unter "Settings" kommen wir zum Kernpunkt der Anwendung. Was soll mit dem Code gemacht werden, wenn er im Gitlab erfolgreich eingecheckt wurde? Unter "Scripts" lauert das Detail:
 <br />
-<div class="image_block"><a href="/blogs/media/blogs/eumel/gitlab5.jpg?mtime=1385415956"><img src="/blogs/media/blogs/eumel/gitlab5.jpg?mtime=1385415956" alt="" width="668" height="276" /></a></div>
+<div class="image_block"><a href="/images/gitlab5.jpg?mtime=1385415956"><img src="/images/gitlab5.jpg?mtime=1385415956" alt="" width="668" height="276" /></a></div>
 <br />
 
 Variante 1: Manifeste und Templates werden auf korrekte Syntax gecheckt (mit einige weiche Ausnahmen). Wenn alles okay ist, wird ein tar-Archiv aus dem Code erstellt und auf einem Webserver als Download zur Verfuegung gestellt:

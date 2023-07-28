@@ -9,7 +9,7 @@ author: eumel8
 
 Kubernetes erweckt den Eindruck, hochkompliziert zu sein. Und meistens ist es das auch. Aber es gibt einige sehr leichgewichtige Tools bzw. Methoden, um Kubernetes schnell zu installieren. Es sind nur ein Kommandozeilen und hier sind einige Methoden:
 
-<div class="image_block"><a href="https://blog.eumelnet.de/blogs/media/blogs/eumel/quick-uploads/joomla-installation-mit-kubernetes-und-helm-1/kubernetes.png?mtime=1568479260">
+<div class="image_block"><a href="images/quick-uploads/joomla-installation-mit-kubernetes-und-helm-1/kubernetes.png?mtime=1568479260">
 <br/>
 
 <strong>Vorbedingungen</strong>

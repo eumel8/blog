@@ -55,7 +55,7 @@ Jetzt koennen wir mit
 
 den Service starten. Ueber http://127.0.0.1:15672/#/exchanges sollten wir auf die Web-Administrationsoberflaeche des RabbitMQ zugreifen koennen (default login: guest/guest). Unter "exchanges" muessen wir noch 2 Eintraege fuer unsere mcollective Queue machen:
 <p> </p>
-<div class="image_block"><a href="/blogs/media/blogs/eumel/rabbitmq.jpg?mtime=1373315916"><img src="/blogs/media/blogs/eumel/rabbitmq.jpg?mtime=1373315916" alt="" width="653" height="735" /></a></div>
+<div class="image_block"><a href="/images/rabbitmq.jpg?mtime=1373315916"><img src="/images/rabbitmq.jpg?mtime=1373315916" alt="" width="653" height="735" /></a></div>
 <p>Die letzten 2 Eintraege sind neu und muessen durch uns hinzugefuegt werden.</p>
 <p> </p>
 <p>Unter /etc/mcollective gibt es sowohl eine server.cfg als eine client.cfg. Beide Konfigurationsfiles benoetigen die Infos ueber den Connector und den RabbitMQ Service: 

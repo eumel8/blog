@@ -18,6 +18,6 @@ Apropos Interviews. Eine weitere Moeglichkeit, um mit Leuten ins Gespraech zu ko
 Die beste Gelegenheit dazu ist der Design-Summit, der dieses Jahr zum letzten Mal parallel zum OpenStack-Summit stattfindet. Mein erstes Treffen am Freitag war mit der Enterprise Working Group (EWG), die sich zum Ziel gestellt hat, Enterprise Applikationen "cloud-faehig" bzw. fertig fuer OpenStack zu machen. Das Ergebnis der Beratung der Arbeitsgruppe wird ein E-Book sein. Danach wurde ich schon von der Uebersetzungs-Truppe I18n erwartet. Dort wurde zusammen mkt dem neuen Projektleiter (PTL) beschlossen, was im naechsten Release alles erreicht werden soll, welche Prioritaeten welche Projekte zum Beispiel haben.
 Nur an den zwei Arbeitsgruppen ist zu sehen, welche Vielfalt das OpenStack-Projekt nicht nur an den Themen bringt, die jetzt rein technisch nicht unbedingt etwas mit OpenStack direkt zutun haben, sondern welche Vielfalt an Projektteilnehern aus allen Teilen der Welt es gibt. Das ist Globalisierung. Und so sieht sie aus: 
 <br />
-<img src="/blogs/media/blogs/eumel/quick-uploads/p579/wp_20161028_18_08_44_pro.jpg?mtime=1478542181" alt="" width="707" height="398" />
+<img src="/images/quick-uploads/p579/wp_20161028_18_08_44_pro.jpg?mtime=1478542181" alt="" width="707" height="398" />
 <br />
 Alle erwaehnten und relevanten Videos unter https://www.youtube.com/playlist?list=PLBYczRi39Ez6Ia4QLeqEtJNZap93H1Ax6

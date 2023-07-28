@@ -7,7 +7,7 @@ date: 2012-01-02
 author: eumel8
 ---
 
-<div class="image_block"><img style="float: right;" src="/blogs/media/blogs/eumel/passwort_swordfish_2.jpg?mtime=1325709389" alt="" width="301" height="196" /></div>
+<div class="image_block"><img style="float: right;" src="/images/passwort_swordfish_2.jpg?mtime=1325709389" alt="" width="301" height="196" /></div>
 <p>Das Boese ist immer und ueberall - so lautet eine alte Weisheit, aktuell ist sie auch heute noch. In Zeiten von  globaler Vernetzung und Rechnen in den Wolken (engl. Fachbegriffe Social Networking &amp; Cloud Computing) ist die Frage nach den Daten unserer werten Informationsgesellschaft immer wichtiger. Viel oft stellt man sich nicht nur die Frage: Wo sind die Daten? Sondern vielmehr: Wo sind die Daten gewesen?</p>
 <br/>
 <p>Alles was im Internet per Web erreichbar ist (http...) ist frueher oder spaeter ueber Google erreichbar. Wenn man mal nach seinem Passwort oder seiner Email-Adresse googelt, kann man manchmal wahre Wunder erleben.</p>
@@ -36,7 +36,7 @@ author: eumel8
 <p>SHA-512 eine weitere Erweiterung von SHA mit einem 16 Zeichen Salt und einer Laenge von 512 Bit. Unsere Schatzkiste sieht in etwa so aus:</p>
 <p><code> user1:$6$...<br /> user2:$6$...<br /> user3:$6$...<br /> </code></p>
 <p>SHA kann auch nochmal mit SHA verschluesselt werden. Es aendert aber nichts dran, dass es sich genau wie MD5 eigentlich um ein Verfahren von Signieren grosser Dateien oder Ermitteln von Pruefsummen handelt. Zur Generierung von Passwoertern waren diese Verfahren nie vorgesehen, genuegten aber den Anspruechen der Zeit, da sie die Zeichenlaengen-Barriere von crypt() gebrochen haben. Laengere Passwoerter waren sonst sinnlos, da nur ersten 8 Zeichen des Passwortes bei der Verschluesselung Beachtung fanden.</p>
-<p><img src="/blogs/media/blogs/eumel/openssh.png?mtime=1325627785" alt="" width="194" height="191" /></p>
+<p><img src="/images/openssh.png?mtime=1325627785" alt="" width="194" height="191" /></p>
 <p>Naechste Stufe: Blowfish. Blowfish ist ein symetrisches Verschluesselungsverfahren mit 128 Bit Schluessellaenge. Es koennen aber auch bis zu 448 Bit sein. Intern arbeitet Blowfish mit 64 Bit Bloecken. In 16 Rundenschluesseln werden jeweils von links und rechts 32 Bit Bloecke verschluesselt, die dann zum Schluss mit2 weiteren Rundenschluesseln verschluesselt werden.  Die Schatzkiste sieht dann so aus:</p>
 <p><code> user1:$2a$... <br /> user2:$2a$... <br /> user3:$2a$... <br /> </code></p>
 <p>Der Rundenschuessel ist Bestandteil des Passworthashes, weswegen die Abspeicherung nicht sehr platzsparend ist. Aber Blowfish gilt als sicher. Bis 2011 gab es noch keine Moeglichkeit, Blowfish verschluesselte Hashs zu knacken. Die Weiterentwicklung von Blowfish ist Twofish, findet aber in der Praxis keine Verbreitung.</p>
@@ -62,4 +62,4 @@ author: eumel8
 </ol>
 <p>Wenn der PC Internetanschluss hat, gehoeren immer Softwareupdates zum Tageswerk. Jede Ungewoehnlichkeit sollte man argwoehnisch beachten. Die Verschluesselungstechniken entwickeln sich immer weiter. Deswegen sollte man da auch immer auf dem neuesten Stand sein ;)</p>
 <p> </p>
-<div class="image_block"><img style="float: right;" src="/blogs/media/blogs/eumel/ritter_wolf.jpg?mtime=1325628211" alt="" width="222" height="222" /></div>
+<div class="image_block"><img style="float: right;" src="/images/ritter_wolf.jpg?mtime=1325628211" alt="" width="222" height="222" /></div>

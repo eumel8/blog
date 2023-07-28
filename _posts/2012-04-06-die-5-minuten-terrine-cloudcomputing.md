@@ -11,7 +11,7 @@ author: eumel8
 <br/>
 <p>Folgendes Rezept zeigt die vollstaendige Virtualisierung und Automatisierung einer Systemlandschaft am Beispiel eine Installation von Joomla. 5 Minuten nach Auftragseingang soll der komplette Server mit Webpraesenz am Netz sein.</p>
 <p>Los gehts:</p>
-<div class="image_block"><a href="http://astore.amazon.de/wunschzettelc-21/detail/B003SE71JS"><img style="float: right;" src="/blogs/media/blogs/eumel/suppenterrine.jpg?mtime=1334329979" alt="" width="187" height="187" /></a></div>
+<div class="image_block"><a href="http://astore.amazon.de/wunschzettelc-21/detail/B003SE71JS"><img style="float: right;" src="/images/suppenterrine.jpg?mtime=1334329979" alt="" width="187" height="187" /></a></div>
 <p></p>
 <p>Zutaten:</p>
 <ol>
@@ -202,7 +202,7 @@ service { "apache2":
 <p><code>dd if=/dev/zero of=/dev/sda1 bs=512 count=1</code></p>
 <p>Das sind bis jetzt aber nur die Arbeiten im Hintergrund. Fuer unsere Kunden muss man noch ein passables Frontend zur Verfuegung stellen. Eine gute Veranlagung fuer die Verbindung der einzelnen Komponenten ist Cobbler. <a href="http://suse.gansert.net/?p=42" target="_blank">Hier</a> ist eine Anleitung fuer OpenSuSE. Cobbler ist in erster Linie ein Frontend fuer Fedora, was aber auch mit anderen Betriebssystemen kompatibel ist. Leider erfuellt es nicht ganz die Beduerfnisse des Szenarios, was wir uns oben schon aufgebaut haben. SO fehlt zum Beispiel die Anbindung an unser XenCenter.  Klar kann man das auch irgendwie in Cobbler implementieren, aber mit CodeIgniter habe ich selbst ein Frontend fuer unseren puppetmaster geschrieben. Es arbeitet zustandlos, speichert also keine Passwoerter oder Daten und kann die <a href="http://docs.vmd.citrix.com/XenServer/6.0.0/1.0/en_gb/api/" target="_blank">API des XEN-Centers</a> bedienen. Eine Vorab-Version befindet sich im Anhang.</p>
 <p></p>
-<div class="image_block"><a href="/blogs/media/blogs/eumel/suppenterrine_m.jpg?mtime=1334329995"><img src="/blogs/media/blogs/eumel/suppenterrine_m.jpg?mtime=1334329995" alt="" width="462" height="283" /></a></div>
+<div class="image_block"><a href="/images/suppenterrine_m.jpg?mtime=1334329995"><img src="/images/suppenterrine_m.jpg?mtime=1334329995" alt="" width="462" height="283" /></a></div>
 <p></p>
 <p>Damit waere das Rezept fuer unsere 5-Minuten-Terrine abgeschlossen. Aaaaber, leider kommt noch ein Aber zum Schluss ;)</p>
 <p>Leider haben wir unterwegs unsere neue Maschine verloren. Der Server wuerde vom Netz booten, bekommt eine zufaellige IP-Adresse, fuer den fehlen die Rezepte im puppet, der Endanwender kriegt niemals mit, ob die neue Maschine verfuegbar ist, wie sie heisst und wie er sich einloggen kann.</p>

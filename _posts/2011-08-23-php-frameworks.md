@@ -9,11 +9,11 @@ author: eumel8
 
 <p><strong>T</strong>otgeglaubte leben laenger.  Angefangen als Scriptsprache irgendwann in den 90ern, mit der man fuer damalige Verhaeltnisse dynamische Webseiten erstellen konnte, hat sich PHP bis heute als im Hintergrund agierender Praesentator von Webseiten im Internet gehalten.</p>
 <br/>
-<p><a href="/blogs/media/blogs/eumel/history_PHP.png?mtime=1314111712"><img src="/blogs/media/blogs/eumel/history_PHP.png?mtime=1314111712" alt="" width="640" height="480" /></a></p>
+<p><a href="/images/history_PHP.png?mtime=1314111712"><img src="/images/history_PHP.png?mtime=1314111712" alt="" width="640" height="480" /></a></p>
 <p>Quelle: http://www.tiobe.com/index.php/paperinfo/tpci/PHP.html</p>
 <p>Profis wuerden natuerlich niemals PHP produktiv einsetzen, aber in zahlreichen Content-Management-Systemen (CMS) oder in Webshops, Blogs werkelt PHP.</p>
 <p>Neben solchen Gesamtkunstwerken stellt sich bei einem neuen Projekt immer zuerst die Frage: Wo anfangen. Meist ist es ja doch ein Webportal mit einer Datenbank, "die irgendwas macht". Wenn man jetzt nicht Funktion fuer Funktion selber schreiben will, draengen sich in letzter Zeit verstaerkt sogenannte Frameworks auf. Ein Framework ist ein Sammelsurium von Funktionen, auf die man (neben den sowieso schon vorhandenen Funktionen im php-core) in seiner Anwendung zugreifen kann. Eine zugrundeliegende Systemarchitektur im modernen Programmierstil ist MVC-Model View Controller:</p>
-<div class="image_block"><a href="/blogs/media/blogs/eumel/Folie1.GIF?mtime=1314112468"><img src="/blogs/media/blogs/eumel/Folie1.GIF?mtime=1314112468" alt="" width="620" height="465" /></a></div>
+<div class="image_block"><a href="/images/Folie1.GIF?mtime=1314112468"><img src="/images/Folie1.GIF?mtime=1314112468" alt="" width="620" height="465" /></a></div>
 <p>Die Idee dieses Stil ist die strikte Trennung der Applikation in 3 Bereiche:</p>
 <ol>
 <li>View (Ansicht):  Praesentation der Applikation im Browser</li>
@@ -21,7 +21,7 @@ author: eumel8
 <li>Model (Logik): Datenmodell und Datenvorhaltung</li>
 </ol>
 <p> </p>
-<p>Diese 3 Bereiche findet man zum Beispiel auch in modernen Systemlandschaften wieder:<a href="/blogs/media/blogs/eumel/Folie2.GIF?mtime=1314112482"><img src="/blogs/media/blogs/eumel/Folie2.GIF?mtime=1314112482" alt="" width="723" height="543" /></a></p>
+<p>Diese 3 Bereiche findet man zum Beispiel auch in modernen Systemlandschaften wieder:<a href="/images/Folie2.GIF?mtime=1314112482"><img src="/images/Folie2.GIF?mtime=1314112482" alt="" width="723" height="543" /></a></p>
 <p> </p>
 <p>Model, View, Controller sind die Inhalte dreier Sicherheitsbereiche im Netzwerk, die durch Firewalls logisch und physikalisch abgetrennt sind. Die View (Ansicht) befindet sich im Frontend, meist die Demilitaerisierte Zone (DMZ), waehrend Datenverarbeitung (Controller) und Datenhaltung (Model) in weiter hinten gelagerten Bereichen stattfindet.</p>
 <p>Die Arbeit mit Frameworks ist bei weitem nicht so einfach, wie es gemeinhin suggeriert wird. Beim "normalen" Programmieren schreibt man einfach drauf los. Und landet irgendwann im Chaos - spaetestens wenn man nach einiger Zeit Fehler suchen oder bestehene Funktionen erweitern muss. Frameworks arbeiten objektorientiert, ein Fakt der nicht nur Java vorbehalten ist. Dennoch lohnt es sich, mit Frameworks zu befassen, denn nach einer gewissen Einarbeitungszeit kann man tatsaechlich mit der Produktion seines Codes beginnen.</p>

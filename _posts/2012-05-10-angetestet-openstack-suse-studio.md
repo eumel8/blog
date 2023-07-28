@@ -17,7 +17,7 @@ author: eumel8
 <p> </p>
 <p>Natuerlich wuerde es auch per HTTP-POST gehen, denn es gibt eine REST-Schnittstelle (glance macht genau dies von der Kommandozeile). Das Image kann man dann auf eine VM ausrollen:</p>
 <p> </p>
-<div class="image_block"><a href="/blogs/media/blogs/eumel/openstack.jpg?mtime=1336767346"><img src="/blogs/media/blogs/eumel/openstack.jpg?mtime=1336767346" alt="" width="687" height="332" /></a></div>
+<div class="image_block"><a href="/images/openstack.jpg?mtime=1336767346"><img src="/images/openstack.jpg?mtime=1336767346" alt="" width="687" height="332" /></a></div>
 <p> </p>
 <p>Weitere Features sind  Zuweisung von IP-Adressen und Einrichtung von Security-Groups (also Firewalls), wie man es vom AWS kennt.</p>
 <p>Ein weiterer Teil vom Openstack ist der Object Storage (Codename Swift). Damit soll skalierbarer Speicher im Petabytebereich erstellt werden koennen. Kernanwendungen soll das Speichern der Betriebssystemimages fuer Openstack sein, aber auch Anwendungsdaten wie Bilder, Thumbnails und Dokumenten Storage.</p>

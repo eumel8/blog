@@ -23,7 +23,7 @@ Das Feature nennt sich Twitter Cards und ist auch in der <a href="https://develo
 <meta property="og:url" content="https://blog.eumelnet.de/blogs/blog8.php/kubernetes-ipv6-jetzt-gehts-los" />
 <meta property="og:description" content="Hurra! Kubernetes 1.21 ist da! Und damit endlich eine Implementierung von IPv6 DualStack in K3S. IPv6 kann also zusammen mit IPv4 betrieben werden. Nun, was bedeutet das genau? Schauen wir uns das in der Praxis unseres Heimnetzwerkes an." />
 <meta property="og:site_name" content="blog.eumel.de" />
-<meta property="og:image" content="https://blog.eumelnet.de/blogs/media/blogs/eumel/blog-eumel-de.png?mtime=1594142083" />
+<meta property="og:image" content="images/blog-eumel-de.png?mtime=1594142083" />
 <meta property="og:image:height" content="851" />
 <meta property="og:image:width" content="315" />
 <meta property="twitter:card" content="summary_large_image" />
