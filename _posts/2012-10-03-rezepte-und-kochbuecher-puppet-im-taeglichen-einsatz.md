@@ -81,7 +81,7 @@ define service {
  check_command check_ping!200.0,20%!500.0,60%
 }
 &lt;% end -%>
-&lt;% if value_hash['monitor'] == "1" &amp;&amp; value_hash['host'] == "fileserver" %>
+&lt;% if value_hash['monitor'] == "1" && value_hash['host'] == "fileserver" %>
 define service {
  use service
  host_name &lt;%= value_hash['host'] %>.&lt;%= puppetdomain %>

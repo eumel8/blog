@@ -111,7 +111,7 @@ Razor-Server wird sogar automatisch gestartet, aber das ist noch gar nicht erfor
 
 ```
 production:
- database_url: 'jdbc:postgresql:razor?user=razor&amp;password=mypass'
+ database_url: 'jdbc:postgresql:razor?user=razor&password=mypass'
 ```
 
 

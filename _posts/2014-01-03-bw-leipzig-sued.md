@@ -16,7 +16,7 @@ DIe 2 Ringlokschuppen an der Rohrteichstrasse (Schuppen 3) und Hermann-Liebmann-
 Ich besuchte meine langjaehrige Arbeitsstaette im Januar 2014. Dabei stand schon fest, dass der Lokschuppen 4 abgerissen werden sollte. Eine entsprechender Beschluss vom EIsenbahn-Bundesamt lag seit dem 05.06.2013 vor. 2015 war es dann so weit. Im Februar 2017 kam ich erst wieder dazu, die Stelle zu besuchen, auf der mal das aelteste Bw der Deutschen Reichsbahn stand. Hier sind die Fotos, mittlerweile nicht mal mehr ein #rottenplace:
 
 
-<embed type="application/x-shockwave-flash" src="https://static.googleusercontent.com/external_content/picasaweb.googleusercontent.com/slideshow.swf" width="400" height="267" flashvars="host=picasaweb.google.com&amp;hl=en_US&amp;feat=flashalbum&amp;RGB=0x000000&amp;feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F110852168276064448839%2Falbumid%2F5964651236550248545%3Falt%3Drss%26kind%3Dphoto%26authkey%3DGv1sRgCP_Ki9DDq62_xAE%26hl%3Den_US" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+<embed type="application/x-shockwave-flash" src="https://static.googleusercontent.com/external_content/picasaweb.googleusercontent.com/slideshow.swf" width="400" height="267" flashvars="host=picasaweb.google.com&hl=en_US&feat=flashalbum&RGB=0x000000&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F110852168276064448839%2Falbumid%2F5964651236550248545%3Falt%3Drss%26kind%3Dphoto%26authkey%3DGv1sRgCP_Ki9DDq62_xAE%26hl%3Den_US" pluginspage="http://www.macromedia.com/go/getflashplayer" />
 
 Hier ein paar Fotos aus gluecklicheren Tagen. Die meisten Maschinen sind entweder im Bw Sued beheimatet oder wurden von Bw Sued Personal gefahren:
 

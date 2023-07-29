@@ -14,7 +14,7 @@ Fortunately, we bought champagne and vodka and were something like exotics.
 The year started almost with OpenStack: <a href="https://www.openstack.org/election/2018-individual-director-election/">The Election Board of Directors</a>. I applied again for <a href="https://governance.openstack.org/election/results/rocky/ptl.html">I18n PTL</a>, a kind of Open Source contribution with my low progam language skills.
 
 DeCiX Partners with BCIX (Berlin Exchange Point) . 
-<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">FFM - BER - Proud to announce our new strategic partnership with <a href="https://twitter.com/bcix?ref_src=twsrc%5Etfw">@bcix</a>! Here’s to offering our DE-CIX <a href="https://twitter.com/hashtag/peering?src=hash&amp;ref_src=twsrc%5Etfw">#peering</a> services and optimized synergies in the German capital, <a href="https://twitter.com/hashtag/Berlin?src=hash&amp;ref_src=twsrc%5Etfw">#Berlin</a>! <a href="https://twitter.com/hashtag/interconnection?src=hash&amp;ref_src=twsrc%5Etfw">#interconnection</a> <a href="https://t.co/C8miJfAZef">pic.twitter.com/C8miJfAZef</a></p>&mdash; DE-CIX (@DECIX) <a href="https://twitter.com/DECIX/status/950728978838499328?ref_src=twsrc%5Etfw">9. Januar 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">FFM - BER - Proud to announce our new strategic partnership with <a href="https://twitter.com/bcix?ref_src=twsrc%5Etfw">@bcix</a>! Here’s to offering our DE-CIX <a href="https://twitter.com/hashtag/peering?src=hash&ref_src=twsrc%5Etfw">#peering</a> services and optimized synergies in the German capital, <a href="https://twitter.com/hashtag/Berlin?src=hash&ref_src=twsrc%5Etfw">#Berlin</a>! <a href="https://twitter.com/hashtag/interconnection?src=hash&ref_src=twsrc%5Etfw">#interconnection</a> <a href="https://t.co/C8miJfAZef">pic.twitter.com/C8miJfAZef</a></p>&mdash; DE-CIX (@DECIX) <a href="https://twitter.com/DECIX/status/950728978838499328?ref_src=twsrc%5Etfw">9. Januar 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
@@ -84,15 +84,15 @@ Open Source and Open Infrastructure was the main topic at the <a href="https://b
 
 I could contribute something to the <a href="https://www.openstackday.pl/">OpenStack Days</a>. To Krakow I drove from Berlin by car. Stopover in Wrozlaw and Opole, also like Krakow nice cities, quiet different, but nice. Worth to visit a second time.
 
-<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/Opole?src=hash&amp;ref_src=twsrc%5Etfw">#Opole</a> at night <a href="https://t.co/q73BKyeWSJ">pic.twitter.com/q73BKyeWSJ</a></p>&mdash; Frank Kloeker (@eumel_8) <a href="https://twitter.com/eumel_8/status/1007371743185571840?ref_src=twsrc%5Etfw">14. Juni 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/Opole?src=hash&ref_src=twsrc%5Etfw">#Opole</a> at night <a href="https://t.co/q73BKyeWSJ">pic.twitter.com/q73BKyeWSJ</a></p>&mdash; Frank Kloeker (@eumel_8) <a href="https://twitter.com/eumel_8/status/1007371743185571840?ref_src=twsrc%5Etfw">14. Juni 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-After the second visit in Budapest I attended a DevOps Training in Frankfurt. Now I'm certified <a href="https://blog.eumelnet.de/blogs/blog8.php/devops-more-than-a-buzzword">with some knowledge</a> which I already knew, read in the book <a href="https://www.amazon.de/Phoenix-Project-DevOps-Helping-Business/dp/1942788290/ref=sr_1_1?ie=UTF8&amp;qid=1546036908">The Phoenix Project.</a>
+After the second visit in Budapest I attended a DevOps Training in Frankfurt. Now I'm certified <a href="https://blog.eumelnet.de/blogs/blog8.php/devops-more-than-a-buzzword">with some knowledge</a> which I already knew, read in the book <a href="https://www.amazon.de/Phoenix-Project-DevOps-Helping-Business/dp/1942788290/ref=sr_1_1?ie=UTF8&qid=1546036908">The Phoenix Project.</a>
 <a href="https://twitter.com/eumel_8/status/1012619255806873600">Travel Status</a>
 
 The summer passed quickly. The football World Soccer Games appeared very quick for Germany. The bad mood against Russia as hosts paid off. We left the games after 3 matches.
 
-Meanwhile we had some Musicans in town: Billy Idol and Carlos Santana. Both played at Zitadelle Spandau, which is now renamed in Zitadelle Berlin, don't know why. Billy Idol was quiet interesting so see him live for the first time. With his old songs and some of his come back album Kings &amp; Queens of the Underground which is almost 4 years old.
+Meanwhile we had some Musicans in town: Billy Idol and Carlos Santana. Both played at Zitadelle Spandau, which is now renamed in Zitadelle Berlin, don't know why. Billy Idol was quiet interesting so see him live for the first time. With his old songs and some of his come back album Kings & Queens of the Underground which is almost 4 years old.
 Santana is an example of Continous Delivery. He's now 71 years old any plays every year on tour the old songs in new manner. Really interesting to hear, and really interesting to see so many younger people at the concerts. I think we will have a lot of them in the next years.
 
 In August I had some recovery at a mining lake named "Beach Roetha" 
@@ -102,7 +102,7 @@ In August I had some recovery at a mining lake named "Beach Roetha"
 
 Back to work, version 5 of ansible-otc released with 634 unit tests, that means API tests, in Travis: 
 
-<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">thx <a href="https://twitter.com/travisci?ref_src=twsrc%5Etfw">@travisci</a> Integrated about 634 unit tests and functional tests for <a href="https://twitter.com/hashtag/ansible?src=hash&amp;ref_src=twsrc%5Etfw">#ansible</a>-otc project: <a href="https://t.co/LoR8dY3dwI">https://t.co/LoR8dY3dwI</a></p>&mdash; Frank Kloeker (@eumel_8) <a href="https://twitter.com/eumel_8/status/1034196210968449024?ref_src=twsrc%5Etfw">27. August 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">thx <a href="https://twitter.com/travisci?ref_src=twsrc%5Etfw">@travisci</a> Integrated about 634 unit tests and functional tests for <a href="https://twitter.com/hashtag/ansible?src=hash&ref_src=twsrc%5Etfw">#ansible</a>-otc project: <a href="https://t.co/LoR8dY3dwI">https://t.co/LoR8dY3dwI</a></p>&mdash; Frank Kloeker (@eumel_8) <a href="https://twitter.com/eumel_8/status/1034196210968449024?ref_src=twsrc%5Etfw">27. August 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
@@ -123,7 +123,7 @@ Later the year we'll experienced a crisis. One of the Huawei leader management g
 
 But now we are in November 2018 in Berlin and the event train started:
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="de"><p lang="en" dir="ltr">If I move? No, thats only preparation <a href="https://twitter.com/hashtag/OpenStack?src=hash&amp;ref_src=twsrc%5Etfw">#OpenStack</a> <a href="https://twitter.com/hashtag/Hackathon?src=hash&amp;ref_src=twsrc%5Etfw">#Hackathon</a> <a href="https://twitter.com/hashtag/Cloudcamp18?src=hash&amp;ref_src=twsrc%5Etfw">#Cloudcamp18</a> <a href="https://t.co/T1TPQUpXoT">pic.twitter.com/T1TPQUpXoT</a></p>&mdash; Frank Kloeker (@eumel_8) <a href="https://twitter.com/eumel_8/status/1060487293113417730?ref_src=twsrc%5Etfw">8. November 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="de"><p lang="en" dir="ltr">If I move? No, thats only preparation <a href="https://twitter.com/hashtag/OpenStack?src=hash&ref_src=twsrc%5Etfw">#OpenStack</a> <a href="https://twitter.com/hashtag/Hackathon?src=hash&ref_src=twsrc%5Etfw">#Hackathon</a> <a href="https://twitter.com/hashtag/Cloudcamp18?src=hash&ref_src=twsrc%5Etfw">#Cloudcamp18</a> <a href="https://t.co/T1TPQUpXoT">pic.twitter.com/T1TPQUpXoT</a></p>&mdash; Frank Kloeker (@eumel_8) <a href="https://twitter.com/eumel_8/status/1060487293113417730?ref_src=twsrc%5Etfw">8. November 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 

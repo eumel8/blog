@@ -129,7 +129,7 @@ def gspread_data(date,trainnumber,traindeparture,traintarget,traindelay,traintex
  return
 ```
 
-Eigentlich ganz einfach. Der Service-Account meldet sich bei der API an. Das Secret-File mit den Credentials liefert Google fuer cut&amp;paste. Ins Arbeitsblatt 1 der Exceltabelle werde die Daten geschrieben. 
+Eigentlich ganz einfach. Der Service-Account meldet sich bei der API an. Das Secret-File mit den Credentials liefert Google fuer cut&paste. Ins Arbeitsblatt 1 der Exceltabelle werde die Daten geschrieben. 
 
 <img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan1.png" width="585" height="386"/>
 

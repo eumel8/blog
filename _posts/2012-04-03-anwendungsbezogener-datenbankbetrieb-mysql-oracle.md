@@ -1,7 +1,7 @@
 ---
 layout: post
 tag: general
-title: Anwendungsbezogener Datenbankbetrieb MySQL &amp; Oracle
+title: Anwendungsbezogener Datenbankbetrieb MySQL & Oracle
 subtitle: "Im anwendungsbezogenen Datenbankbetrieb ist es wie mit dem Auto: Man weiss zwar, dass es ein Getriebe und einen Motor gibt, aber als Fahrer interessiert nur das Ziel und die Bedienung von Schaltern und Knoepfen. nnAnbei einige Zaubersprueche zur Bedie&hellip;"
 date: 2012-04-03
 author: eumel8

@@ -2,7 +2,7 @@
 layout: post
 tag: general
 title: 10 kleine Helferlein
-subtitle: "CHANGE MASTER TOn   MASTER_HOST='master2.mycompany.com',n   MASTER_USER='replication',n   MASTER_PASSWORD='bigs3cret',n   MASTER_PORT=3306,n   MASTER_LOG_FILE='master2-bin.001',n   MASTER_LOG_POS=4,n   MASTER_CONNECT_RETRY=10;nnnnnnmysql&amp;gt&hellip;"
+subtitle: "CHANGE MASTER TOn   MASTER_HOST='master2.mycompany.com',n   MASTER_USER='replication',n   MASTER_PASSWORD='bigs3cret',n   MASTER_PORT=3306,n   MASTER_LOG_FILE='master2-bin.001',n   MASTER_LOG_POS=4,n   MASTER_CONNECT_RETRY=10;nnnnnnmysql&gt&hellip;"
 date: 2012-10-31
 author: eumel8
 ---
@@ -234,7 +234,7 @@ bestimte Sorte VMs loeschen
 for i in `openstack server list | grep k8s-00 | grep ranchermaster | awk '{print $2}'`;do openstack server delete $i;done
 </code></pre><!-- /codeblock -->
 
-<strong>Dies &amp; Das</strong>
+<strong>Dies & Das</strong>
 
 Virtuelle Konsole aufrufen mit virt-viewer
 

@@ -126,15 +126,15 @@ $Keywords = preg_replace("/,/", "\"|\"", $Keywords);
  $url = "http://ecs.amazonaws.de/onca/xml?";
 
  if ($ItemId) {
- $request = "AWSAccessKeyId=".$AWSAccessKeyId."&amp;AssociateTag=".$AssociateTag."&amp;IdType=ASIN&amp;ItemId=".$ItemId."&amp;Operation=ItemLookup&amp;ResponseGroup=".$ResponseGroup."&amp;Service=AWSECommerceService&amp;Timestamp=".$Timestamp."&amp;Version=".$Version;
+ $request = "AWSAccessKeyId=".$AWSAccessKeyId."&AssociateTag=".$AssociateTag."&IdType=ASIN&ItemId=".$ItemId."&Operation=ItemLookup&ResponseGroup=".$ResponseGroup."&Service=AWSECommerceService&Timestamp=".$Timestamp."&Version=".$Version;
  } else {
- $request = "AWSAccessKeyId=".$AWSAccessKeyId."&amp;AssociateTag=".$AssociateTag."&amp;ItemPage=".$ItemPage."&amp;Keywords=".rawurlencode($Keywords)."&amp;Operation=".$Operation."&amp;ResponseGroup=".$ResponseGroup."&amp;SearchIndex=".$SearchIndex."&amp;Service=AWSECommerceService&amp;Timestamp=".$Timestamp."&amp;Version=".$Version;
+ $request = "AWSAccessKeyId=".$AWSAccessKeyId."&AssociateTag=".$AssociateTag."&ItemPage=".$ItemPage."&Keywords=".rawurlencode($Keywords)."&Operation=".$Operation."&ResponseGroup=".$ResponseGroup."&SearchIndex=".$SearchIndex."&Service=AWSECommerceService&Timestamp=".$Timestamp."&Version=".$Version;
  }
 
  $url .= $request;
  $srequest .= $request;
  $signature = rawurlencode(base64_encode(hash_hmac('sha256', $srequest, $AWSSecretKey, true)));
- $url .= "&amp;Signature=".$signature;
+ $url .= "&Signature=".$signature;
 
 ```
 
@@ -199,10 +199,10 @@ foreach ($result->Items->Item as $item) {
 ```php
  if($item->ASIN){
  echo "<p class=\"readmore\"><a href=\"".htmlspecialchars("?".
- "SearchIndex"."=". $SearchIndex ."&amp;".
- "ItemPage" ."=".$ItemPage ."&amp;".
- "Operation=ItemLookup&amp;" .
- "ResponseGroup=Similarities&amp;" .
+ "SearchIndex"."=". $SearchIndex ."&".
+ "ItemPage" ."=".$ItemPage ."&".
+ "Operation=ItemLookup&" .
+ "ResponseGroup=Similarities&" .
  "ItemId" ."=".$item->ASIN).
  "\">SimilarityLookup: $item->ASIN</a>\n";
  }
@@ -212,8 +212,8 @@ foreach ($result->Items->Item as $item) {
  echo "Similar: <ul>";
  foreach ($item->SimilarProducts->SimilarProduct as $similarproduct) {
  echo "<li><a href=\"".htmlspecialchars("?".
- "ItemId" ."=".$similarproduct->ASIN."&amp;".
- "Operation=ItemLookup&amp;" .
+ "ItemId" ."=".$similarproduct->ASIN."&".
+ "Operation=ItemLookup&" .
  "ResponseGroup=ItemAttributes") .
  "\">".$similarproduct->Title."</a></li>";
 
@@ -257,8 +257,8 @@ if ($TotalPages > 1) {
  if ($ItemPage*1 <= $TotalPages) {
  echo "<p class=\"readmore\">";
  echo "<a class=\"fl_right\" href=\"".htmlspecialchars("?".
- "SearchIndex"."=". $SearchIndex ."&amp;".
- "Keywords" ."=". $Keywords ."&amp;".
+ "SearchIndex"."=". $SearchIndex ."&".
+ "Keywords" ."=". $Keywords ."&".
  "ItemPage" ."=".($ItemPage +1)).
  "\">next</a>\n";
  }

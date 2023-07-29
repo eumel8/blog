@@ -16,7 +16,7 @@ author: eumel8
 <p>Zutaten:</p>
 <ol>
 <li>Herrkoemmlicher PC mit voll-virtualisierbarer CPU (jeder neuerer Intel)</li>
-<li><a href="http://www.citrix.com/English/ps2/products/product.asp?contentID=683148&amp;ntref=prod_cat" target="_blank">XenServer</a> von Citrix (kostenlos in der Basisvariante ohne Hochverfuegbarkeit)</li>
+<li><a href="http://www.citrix.com/English/ps2/products/product.asp?contentID=683148&ntref=prod_cat" target="_blank">XenServer</a> von Citrix (kostenlos in der Basisvariante ohne Hochverfuegbarkeit)</li>
 <li>Eine virtuelle Instanz "puppetmaster" mit</li>
 </ol> 
 <ul>
@@ -25,7 +25,7 @@ author: eumel8
 </ul>
 <p>Vorbereitungen:</p>
 <p>Die (einmaligen) Vorbereitungen nehmen schon einen gewaltigen Zeiraum ein. Man muss sich immer wieder fragen: Welche Installationsschritte muessen gemacht werden, welche Handlangertaetigkeiten gehoeren automatisiert. Der Weg zur Standardisierung lohnt sich aber. Am Ende werden wir nicht nur eine virtuelle Linux-Server-Instanz installiert haben, sondern ein hochdynamisches System besitzen, welches muehelos erweitert und angepasst werden kann.</p>
-<p>Installation XenServer: Die Software kommt auf bootfaehiger <a href="http://www.citrix.com/English/ps2/products/feature.asp?contentID=2300356&amp;ntref=DLpromo2" target="_blank">CD</a> daher und moechte mindestens auf einer extra Festplattenpartition installiert werden. Bei der interaktiven Installation wird man nach IP-Adresse und festzulendes Admin-Passwort gefragt. Alles recht unspektakulaer. Wenn das XenCenter gestartet ist, bekommt man ein spartanisches Menue im DOS-Style zur Verfuegung gestellt. Man kann aber per HTTP und Browser auf die IP des XenServer zugreifen und von dort einen komfortablen Windows-Client herunterladen. Die Kommunikation mit dem XenServer erfolgt so ueber WEB und https-Verschluesselung</p>
+<p>Installation XenServer: Die Software kommt auf bootfaehiger <a href="http://www.citrix.com/English/ps2/products/feature.asp?contentID=2300356&ntref=DLpromo2" target="_blank">CD</a> daher und moechte mindestens auf einer extra Festplattenpartition installiert werden. Bei der interaktiven Installation wird man nach IP-Adresse und festzulendes Admin-Passwort gefragt. Alles recht unspektakulaer. Wenn das XenCenter gestartet ist, bekommt man ein spartanisches Menue im DOS-Style zur Verfuegung gestellt. Man kann aber per HTTP und Browser auf die IP des XenServer zugreifen und von dort einen komfortablen Windows-Client herunterladen. Die Kommunikation mit dem XenServer erfolgt so ueber WEB und https-Verschluesselung</p>
 <p>Konfiguration XenServer: Die Administration von Resourcen ist bei allen Virtualisierungsloesungen gleich (Vmware, Xen, AWS...):</p>
 <ul>
 <li>CPU</li>
@@ -45,7 +45,7 @@ author: eumel8
 <p><code>mount -o loop </code>openSUSE-12.1-DVD-i586.iso /mnt/</p>
 <p>Das Install-Medium machen wir durch unseren Webserver zugreifbar: /etc/apache2/conf.d/puppetmaster.conf</p>
 <pre>Alias /mnt/ "/mnt/"<br /><br /> Options Indexes MultiViews<br /> AllowOverride None<br /> Order allow,deny<br /> Allow from all<br /><br /></pre>
-<p><code>chkconfig apache2 on &amp;&amp; rcapache2 start </code></p>
+<p><code>chkconfig apache2 on && rcapache2 start </code></p>
 <p>Jetzt sollten wir ueber http://puppetmaster/mnt auf das Installmedium zugreifen koennen.</p>
 <p>Fuer die weiteren Virtual Machines erstellen wir uns am besten auf dem XenServer ein Template namens "autoyast". Diesem geben wir die Resource 1 CPU, 512 MB RAM, 6 GB Festplatte aber KEIN Netzwerk! Das konfigurieren wir spaeter dazu.  Es sind mindestens 512 MB noetig fuer YAST, das ist sehr gefraessig. Wenn wir weniger RAM konfigurieren, bricht die Installation irgendwann mal mit "exit code 137" ab und nach langem Suchen auf tty3 finden wir Melduingen zu "out of memory". Das sollte man sich ersparen. Ausserdem stellen wir die Boot-Reihenfolge in unserem Template auf</p>
 <ol>
@@ -71,7 +71,7 @@ subnet 192.168.88.0 netmask 255.255.255.0 {
  option routers 192.168.88.1; <br /> filename "pxelinux.0";
 }
 </code></pre><!-- /codeblock -->
-<p>chkconfig dhcpd on &amp;&amp; rcdhcpd start</p>
+<p>chkconfig dhcpd on && rcdhcpd start</p>
 <p>Installation TFTP:</p>
 <p><code>zypper install tftp</code></p>
 <p>Konfiguration TFTP:</p>
@@ -89,7 +89,7 @@ service tftp
  disable = no
 }
 </code></pre><!-- /codeblock -->
-<p>mkdir /srv/tftp/pxelinux.cfg &amp;&amp; chkconfig xinetd on &amp;&amp; rcxinetd start</p>
+<p>mkdir /srv/tftp/pxelinux.cfg && chkconfig xinetd on && rcxinetd start</p>
 <p>Installation Booloader + AutoYast:</p>
 <p>zypper install syslinux autoyast2 autoyast2-installation</p>
 <p>cp /usr/share/syslinux/pxelinux.0 /srv/tftp/pxelinux.cfg/pxelinux.0</p>

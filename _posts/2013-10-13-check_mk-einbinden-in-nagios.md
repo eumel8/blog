@@ -35,7 +35,7 @@ Wir geben die Adresse unseres Monitoring-Hosts an. Wir koennten auch localhost n
 ```
 define command {
  command_name check_mk-mounts
- command_line echo "ERROR - you did an active check on this service - please disable active checks" &amp;&amp; exit 1
+ command_line echo "ERROR - you did an active check on this service - please disable active checks" && exit 1
 }
 ```
 

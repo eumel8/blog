@@ -7,7 +7,7 @@ date: 2016-05-08
 author: eumel8
 ---
 
-Aber Docker ist es nicht. Da war mir doch zu viel Trubel drum und so richtig Vorteile hat es ja nicht, denn unter jedem Docker liegt noch ein Betriebssystem, was man hegen und pflegen muss. Seine Anwendung muss man dann auch noch ausnanderzergeln, 'dockerizieren'. Aufmerksamgeworden bin ich bei <a href="https://www.youtube.com/watch?feature=player_embedded&amp;v=lM2wwYDLB2M">Canonical auf LXD</a>
+Aber Docker ist es nicht. Da war mir doch zu viel Trubel drum und so richtig Vorteile hat es ja nicht, denn unter jedem Docker liegt noch ein Betriebssystem, was man hegen und pflegen muss. Seine Anwendung muss man dann auch noch ausnanderzergeln, 'dockerizieren'. Aufmerksamgeworden bin ich bei <a href="https://www.youtube.com/watch?feature=player_embedded&v=lM2wwYDLB2M">Canonical auf LXD</a>
 <br/>
 LXD 2.0 heisst der neue Stern am Virtualisierungshimmel. Erst gabs die Paravirtualisierung mit Vmware und Xen, dann die Hardware-Accelerator mit KVM und VirtualBox und jetzt <a href="http://www.ubuntu.com/cloud/lxd">LXD</a>. LXD verspricht vollstaendige Hardwareemulation vom Hostsystem ohne Geschwindigkeitsnachteile, die eine Virtualisierung sonst mitbringt. Sehr kurze Bootzeiten unter einer Sekunde. Eine sehr hohe Packungsdichte von etlichen hundert oder gar tausenden Systemen auf einem Rechner mit vollstaendiger Isolierung, also einer sehr hohen Systemsicherheit auf Netzwerk und Betriebssystemebene. Und die Moeglichkeit der Live-Migration von einem zu einem anderen Host.
 Schauen wir uns das mal an:

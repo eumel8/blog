@@ -1,7 +1,7 @@
 ---
 layout: post
 tag: inet
-title: OpenSUSE 13.1 - Tips &amp; Tricks
+title: OpenSUSE 13.1 - Tips & Tricks
 subtitle: "..."
 date: 2014-09-12
 author: eumel8

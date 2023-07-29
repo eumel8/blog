@@ -112,13 +112,13 @@ Aber zurueck zum Anfang. Eine Woche OpenStack in Shanghai wurde versprochen, imm
 
 Am Schluss des Artikels findet man eine Liste interessanter Sessions. Es sind Anwendungsfaelle hiesiger Firmen dabei mit Erklaerung ihrer Architektur. Aber auch sehr viele "sponsored sessions", also jemand will ein Produkt verkaufen. Teilweise interessant, macht aber auch den Open Source Gedanken etwas kaputt.
 
-Was gut funktionierte waren wieder die <a href="https://www.openstack.org/summit/shanghai-2019/summit-schedule/#track=318&amp;recorded=false">Forum Sessions</a>, in denen zusammen aktuelle Themen diskutiert werden und die eine persoenliche Teilnahme an der Veranstaltung immer sinnvoll macht. Aehnlich natuerlich beim PTG, bei dem sich vorher immer ein Blick in die <a href="http://ptg.openstack.org/etherpads.html">Etherpad Liste</a> lohnt, um zu sehen welche Themen dran sind und wer dran teilnimmt.
+Was gut funktionierte waren wieder die <a href="https://www.openstack.org/summit/shanghai-2019/summit-schedule/#track=318&recorded=false">Forum Sessions</a>, in denen zusammen aktuelle Themen diskutiert werden und die eine persoenliche Teilnahme an der Veranstaltung immer sinnvoll macht. Aehnlich natuerlich beim PTG, bei dem sich vorher immer ein Blick in die <a href="http://ptg.openstack.org/etherpads.html">Etherpad Liste</a> lohnt, um zu sehen welche Themen dran sind und wer dran teilnimmt.
 
 Die grossen Projektgruppen leisten kontinuierlich gute Arbeit. Die verarbeiteten Aenderungen (Lines of Code) sind im letzten Release der Migration auf Python 3 geschuldet (Hauptprojektziel) und immer wieder Verbesserungen an Code und Dokumentation. Es sind auch immer Einzelpersonen, die in unermuedlichem Fleiss die Projekte am Leben halten. Hier ein paar Beispiele:
 
 Colleen Murphy (PTL Keystone). Ihre <a href="http://www.gazlene.net/shanghai-forum-ptg.html">Summit-Zusammenfassung</a> 
 Julia Kreger (PTL Ironic), zustaendig fuer "naked metal deployment", wie es im Uebersetzungsstream so schoen hiess.
-Jay Bryant (Cinder Project &amp; Upstream Institute)
+Jay Bryant (Cinder Project & Upstream Institute)
 
 Den groessten Anteil an der Entwicklung hat mittlerweile Redhat (IBM).
 

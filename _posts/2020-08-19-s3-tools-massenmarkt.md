@@ -32,7 +32,7 @@ Funktion: S3 Buckets als Dateisystem lokal mounten ueber FUSE
 <strong>Name: s3cmd</strong>
 Link/Installation: 
 ```bash
-$ sudo apt install python3-pip &amp;&amp; pip3 install s3cmd
+$ sudo apt install python3-pip && pip3 install s3cmd
 $ s3cmd --configure
 # use: access_key, secret_key host_base = obs.otc.t-systems.com
 # host_bucket = %(bucket)s.obs.otc.t-systems.com

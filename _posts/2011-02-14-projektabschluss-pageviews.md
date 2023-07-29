@@ -13,7 +13,7 @@ author: eumel8
 <p>Jetzt haette man diese Zahlen auch durch Google-Analytics (oder Omniture etc.) berechnen koennen oder auf jeder Webseite ein Blind-Gif einbauen, um diese dann etwa als CGI irgendwo zu zaehlen, aber da muss man ja jede Webseite anfassen (auch die dynamisch generierten) und ist erstmal ewig beschaeftigt und hat vor allem keine sinnvolle Anwendung fuer Hadoop ;-)</p>
 <p>Dessen Zusammenspiel habe ich weiter hinten schon beschrieben. Fuer dieses Projekt brauchen wir</p>
 <ul>
-<li>Einen funktionierenden Hadoop-Cluster mit Datanodes und Map&amp;Reduce-Nodes</li>
+<li>Einen funktionierenden Hadoop-Cluster mit Datanodes und Map&Reduce-Nodes</li>
 <li>Hbase</li>
 <li>Stargate fuer Hbase</li>
 <li>pig (mit der library piggybank)</li>

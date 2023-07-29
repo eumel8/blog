@@ -1,7 +1,7 @@
 ---
 layout: post
 tag: general
-title: Single Sign On mit OpenSSO, Josso &amp; Co.
+title: Single Sign On mit OpenSSO, Josso & Co.
 subtitle: "Die letzte grosse Herausforderung im Internet ist die Information von Passwoertern und Accounts bei verschiedenen Webservices und Anbietern. Egal ob beruflich oder privat: Die Liste der zu verwaltenden Accounts, die einem bei dem einen oder anderen Anbi&hellip;"
 date: 2011-04-11
 author: eumel8

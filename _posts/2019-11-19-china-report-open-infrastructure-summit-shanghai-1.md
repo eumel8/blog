@@ -112,13 +112,13 @@ But back to the beginning. One week OpenStack in Shanghai was promised to still 
 
 At the end of the article you will find a list of interesting sessions. There are applications of local companies with an explanation of their architecture. But also a lot of sponsored sessions, so someone wants to sell a product. Partly interesting, but also destroys the Open Source idea.
 
-What worked well again were the <a href="https://www.openstack.org/summit/shanghai-2019/summit-schedule/#track=318&amp;recorded=false">Forum Sessions</a>, in which current topics are discussed together and which always makes personal participation in the event meaningful. Similar to the PTG, of course, where it is always worth taking a look at the <a href="http://ptg.openstack.org/etherpads.html">Etherpad list</a> to see which topics are covered and who participates.
+What worked well again were the <a href="https://www.openstack.org/summit/shanghai-2019/summit-schedule/#track=318&recorded=false">Forum Sessions</a>, in which current topics are discussed together and which always makes personal participation in the event meaningful. Similar to the PTG, of course, where it is always worth taking a look at the <a href="http://ptg.openstack.org/etherpads.html">Etherpad list</a> to see which topics are covered and who participates.
 
 The large project groups are continuously doing good work. The processed lines of code are owed in the last release of the migration to Python 3 (main project goal) and improvements in code and documentation are made again and again. There are also always individuals who keep the projects alive with untiring diligence. Here are a few examples:
 
 Colleen Murphy (PTL Keystone). Her <a href="http://www.gazlene.net/shanghai-forum-ptg.html">Summit/PTG Recap</a> 
 Julia Kreger (PTL Ironic), responsible for the funny translated "naked metal deployment"
-Jay Bryant (Cinder Project &amp; Upstream Institute)
+Jay Bryant (Cinder Project & Upstream Institute)
 
 Redhat (IBM) now has the largest part in the development.
 

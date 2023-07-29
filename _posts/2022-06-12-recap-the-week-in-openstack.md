@@ -89,13 +89,13 @@ Day 2 keynote started with community metrics presented by Thierry Carrez:
 
 <img src="/images/quick-uploads/recap-the-week-in-openstack/20220608_093657.jpg" width="585" height="386"/>
 
-For sure, lovely numbers, but verified <a href="https://www.stackalytics.io/?release=zed&amp;metric=commits">on Stackalytics</a> that is an all-time summary. For example, Deutsche Telekom was also on Marc Collier's list of contributer companies, but the last commit was 6 years ago. So that are historical data.
+For sure, lovely numbers, but verified <a href="https://www.stackalytics.io/?release=zed&metric=commits">on Stackalytics</a> that is an all-time summary. For example, Deutsche Telekom was also on Marc Collier's list of contributer companies, but the last commit was 6 years ago. So that are historical data.
 
-Next up on stage was Kendall Nelson &amp; Archana Kumari to describe Project Onboarding Program and Mentoring Program, a very long running program on the OpenStack community to connect newcomer.
+Next up on stage was Kendall Nelson & Archana Kumari to describe Project Onboarding Program and Mentoring Program, a very long running program on the OpenStack community to connect newcomer.
 
 <img src="/images/quick-uploads/recap-the-week-in-openstack/20220608_094547.jpg" width="585" height="386"/>
 
-The most interesting Keynote session followed up: Stuart Grace from BBC R&amp;D explained Building Environmental Dashboards for OpenStack. 
+The most interesting Keynote session followed up: Stuart Grace from BBC R&D explained Building Environmental Dashboards for OpenStack. 
 
 <img src="/images/quick-uploads/recap-the-week-in-openstack/20220608_095719.jpg" width="585" height="386"/>
 
@@ -105,7 +105,7 @@ The most interesting Keynote session followed up: Stuart Grace from BBC R&amp;D 
 
 <img src="/images/quick-uploads/recap-the-week-in-openstack/20220608_095921.jpg" width="585" height="386"/>
 
-Carbon Intensity API is a service in UK, where you can connect your OpenStack cloud to identify which workload produced which carbon output. This topic continued from the speach the day befor from Dr. Franziska Brantner and is connected to the AWS power consumption report, a new part of the billing service. But it steps a bit further, because it makes prediction on what time you can useful running your workload to save carbon expulsion. The full story is described about Estimating Power Usage is described in <a href="https://www.bbc.co.uk/rd/blog/2022-02-openstack-cloud-dashboard-report-sustainability">BBC R&amp;D blog</a> and the fun fact: I had similar in our backlog for years.
+Carbon Intensity API is a service in UK, where you can connect your OpenStack cloud to identify which workload produced which carbon output. This topic continued from the speach the day befor from Dr. Franziska Brantner and is connected to the AWS power consumption report, a new part of the billing service. But it steps a bit further, because it makes prediction on what time you can useful running your workload to save carbon expulsion. The full story is described about Estimating Power Usage is described in <a href="https://www.bbc.co.uk/rd/blog/2022-02-openstack-cloud-dashboard-report-sustainability">BBC R&D blog</a> and the fun fact: I had similar in our backlog for years.
 
 Similar topic is the <a href="https://www.ecmwf.int/en/research/modelling-and-prediction">ECMWF</a> 
 with numerical weather prediction, found also on <a href="https://github.com/ecmwf">Github</a>

@@ -1,7 +1,7 @@
 ---
 layout: post
 tag: general
-title: Angetestet. OpenStack &amp; SUSE Studio
+title: Angetestet. OpenStack & SUSE Studio
 subtitle: "http://blog.eumelnet.de/blogs/blog8.php/cloudcomputingnhttp://www.zdnet.de/news/41560611/cebit-telekom-cloud-unterstuetzt-kuenftig-openstack.htmnhttp://www.linux-magazin.de/Heft-Abo/Ausgaben/2012/01/Suse-Cloud"
 date: 2012-05-10
 author: eumel8

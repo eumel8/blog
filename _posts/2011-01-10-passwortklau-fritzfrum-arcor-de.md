@@ -19,6 +19,6 @@ author: eumel8
 </ol>
 <blockquote>
 <p> </p>
-<p>https://www.googleapis.com/customsearch/v1?cx=013036536707430787589:_pqjad5hr1a&amp;key=AIzaSyDtO5UG7z2Y_BGSVNyK8nsMr-zQSGNrNck&amp;alt=atom&amp;q=%22fritzfrum@arcor.de%22</p>
+<p>https://www.googleapis.com/customsearch/v1?cx=013036536707430787589:_pqjad5hr1a&key=AIzaSyDtO5UG7z2Y_BGSVNyK8nsMr-zQSGNrNck&alt=atom&q=%22fritzfrum@arcor.de%22</p>
 </blockquote>
 <p>4. Fast fertig. Diese Adresse gebe ich als Abo eines neuen RSS-Feeds in meinem Mailprogramm oder Smartphone ein. Bis zu 100 Mal kann ich am Tag diesen String abfragen oder von meinem RSS-Reader pollen lassen. Im guenstigesten Fall ist das Ergebnis immer leer. Aber wenn meine Adresse irgendwo einmal auftaucht, wird sie frueher oder spaeter von Google gefunden und dann kann ich ggf. reagieren.</p>

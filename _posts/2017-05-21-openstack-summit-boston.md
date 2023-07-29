@@ -89,7 +89,7 @@ In der Foundation Lounge gab es nun zahlreiche Aufkleber mit den Team-Maskottche
 
 Aber auch sonst hat sich natuerlich in zahlreichen Projekten etwas getan, weswegen zahlreiche Sessions die Project Updates als Thema hatten:
 
-https://www.youtube.com/user/OpenStackFoundation/search?query=Project+Update&amp;sp=CAI
+https://www.youtube.com/user/OpenStackFoundation/search?query=Project+Update&sp=CAI
 
 Die Interop-Projektgruppe konnte sich mit der zweiten Interop Challenge wieder besonders gut in Szene setzen. Mark Collier hatte sich wieder besondere "Gemeinheiten" einfallen lassen, die die Ops auf ihren jeweiligen Cloud zum Laufen bringen mussten:
 
@@ -226,7 +226,7 @@ In the Foundation Lounge there were now numerous stickers with the team mascots 
 
 But also in other projects, something has happened, which is why numerous sessions had the project updates as a topic:
 
-https://www.youtube.com/user/OpenStackFoundation/search?query=Project+Update&amp;sp=CAI
+https://www.youtube.com/user/OpenStackFoundation/search?query=Project+Update&sp=CAI
 
 With the second Interop Challenge, the Interop project group was able to put itself in a particularly good position again. Mark Collier had once again come up with some "bad things" that had to make the Ops work on their respective Cloud:
 

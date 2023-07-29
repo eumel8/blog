@@ -2,13 +2,13 @@
 layout: post
 tag: general
 title: Passwort Swordfish
-subtitle: "Das Boese ist immer und ueberall - so lautet eine alte Weisheit, aktuell ist sie auch heute noch. In Zeiten von  globaler Vernetzung und Rechnen in den Wolken (engl. Fachbegriffe Social Networking &amp; Cloud Computing) ist die Frage nach den Daten unse&hellip;"
+subtitle: "Das Boese ist immer und ueberall - so lautet eine alte Weisheit, aktuell ist sie auch heute noch. In Zeiten von  globaler Vernetzung und Rechnen in den Wolken (engl. Fachbegriffe Social Networking & Cloud Computing) ist die Frage nach den Daten unse&hellip;"
 date: 2012-01-02
 author: eumel8
 ---
 
 <div class="image_block"><img style="float: right;" src="/images/passwort_swordfish_2.jpg?mtime=1325709389" alt="" width="301" height="196" /></div>
-<p>Das Boese ist immer und ueberall - so lautet eine alte Weisheit, aktuell ist sie auch heute noch. In Zeiten von  globaler Vernetzung und Rechnen in den Wolken (engl. Fachbegriffe Social Networking &amp; Cloud Computing) ist die Frage nach den Daten unserer werten Informationsgesellschaft immer wichtiger. Viel oft stellt man sich nicht nur die Frage: Wo sind die Daten? Sondern vielmehr: Wo sind die Daten gewesen?</p>
+<p>Das Boese ist immer und ueberall - so lautet eine alte Weisheit, aktuell ist sie auch heute noch. In Zeiten von  globaler Vernetzung und Rechnen in den Wolken (engl. Fachbegriffe Social Networking & Cloud Computing) ist die Frage nach den Daten unserer werten Informationsgesellschaft immer wichtiger. Viel oft stellt man sich nicht nur die Frage: Wo sind die Daten? Sondern vielmehr: Wo sind die Daten gewesen?</p>
 <br/>
 <p>Alles was im Internet per Web erreichbar ist (http...) ist frueher oder spaeter ueber Google erreichbar. Wenn man mal nach seinem Passwort oder seiner Email-Adresse googelt, kann man manchmal wahre Wunder erleben.</p>
 <p>Doch woher kommt eigentlich die Sache mit dem Passwort? Frueher hiess das ja immer noch Parole - eine Sache, die es auch heute noch beim Militaer gibt. Und ganz frueher hiess es noch Losung - also wenn man in die Burg wollte, brauchte man an der Zugbruecke die Losung.</p>

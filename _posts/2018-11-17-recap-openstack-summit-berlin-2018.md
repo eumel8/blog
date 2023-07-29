@@ -48,7 +48,7 @@ To make the city of Berlin a little more known, I grabbed the idea of the Pub Cr
 
 <img src="/images/quick-uploads/p666/wp_20181114_22_05_01_pro.jpg" width="585" height="386"/>
 
-Of course, most of the project teams want to have their own dinner, but we have had only 3 nights to place that. First night is the Marketplace Mixer as usual and Thursday lots of people leave the city, especially if you only have a business trip. The Docs&amp;I18n team met on Thursday in the restaurant Scheune for a team dinner and end up of the Summit, because we won the last session track for the Project Onboarding.
+Of course, most of the project teams want to have their own dinner, but we have had only 3 nights to place that. First night is the Marketplace Mixer as usual and Thursday lots of people leave the city, especially if you only have a business trip. The Docs&I18n team met on Thursday in the restaurant Scheune for a team dinner and end up of the Summit, because we won the last session track for the Project Onboarding.
 
 <img src="/images/" width="585" height="386"/>
 
@@ -77,7 +77,7 @@ It's more and more for me a "Summit on the Floor". I attended some fewer session
  <li>https://etherpad.openstack.org/p/BER-Ops-Catch-Up</li>
 </ul>
 
-This gives the opportunity to read afterwards and also other people who are interested can step in. Most interesting things are the revitalization of Trove with the guys from Samsung R&amp;D Poland and the work of Operators community to get then closer to the Developer. I see the next task in the horizon (organizing Ops meetup in Europe and an OpenStack Day in Germany). 
+This gives the opportunity to read afterwards and also other people who are interested can step in. Most interesting things are the revitalization of Trove with the guys from Samsung R&D Poland and the work of Operators community to get then closer to the Developer. I see the next task in the horizon (organizing Ops meetup in Europe and an OpenStack Day in Germany). 
 
 Before I leave to vacation some words about I18n. 
 
