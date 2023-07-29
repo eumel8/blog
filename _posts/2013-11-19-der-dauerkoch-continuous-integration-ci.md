@@ -36,21 +36,22 @@ Unter "Settings" kommen wir zum Kernpunkt der Anwendung. Was soll mit dem Code g
 
 Variante 1: Manifeste und Templates werden auf korrekte Syntax gecheckt (mit einige weiche Ausnahmen). Wenn alles okay ist, wird ein tar-Archiv aus dem Code erstellt und auf einem Webserver als Download zur Verfuegung gestellt:
 <br />
-<!-- codeblock lang="" line="1" --><pre><code>
+
+```bash
 git submodule update --remote
 for file in $(find . -iname '*.pp'); do puppet parser validate --render-as s --modulepath=modules "$file" || exit 1; done
 for file in $(find . -iname '*.erb'); do erb -P -x -T '-' $file | ruby -c || exit 1; done
  puppet-lint --no-80chars-check --no-nested_classes_or_defines-check --no-autoloader_layout-check --no-double_quoted_strings-check --no-variables_not_enclosed-check --no-documentation|| exit 1
 date '+%F-%I-%M-%S' &gt; puppet/BUILDSTATUS
 tar cfz "/usr/share/nginx/www/gnuu_"$CI_BUILD_REF_NAME"_"`date '+%F-%I-%M-%S'`.tgz puppet/ --exclude=.git
-</code></pre><!-- /codeblock -->
+```
+
 <br />
 
 Variante 2: Dieses Projekt enthaelt den Code fuer eine komplette Webanwendung in PHP. Wenn am Code etwas geaendert wurde und das im Git eingecheckt ist, werden die Aenderungen wiederum im Open Build Service (OBS) eingecheckt, der wiederum die neue Version eines RPM und DEB Paketes draus baut. Die Darstellung ist eher funktionell. Normalerweise wuerde man die Versionsnummern des Paketes noch verknuepfen, aber das macht OBS mit Built Numbers teilweise selber:
 
 
-<!-- codeblock lang="" line="1" --><pre><code>#! /bin/bash
-
+```bash
 # . /home/gitlab_ci_runner/.bashrc
 
 cd /home/gitlab_ci_runner/gitlab-ci-runner/tmp/builds/project-3
@@ -73,7 +74,8 @@ rm -rf bmpcloud-1.0.0
 osc -A https://obs2.eurazor.local:444 ci -m "gitlab_ci build" --skip-validation
 
 echo "finished"
-</code></pre><!-- /codeblock -->
+```
+
 <br />
 OBS baut mit KIWI auch eigene Images, die entweder sofort boot- und/oder installfaehig sind. In seiner Cloudumgebung kann man sofort ein neues Image starten, sobald eine neuere Version zur Verfuegung steht.
 <br />

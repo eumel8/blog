@@ -2,7 +2,7 @@
 layout: post
 tag: cloud-computing
 title: Citrix XenCenter
-subtitle: "Mit dem Citrix XenCenter kann man virtuale Maschinen erstellen und verwalten. Es laeuft auf einem handelsueblichen PC, kann aber auch mit 2 Instanzen zur Hochverfuegbarkeitsloesung ausgebaut werden. Dazu bedarf es aber eine kostenpflichtigen Lizenz. Die&hellip;"
+subtitle: "Mit dem Citrix XenCenter kann man virtuale Maschinen erstellen und verwalten. Es laeuft auf einem handelsueblichen PC, kann aber auch mit 2 Instanzen zur Hochverfuegbarkeitsloesung ausgebaut werden. Dazu bedarf es aber eine kostenpflichtigen Lizenz. "
 date: 2014-05-07
 author: eumel8
 ---
@@ -32,10 +32,12 @@ Problem mit alten Versionen von Citrix XenCenter (5.6.0), ab 6.0 behoben.
 Problem in 6.2 geloest
 </li>
  <li>Backup/Restore von VMs:
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+
+```bash
 xe vm-export vm=gitlabci filename=gitlabci.vda
 xe vm-import filename=gitlabci.vda
-</code></pre><!-- /codeblock -->
+```
+
 </li>
  <li>
 Festplatte in VM zu klein (LVM/BTRFS/OpenSuSE):
@@ -43,7 +45,7 @@ VM herunterfahren
 Diskspace der Disk im XentCenter fuer VM erwweitern.
 VM starten und per root mit ssh einloggen:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
+```bash
 pvdisplay
 pvresize /dev/sdb
 pvdisplay
@@ -51,7 +53,8 @@ lvdisplay
 lvresize /dev/vg_data/lv_data -L +16G
 lvdisplay
 btrfs filesystem resize +16G /data
-</code></pre><!-- /codeblock -->
+```
+
 </li>
 <li>
 Festplatte in VM zu klein (LVM/EXT4/Ubuntu):
@@ -59,8 +62,7 @@ VM herunterfahren
 Diskspace der Disk im XentCenter fuer VM erwweitern.
 VM starten und per root mit ssh einloggen:
 
-<!-- codeblock lang=shell line=1 --><pre class="codeblock"><code>
-
+```bash
 fdisk /dev/xvda
 Ansicht:
 /dev/xvda1 2048 999423 997376 487M 83 Linux
@@ -81,7 +83,7 @@ lvdisplay
 lvm lvresize /dev/ubuntu-vg/root -l+100%FREE
 lvdisplay
 resize2fs /dev/ubuntu-vg/root
-</code></pre><!-- /codeblock -->
+```
 </li>
 </ul>
 

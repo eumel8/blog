@@ -2,7 +2,7 @@
 layout: post
 tag: inet
 title: Meine Buchempfehlungen, selbst gebaut
-subtitle: "Seit einiger Zeit gehoert der Tolino als treuer Begleiter ins Reisegepaeck. Praktisch, leicht, egal ob daemmriges Licht, ich hab immer was zum Lesen dabei, ohne kiloschwere Buecher mit mir rumzuschleppen. Das einzige Problem war bis jetzt, wenn ein Buch&hellip;"
+subtitle: "Seit einiger Zeit gehoert der Tolino als treuer Begleiter ins Reisegepaeck. Praktisch, leicht, egal ob daemmriges Licht, ich hab immer was zum Lesen dabei, ohne kiloschwere Buecher mit mir rumzuschleppen. Das einzige Problem war bis jetzt, wenn ein Buch zu Ende ist - was lese ich als Naechstes"
 date: 2015-07-29
 author: eumel8
 ---
@@ -13,8 +13,8 @@ author: eumel8
 <p>Ueber die API kann man aehnlich der Amazon-Webseite im Artikelbestand des Warenhauses suchen. Wie auf dem <a href="http://associates-amazon.s3.amazonaws.com/scratchpad/index.html" target="_blank">Scratchpad</a> zu sehen ist, gibt es ein paar interessante Stellschrauben wie etwa die <a href="http://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_ResponseGroupsList.html" target="_blank">ResponseGroup Similarities</a>. Um die API aber benutzen zu koennen, muessen wir uns kostenlos fuer diesen Dienst freischalten. Ausserdem muessen wir uns einen AccessKey + Secret generieren, um uns an der API anmelden zu koennen. AssociateTag koennen wir vernachlaessigen, Operation stellen wir auf ItemSearch, SearchIndex auf Books und die Region auf webservices.amazon.de, um den deutschen Marktplatz zu durchsuchen. Bei Keywords tragen wir einfach den Autor unseres letzten Lieblingsbuches ein, z.B. Frank Schaetzing. Das Scratchpad bastelt unseren Request passend zusammen, signiert ihn und schickt ihn zur API. Als Antwort sollten wir ein XML-File mit den gewuenschten Treffern erhalten. Das XML-File koennen wir mit simplexml_load_string in php in ein Array laden und dieses als Webseite ausgeben. Auch verraet uns die API wieviel Treffer wir erzielt haben und koennen dami in den Ergebnissen "weiterblaettern", damit nicht alle 20.000 Ergebnisse auf einer Seite zu sehen sind.</p>
 <p>Praktisch sieht unser PHP-Skript so aus:</p>
 
-<!-- codeblock lang=php line=1 --><pre class="codeblock"><code>
-&lt;?php
+```
+<?php
 // set AWS credentials and associate tag
 $AWSAccessKeyId = "AK47PABLOIKA3344MONSA";
 $AWSSecretKey = "4ZVtHsw7233HDoElCleeodmz";
@@ -40,59 +40,60 @@ $Version = "2013-08-01";
 // load keywords from cookies
 $Keywords = $cookie;
 
-?&gt;
-</code></pre><!-- /codeblock -->
+?>
+```
 
 <p> 
 Das mit den Cookies ist zwar etwas Doppelmoppel, aber mancher mag ja Cookies nicht und da sollte man auch ohne arbeiten koennen
 </p>
-<!-- codeblock lang=html line=1 --><pre class="codeblock"><code>
-&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
-&lt;!--
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
 Template Name: Opportunity
-Author: &lt;a href="http://www.os-templates.com/"&gt;OS Templates&lt;/a&gt;
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
 Author URI: http://www.os-templates.com/
 Licence: Free to use under our free template licence terms
 Licence URI: http://www.os-templates.com/template-terms
---&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
-&lt;head&gt;
-&lt;title&gt;#ebook wishlist&lt;/title&gt;
-&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;
-&lt;link rel="stylesheet" href="layout/styles/layout.css" type="text/css"&gt;
-&lt;/link&gt;&lt;/meta&gt;&lt;/head&gt;
-&lt;body id="top"&gt; col1"&gt;
- &lt;div id="topbar"&gt;
- &lt;/div&gt;
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>#ebook wishlist</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="layout/styles/layout.css" type="text/css">
+</link></meta></head>
+<body id="top"> col1">
+ <div id="topbar">
+ </div>
 
-&lt;div class="wrapper col2"&gt;
- &lt;div id="header"&gt;
- &lt;div id="logo"&gt;
- &lt;h1&gt;&lt;a href="index.php"&gt;ebook wishlist&lt;/a&gt;&lt;/h1&gt;
+<div class="wrapper col2">
+ <div id="header">
+ <div id="logo">
+ <h1><a href="index.php">ebook wishlist</a></h1>
  <p>a free web service for search similar ebooks</p>
- &lt;/div&gt;
- &lt;div id="topnav"&gt;
- &lt;div id="search"&gt;
- &lt;form action='&lt;?php htmlspecialchars($_SERVER["SCRIPT_NAME"]) ?&gt;' method='get'&gt;
- &lt;fieldset&gt;
- &lt;legend&gt;ebook-search&lt;/legend&gt;
- &lt;input type="text" name="keywords" value="&lt;?php echo $cookie ? /&gt;" size="65" autofocus="autofocus"&gt;
- &lt;input type="submit" name="go" id="go" value="GO" onclick="history.go(0)" /&gt;
- &lt;/fieldset&gt;
- &lt;/form&gt;
- &lt;/div&gt;
- &lt;/div&gt;
- &lt;br class="clear" /&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;/body&gt;&lt;/html&gt;
+ </div>
+ <div id="topnav">
+ <div id="search">
+ <form action='<?php htmlspecialchars($_SERVER["SCRIPT_NAME"]) ?>' method='get'>
+ <fieldset>
+ <legend>ebook-search</legend>
+ <input type="text" name="keywords" value="<?php echo $cookie ? />" size="65" autofocus="autofocus">
+ <input type="submit" name="go" id="go" value="GO" onclick="history.go(0)" />
+ </fieldset>
+ </form>
+ </div>
+ </div>
+ <br class="clear" />
+ </div>
+</div>
+</body></html>
+```
 
-</code></pre><!-- /codeblock -->
 
 <p>Etwas css foo macht die Seite bunter. Und wir generieren die Eingabeform fuer die Suche.</p>
 
-<!-- codeblock lang=php line=1 --><pre class="codeblock"><code>
-&lt;?php
+```html
+<?php
 
  if ($_GET) {
  if ($_GET['keywords']) {$Keywords = filter_var($_GET['keywords'],FILTER_SANITIZE_STRING) ;}
@@ -107,21 +108,20 @@ Licence URI: http://www.os-templates.com/template-terms
  die("Cookie not valid ".$Keywords);
  }
 
-</code></pre><!-- /codeblock -->
+```
 
 <p>Die Eingabevariablen <em>$_GET['ItemPage']</em> brauchen wir zum "Blaettern" und die anderen Variablen fuer einen anderen Suchmodus</p>
 
-<!-- codeblock lang=php line=1 --><pre class="codeblock"><code>
-
+```php
 $Keywords = preg_replace("/^/", "\"", $Keywords);
 $Keywords = preg_replace("/$/", "\"", $Keywords);
 $Keywords = preg_replace("/,/", "\"|\"", $Keywords);
+``` 
 
-</code></pre><!-- /codeblock -->
 
 <p>Die Keywords werden fuer die API praepariert, um auch nach mehreren Suchbegriffen suchen zu koennen</p>
 
-<!-- codeblock lang=php line=1 --><pre class="codeblock"><code>
+```php
  $srequest = "GET\necs.amazonaws.de\n/onca/xml\n";
  $url = "http://ecs.amazonaws.de/onca/xml?";
 
@@ -136,150 +136,145 @@ $Keywords = preg_replace("/,/", "\"|\"", $Keywords);
  $signature = rawurlencode(base64_encode(hash_hmac('sha256', $srequest, $AWSSecretKey, true)));
  $url .= "&amp;Signature=".$signature;
 
-</code></pre><!-- /codeblock -->
+```
 
 <p>Das Herzstueck der Anlage. Die Parameter werden zum API-Aufruf zusammengebaut. Dabei ist darauf zu achten, dass die Parameter in alphabetischer Reihenfolge stehen! Zum Schluss wird der Aufruf signiert</p>
 
-<!-- codeblock lang=php line=1 --><pre class="codeblock"><code>
-
+```php
 $response = file_get_contents($url);
 $result = simplexml_load_string($response);
 ?>
+```
 
-</code></pre><!-- /codeblock -->
 
 <p>Ab die Post und her damit. Die URL wird ueber das Internet aufgerufen und das Ergebnis in der Variable <em>$result</em> abgespeichert</p>
 
-<!-- codeblock lang=html line=1 --><pre class="codeblock"><code>
+```html
 
-&lt;div class="wrapper col4"&gt;
- &lt;div id="container"&gt;
- &lt;div id="content"&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-
-</code></pre><!-- /codeblock -->
+<div class="wrapper col4">
+ <div id="container">
+ <div id="content">
+</div></div></div>
+``` 
 
 <p>divs als table Ersatz</p>
 
-<!-- codeblock lang=php line=1 --><pre class="codeblock"><code>
+```php
+<?php
 
-&lt;?php
+foreach ($result->Items->Item as $item) {
 
-foreach ($result-&gt;Items-&gt;Item as $item) {
-
-?&gt;
- &lt;div id="latestnews"&gt;
- &lt;ul&gt;
- &lt;li&gt;
-&lt;?php
- if($item-&gt;MediumImage-&gt;URL){
- echo ("&lt;div class=\"imgholder\"&gt;&lt;a href=\"".$item-&gt;DetailPageURL."\" target=\"_blank\"&gt;&lt;img src=\"".$item- /&gt;MediumImage-&gt;URL."\" border=\"0\" alt=\"Cover\"&gt;&lt;/a&gt;&lt;/div&gt;\n");
+?>
+ <div id="latestnews">
+ <ul>
+ <li>
+<?php
+ if($item->MediumImage->URL){
+ echo ("<div class=\"imgholder\"><a href=\"".$item->DetailPageURL."\" target=\"_blank\"><img src=\"".$item- />MediumImage->URL."\" border=\"0\" alt=\"Cover\"></a></div>\n");
  }
- echo "&lt;div class=\"latestnews\"&gt;";
- echo ("&lt;h3&gt;&lt;a href=\"".$item-&gt;DetailPageURL."\"target=\"_blank\" &gt;".htmlspecialchars($item-&gt;ItemAttributes-&gt;Title)."&lt;/a&gt;&lt;/h3&gt;&lt;br /&gt;\n");
- if($item-&gt;ItemAttributes-&gt;Author[0]){
- echo ("Autor: ".htmlspecialchars($item-&gt;ItemAttributes-&gt;Author[0])."\n");
+ echo "<div class=\"latestnews\">";
+ echo ("<h3><a href=\"".$item->DetailPageURL."\"target=\"_blank\" >".htmlspecialchars($item->ItemAttributes->Title)."</a></h3><br />\n");
+ if($item->ItemAttributes->Author[0]){
+ echo ("Autor: ".htmlspecialchars($item->ItemAttributes->Author[0])."\n");
  }
- if($item-&gt;ItemAttributes-&gt;Publisher){
- echo ("&lt;br /&gt;Verlag: ".htmlspecialchars($item-&gt;ItemAttributes-&gt;Publisher)."\n");
+ if($item->ItemAttributes->Publisher){
+ echo ("<br />Verlag: ".htmlspecialchars($item->ItemAttributes->Publisher)."\n");
  }
- if($item-&gt;ItemAttributes-&gt;PublicationDate){
- echo ("&lt;br /&gt;erschienen: ".htmlspecialchars($item-&gt;ItemAttributes-&gt;PublicationDate)."\n");
+ if($item->ItemAttributes->PublicationDate){
+ echo ("<br />erschienen: ".htmlspecialchars($item->ItemAttributes->PublicationDate)."\n");
  }
- if($item-&gt;OfferSummary-&gt;LowestNewPrice-&gt;FormattedPrice){
- echo ("&lt;br /&gt;Preis: ".htmlspecialchars($item-&gt;OfferSummary-&gt;LowestNewPrice-&gt;FormattedPrice)."\n");
+ if($item->OfferSummary->LowestNewPrice->FormattedPrice){
+ echo ("<br />Preis: ".htmlspecialchars($item->OfferSummary->LowestNewPrice->FormattedPrice)."\n");
  }
- if($item-&gt;OfferSummary-&gt;LowestUsedPrice-&gt;FormattedPrice){
- echo (" / erh&auml;ltlich ab: ".htmlspecialchars($item-&gt;OfferSummary-&gt;LowestUsedPrice-&gt;FormattedPrice)."\n");
+ if($item->OfferSummary->LowestUsedPrice->FormattedPrice){
+ echo (" / erh&auml;ltlich ab: ".htmlspecialchars($item->OfferSummary->LowestUsedPrice->FormattedPrice)."\n");
  }
- if($item-&gt;DetailPageURL) {
- echo ("&lt;p class=\"readmore\"&gt;&lt;a href=\"".$item-&gt;DetailPageURL."\" target=\"_blank\" &gt;more details&lt;/a&gt;\n");
+ if($item->DetailPageURL) {
+ echo ("<p class=\"readmore\"><a href=\"".$item->DetailPageURL."\" target=\"_blank\" >more details</a>\n");
  }
-
-</code></pre><!-- /codeblock -->
+```
 
 <p>Ausgabe diverser Eigenschaften des Produkts (wenn vorhanden) in einer Schleife.</p>
 
-<!-- codeblock lang=php line=1 --><pre class="codeblock"><code>
- if($item-&gt;ASIN){
- echo "&lt;p class=\"readmore\"&gt;&lt;a href=\"".htmlspecialchars("?".
+```php
+ if($item->ASIN){
+ echo "<p class=\"readmore\"><a href=\"".htmlspecialchars("?".
  "SearchIndex"."=". $SearchIndex ."&amp;".
  "ItemPage" ."=".$ItemPage ."&amp;".
  "Operation=ItemLookup&amp;" .
  "ResponseGroup=Similarities&amp;" .
- "ItemId" ."=".$item-&gt;ASIN).
- "\"&gt;SimilarityLookup: $item-&gt;ASIN&lt;/a&gt;\n";
+ "ItemId" ."=".$item->ASIN).
+ "\">SimilarityLookup: $item->ASIN</a>\n";
  }
 
- if($item-&gt;SimilarProducts){
+ if($item->SimilarProducts){
  echo "<p>";
- echo "Similar: &lt;ul&gt;";
- foreach ($item-&gt;SimilarProducts-&gt;SimilarProduct as $similarproduct) {
- echo "&lt;li&gt;&lt;a href=\"".htmlspecialchars("?".
- "ItemId" ."=".$similarproduct-&gt;ASIN."&amp;".
+ echo "Similar: <ul>";
+ foreach ($item->SimilarProducts->SimilarProduct as $similarproduct) {
+ echo "<li><a href=\"".htmlspecialchars("?".
+ "ItemId" ."=".$similarproduct->ASIN."&amp;".
  "Operation=ItemLookup&amp;" .
  "ResponseGroup=ItemAttributes") .
- "\"&gt;".$similarproduct-&gt;Title."&lt;/a&gt;&lt;/li&gt;";
+ "\">".$similarproduct->Title."</a></li>";
 
  }
- echo "&lt;/ul&gt;";
+ echo "</ul>";
  echo "</p>";
  }
-?&gt;
-&lt;?php
+?>
+<?php
 }
-?&gt;
-</code></pre><!-- /codeblock -->
+?>
+```
 
 <p>Hier koennen similare Produkte weiter nach Similaritaeten durchsucht werden</p>
 
-<!-- codeblock lang=php line=1 --><pre class="codeblock"><code>
 
-&lt;div id="container"&gt;
- &lt;div id="content"&gt;
-&lt;?php
+```php
+<div id="container">
+ <div id="content">
+<?php
 
-foreach ($result-&gt;Items-&gt;Request as $found) {
- echo ("&lt;h3&gt;Page ".$found-&gt;ItemSearchRequest-&gt;ItemPage."&lt;/h3&gt;\n");
- $SearchIndex = ($found-&gt;ItemSearchRequest-&gt;SearchIndex);
- $Keywords = ($found-&gt;ItemSearchRequest-&gt;Keywords);
+foreach ($result->Items->Request as $found) {
+ echo ("<h3>Page ".$found->ItemSearchRequest->ItemPage."</h3>\n");
+ $SearchIndex = ($found->ItemSearchRequest->SearchIndex);
+ $Keywords = ($found->ItemSearchRequest->Keywords);
 }
 
 
-foreach ($result-&gt;Items as $results) {
- echo ("Results total: ".$results-&gt;TotalResults);
- echo (" on ".$results-&gt;TotalPages. " pages");
+foreach ($result->Items as $results) {
+ echo ("Results total: ".$results->TotalResults);
+ echo (" on ".$results->TotalPages. " pages");
 }
 
-$TotalPages = ($results-&gt;TotalPages);
-$SearchIndex = ($found-&gt;ItemSearchRequest-&gt;SearchIndex);
-$Keywords = ($found-&gt;ItemSearchRequest-&gt;Keywords);
-$ItemPage = ($found-&gt;ItemSearchRequest-&gt;ItemPage);
+$TotalPages = ($results->TotalPages);
+$SearchIndex = ($found->ItemSearchRequest->SearchIndex);
+$Keywords = ($found->ItemSearchRequest->Keywords);
+$ItemPage = ($found->ItemSearchRequest->ItemPage);
 $Keywords = preg_replace("/[ ]/", "+", $Keywords);
 
-if ($TotalPages &gt; 1) {
- if ($ItemPage*1 &lt;= $TotalPages) {
- echo "&lt;p class=\"readmore\"&gt;";
- echo "&lt;a class=\"fl_right\" href=\"".htmlspecialchars("?".
+if ($TotalPages > 1) {
+ if ($ItemPage*1 <= $TotalPages) {
+ echo "<p class=\"readmore\">";
+ echo "<a class=\"fl_right\" href=\"".htmlspecialchars("?".
  "SearchIndex"."=". $SearchIndex ."&amp;".
  "Keywords" ."=". $Keywords ."&amp;".
  "ItemPage" ."=".($ItemPage +1)).
- "\"&gt;next&lt;/a&gt;\n";
+ "\">next</a>\n";
  }
 }
-?&gt;
- &lt;div id="coloumn"&gt;
- &lt;a href="&lt;?php echo $_SERVER["SCRIPT_NAME"];?&gt;"&gt;new search&lt;/a&gt;
- &lt;br class="clear" /&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;?php
+?>
+ <div id="coloumn">
+ <a href="<?php echo $_SERVER["SCRIPT_NAME"];?>">new search</a>
+ <br class="clear" />
+ </div>
+</div>
+</div>
+<?php
 
 }
-
-</code></pre><!-- /codeblock -->
+```
 
 <p>Am Schluss erfahren wir, wieviel Suchtreffer es gibt und bereiten die "Blaetterfunktion" vor, um weitere Ergebnisse anzeigen zu koennen</p>
 
-<p><strong>Fertig!</strong> Das Script in Aktion finden wir auf <a href="http://ebooks.eumel.de" target="_blank">ebooks.eumel.de</a>. Und wie wir die Kindle-Buecher ins Tolino reinbekommen, steht auf <a href="http://blog.eumelnet.de/blogs/blog6.php/main-1/tolino-kindle-unsupported" target="_blank">unsupported.eumel.de</a></p>
+<p><strong>Fertig!</strong> Das Script in Aktion finden wir auf <a href="http://ebooks.eumel.de" target="_blank">ebooks.eumel.de</a>. Und wie wir die Kindle-Buecher ins Tolino reinbekommen, steht auf <a href="https://unsupported.eumel.de/2015/07/29/tolino-kindle-unsupported.html" target="_blank">unsupported.eumel.de</a></p>
