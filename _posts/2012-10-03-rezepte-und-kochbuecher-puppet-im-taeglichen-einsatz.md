@@ -29,8 +29,8 @@ Neben dem Lagerplatz fuer Kartoffeln, Gurken und Tomaten ist es Zeit, sich etwas
 Bei Templating kommt die Sache mit Ruby ins Spiel. Betrachten wir z.B. eine herkoemmliche Nagios-Konfiguration:
 </p>
 <p></p>
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
 
+```
 define host {
  use server
  address 192.168.0.101
@@ -49,13 +49,14 @@ define host {
  host_name vm3
 }
 
-</code></pre><!-- /codeblock -->
+```
+
 <p></p>
 <p>
 usw. - dasselbe dann nochmal fuer die Services. Es entstehen unendlich lange und unuebersichtliche Konfigurationsdateien. Wie waere es stattdessen mit 2 Templates:
 </p>
 host.erb:
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
+```
 &lt;% node_array.each_pair do |key, value_hash| -%>
 &lt;% if value_hash['monitor'] == "1" %>
 define host {
