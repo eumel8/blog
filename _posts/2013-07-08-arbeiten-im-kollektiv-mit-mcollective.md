@@ -118,7 +118,7 @@ Data Plugins: agent fstat
 
 Configuration Management Classes: No classes applied 
 
-Facts: mcollective =&gt; 1 
+Facts: mcollective => 1 
 
 ```
 
@@ -130,7 +130,7 @@ Fuer etwas mehr Funktionalitaet koennen wir noch ein paar Plugins installieren. 
 ```bash
 # mco puppet status 
 
-* [ ============================================================&gt; ] 1 / 1 
+* [ ============================================================> ] 1 / 1 
 
 mcollective: Currently stopped; last completed run 15895 days 9 hours 38 minutes 02 seconds ago 
 

@@ -87,8 +87,8 @@ cd /var/lib/lxd/containers/s2/rootfs
 find . -perm -2000 > /tmp/s2_2000.txt
 find . -perm -4000 > /tmp/s2_4000.txt
 find . -perm -4000 > /tmp/s2_6000.txt
-for i in `awk -F: '{print $3}' &lt; etc/group`; do find . -gid $i -exec chgrp $(( 100000 + $i )) {} +; done
-for i in `awk -F: '{print $3}' &lt; etc/passwd`; do find . -uid $i -exec chown $(( 100000 + $i )) {} +; done
+for i in `awk -F: '{print $3}' < etc/group`; do find . -gid $i -exec chgrp $(( 100000 + $i )) {} +; done
+for i in `awk -F: '{print $3}' < etc/passwd`; do find . -uid $i -exec chown $(( 100000 + $i )) {} +; done
 for i in `cat /tmp/s2_2000.txt`; do chmod +2000 $i; done
 for i in `cat /tmp/s2_4000.txt`; do chmod +4000 $i; done
 for i in `cat /tmp/s2_6000.txt`; do chmod +6000 $i; done

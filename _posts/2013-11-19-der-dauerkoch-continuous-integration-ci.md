@@ -42,7 +42,7 @@ git submodule update --remote
 for file in $(find . -iname '*.pp'); do puppet parser validate --render-as s --modulepath=modules "$file" || exit 1; done
 for file in $(find . -iname '*.erb'); do erb -P -x -T '-' $file | ruby -c || exit 1; done
  puppet-lint --no-80chars-check --no-nested_classes_or_defines-check --no-autoloader_layout-check --no-double_quoted_strings-check --no-variables_not_enclosed-check --no-documentation|| exit 1
-date '+%F-%I-%M-%S' &gt; puppet/BUILDSTATUS
+date '+%F-%I-%M-%S' > puppet/BUILDSTATUS
 tar cfz "/usr/share/nginx/www/gnuu_"$CI_BUILD_REF_NAME"_"`date '+%F-%I-%M-%S'`.tgz puppet/ --exclude=.git
 ```
 

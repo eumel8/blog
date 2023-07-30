@@ -15,8 +15,8 @@ author: eumel8
 # mkdir /suse
 # mount -o loop openSUSE-12.1-DVD-x86_64.iso /suse
 </pre>
-<pre>cat &lt;&lt;EOF&gt;/etc/apache2/conf.d/suse.conf
- Alias /suse/ /suse/<br /> &lt;Directory /suse/&gt;<br /> Options +Indexes +FollowSymLinks<br /> Order allow,deny<br /> Allow from all<br /> &lt;/Directory&gt;<br /> 
+<pre>cat <<EOF>/etc/apache2/conf.d/suse.conf
+ Alias /suse/ /suse/<br /> <Directory /suse/><br /> Options +Indexes +FollowSymLinks<br /> Order allow,deny<br /> Allow from all<br /> </Directory><br /> 
 EOF
 rcapache2 restart
 </pre>

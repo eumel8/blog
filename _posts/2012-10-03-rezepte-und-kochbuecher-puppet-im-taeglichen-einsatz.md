@@ -56,54 +56,56 @@ define host {
 usw. - dasselbe dann nochmal fuer die Services. Es entstehen unendlich lange und unuebersichtliche Konfigurationsdateien. Wie waere es stattdessen mit 2 Templates:
 </p>
 host.erb:
+
 ```
-&lt;% node_array.each_pair do |key, value_hash| -%>
-&lt;% if value_hash['monitor'] == "1" %>
+<% node_array.each_pair do |key, value_hash| -%>
+<% if value_hash['monitor'] == "1" %>
 define host {
  use server
- host_name &lt;%= value_hash['host'] %>.&lt;%= puppetdomain %>
- address &lt;%= value_hash['ip'] %>
+ host_name <%= value_hash['host'] %>.<%= puppetdomain %>
+ address <%= value_hash['ip'] %>
 }
-&lt;% end -%>
-&lt;% end -%>
+<% end -%>
+<% end -%>
+```
 
-</code></pre><!-- /codeblock -->
 <p></p>
 services.erb:
 
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
-
-&lt;% node_array.each_pair do |key, value_hash| -%>
-&lt;% if value_hash['monitor'] == "1" %>
+```
+<% node_array.each_pair do |key, value_hash| -%>
+<% if value_hash['monitor'] == "1" %>
 define service {
  use service
- host_name &lt;%= value_hash['host'] %>.&lt;%= puppetdomain %>
+ host_name <%= value_hash['host'] %>.<%= puppetdomain %>
  service_description ping
  check_command check_ping!200.0,20%!500.0,60%
 }
-&lt;% end -%>
-&lt;% if value_hash['monitor'] == "1" && value_hash['host'] == "fileserver" %>
+<% end -%>
+<% if value_hash['monitor'] == "1" && value_hash['host'] == "fileserver" %>
 define service {
  use service
- host_name &lt;%= value_hash['host'] %>.&lt;%= puppetdomain %>
+ host_name <%= value_hash['host'] %>.<%= puppetdomain %>
  service_description Disk /dev/vdb1
  check_command check_nrpe_1arg!check_vdb1
 }
-&lt;% end -%>
-&lt;% end -%>
-</code></pre><!-- /codeblock -->
+<% end -%>
+<% end -%>
+```
+
 <p></p>
 <p>
 Fertig. Voraussetzung fuer die Nutzung waere die Definition der Variablen in einem hoeher gelegenen Rezept:
 </p>
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
 
+```
  $puppetdomain = "internal.mycloud.local"
  $node_array = {
  vm1 => { 'host' => 'vm1', 'ip' => '192.168.0.101', 'monitor' => '1' },
  vm2 => { 'host' => 'vm2', 'ip' => '192.168.0.102', 'monitor' => '1' },
  vm3 => { 'host' => 'vm3', 'ip' => '192.168.0.103', 'monitor' => '1' },
-</code></pre><!-- /codeblock -->
+```
+
 <p></p>
 <p>
 Dokumentiert ist Puppet auf der <a href="http://puppetlabs.com/" target="_blank">Homepage von Puppetlabs</a> in <a href="http://docs.puppetlabs.com/puppet/2.7/reference/" target="_blank">http://docs.puppetlabs.com/puppet/2.7/reference/</a> (fuer die Version 2.7).
@@ -121,8 +123,7 @@ Puppet selbst bringt genug Funktionalitaeten mit, um Konfigurationsdateien von e
 </p>
 Ein Beispiel:
 
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
-
+```
  file { '/srv/www/htdocs/index.html':
  ensure => file,
  replace => no,
@@ -136,13 +137,13 @@ Ein Beispiel:
  refreshonly => true,
  require => Mount ["/mediacenter"]
  }
-</code></pre><!-- /codeblock -->
+```
+
 <p></p>
 <p> Fuer unseren Webserver-Content soll die index.html present sein. Wenn die fehlt, soll fetch_gnuuweb ausgefuehrt werden, der die Datei von einem Archiv auspackt, wozu aber der Mountpoint /mediacenter verfuegbar sein muss:
 </p>
 
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
-
+```
  file {"/mediacenter":
  ensure => directory
  }
@@ -168,7 +169,8 @@ Ein Beispiel:
  remounts => false,
  require => [Package['davfs2'], File['/etc/davfs2/secrets'], File['/mediacenter']],
  }
-</code></pre><!-- /codeblock -->
+```
+
 <p></p>
 <p>
 Zum Anlegen der index.html ist ausserdem das Verzeichnis /srv/www/htdocs notwendig und das Programmpaket wget soll auch installiert sein. 

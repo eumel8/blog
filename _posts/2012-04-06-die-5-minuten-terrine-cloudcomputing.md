@@ -57,7 +57,8 @@ author: eumel8
 <p><code>zypper install dhcp-server</code></p>
 <p>Konfiguration DHCP:</p>
 <p>/etc/dhcpd.conf:</p>
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
+
+```
 option domain-name-servers 192.168.88.1;
 default-lease-time 600;
 max-lease-time 7200;
@@ -70,13 +71,15 @@ subnet 192.168.88.0 netmask 255.255.255.0 {
  allow bootp;
  option routers 192.168.88.1; <br /> filename "pxelinux.0";
 }
-</code></pre><!-- /codeblock -->
+```
+
 <p>chkconfig dhcpd on && rcdhcpd start</p>
 <p>Installation TFTP:</p>
 <p><code>zypper install tftp</code></p>
 <p>Konfiguration TFTP:</p>
 <p>/etc/xinetd.d/tftp:</p>
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
+
+```
 service tftp
 {
  socket_type = dgram
@@ -88,7 +91,8 @@ service tftp
  server_args = -s /srv/tftp/pxelinux.cfg
  disable = no
 }
-</code></pre><!-- /codeblock -->
+```
+
 <p>mkdir /srv/tftp/pxelinux.cfg && chkconfig xinetd on && rcxinetd start</p>
 <p>Installation Booloader + AutoYast:</p>
 <p>zypper install syslinux autoyast2 autoyast2-installation</p>
@@ -96,14 +100,14 @@ service tftp
 <p>/srv/tftp/pxelinux.cfg/pxelinux.cfg/default</p>
 <p> </p>
 
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
+```
 default linux
 label linux
  kernel linux
  append initrd=initrd install=http://192.168.88.1/mnt/ autoyast=http://192.168.88.1/suse12.xml loghost=192.168.88.1
 prompt 1
 timeout 10
-</code></pre><!-- /codeblock -->
+```
 
 <p> </p>
 <p>Die Konfiguration von Autoyast ist <a href="http://www.suse.de/~ug/" target="_blank">hier</a> beschrieben. Es gibt auch viele nuetzliche Links und Beispiele. In einer Mailingliste findet man die meisten Antworten. Unser Autoyast-File heisst also suse12.xml und liegt auf dem Webserver des puppetserver. EIne Version befindet sich im Anhang des Postings. Was wird alles gemacht:</p>
@@ -136,7 +140,8 @@ timeout 10
 <li>hallowelt.cnt (unsere "Startseite" fuer unsere Webpraesenz und exemplarisch fuer weiteren Content</li>
 </ul>
 <p>Im Unterverzeichnis "manifests" gibt es eine init.pp:</p>
-<!-- codeblock lang= line=1 --><pre class="codeblock"><code>
+
+```
 class apache2 {
 Package { ensure => "installed" }
 $enhancers = [ "apache2", "apache2-mod_php5", "apache2-mod_perl" ]
@@ -180,13 +185,14 @@ service { "apache2":
 }
 
 }
-</code></pre><!-- /codeblock -->
+```
+
 <p>Die Syntax ist eigentlich recht selbsterklaerend:</p>
 <ul>
 <li>Das Paket apache2 soll mit php5 installiert sein.</li>
 <li>Die Systemkonfig kommt von "uns".</li>
 <li>Die Konfig fuer den VHost kommt von uns.</li>
-<li>DIe Document-Root fuer den VHost  ist angelegt und enthaelt unsere Startseite.</li>
+<li>Die Document-Root fuer den VHost  ist angelegt und enthaelt unsere Startseite.</li>
 <li>Der apache2-Service laeuft</li>
 </ul>
 <p>Damit passiert jetzt folgendes:</p>

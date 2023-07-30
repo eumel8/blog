@@ -25,7 +25,7 @@ N 5
 
 ```bash
 ls -l /etc/systemd/system/default.target 
-lrwxrwxrwx 1 root root 36 May 10 2012 /etc/systemd/system/default.target &gt; /lib/systemd/system/runlevel5.target 
+lrwxrwxrwx 1 root root 36 May 10 2012 /etc/systemd/system/default.target > /lib/systemd/system/runlevel5.target 
 ```
 
 <p>Einfach ersetzen durch:</p>

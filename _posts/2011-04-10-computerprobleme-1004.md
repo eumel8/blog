@@ -16,7 +16,7 @@ author: eumel8
 <p>Ein weiteres Teilprojekt. Von einer 1-TB-USB-Festplatte mit Mediaplayer sollen die Daten auf eine andere 2-TB-USB-Festplatte gebackuped werden. Die erste Platte ist mit dem WD TV Live Hub im LAN und freigegebenen Windows-Share erreichbar. Die zweite Platte haengt am Linux-Rechner, der sich im selben LAN befindet.  Beide Platten sind mit NTFS formatiert.</p>
 <p>Ein kostenloses Unix-Tool fuer Backup ist zum Beispiel rsync. Der typische Befehl zum Backup lautet dann:</p>
 <blockquote>
-<p>rsync -av &lt;altes Verzeichnis&gt; &lt;neues Verzeichnis&gt;</p>
+<p>rsync -av <altes Verzeichnis> <neues Verzeichnis></p>
 </blockquote>
 <p>Die Platte vom Mediaplayer ist per CIFS gemountet, also einfach</p>
 <blockquote>

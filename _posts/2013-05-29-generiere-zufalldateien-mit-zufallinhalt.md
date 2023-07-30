@@ -16,10 +16,10 @@ Ein Shellscript, mit dem man Dateien in zufaelliger Anzahl, Groesse und Namen er
 #generate random files
 
 if [ ! $# -gt 0 ]; then
-echo "usage: $0 &lt;numfiles&gt; [&lt;blocksize&gt; &lt;maxblocks&gt;]"
-echo " &lt;numfiles&gt;: number of files to create,"
-echo " &lt;blocksize&gt;: size of file blocks (default 1024 bytes)"
-echo " &lt;maxblocks&gt;: maximum number of blocks per file (default 100)"
+echo "usage: $0 <numfiles> [<blocksize> <maxblocks>]"
+echo " <numfiles>: number of files to create,"
+echo " <blocksize>: size of file blocks (default 1024 bytes)"
+echo " <maxblocks>: maximum number of blocks per file (default 100)"
 echo ""
 echo "Parameters after the third provided number are ignored."
 echo ""

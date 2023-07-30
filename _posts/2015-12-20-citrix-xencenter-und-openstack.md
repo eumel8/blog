@@ -32,7 +32,7 @@ Wenn man die aktuelle OpenStack-Version nicht moechte, kann man noch andere Bran
 Als naechstes ist die Datei localrc in diesem Verzeichnis zu erstellen:
 
 ```bash
-cat > ./localrc &lt;<eof # At the moment, we depend on github's snapshot function.
+cat > ./localrc <<eof # At the moment, we depend on github's snapshot function.
 GIT_BASE="http://github.com"
 
 # Passwords

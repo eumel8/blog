@@ -11,7 +11,7 @@ Im anwendungsbezogenen Datenbankbetrieb ist es wie mit dem Auto: Man weiss zwar,
 <br/>
 <strong>Exportiere und Importiere Daten</strong> <strong>Datenbank mit Inhalt exportieren</strong>
 <em>**MySQL**</em>
-<pre> # mysqldump database &gt; database.dmp </pre>
+<pre> # mysqldump database > database.dmp </pre>
 <em> **Oracle**</em> 
 <pre># exp userid=\'sys/manager as sysdba\' \ 
 file=database_exp.dmp \ 
@@ -33,7 +33,7 @@ consistent=yes
 </pre> 
 <strong>Datenbank ohne Inhalt exportieren</strong>
 <em>**MySQL**</em> 
-<pre># mysqldump -d database &gt; database.dmp </pre>
+<pre># mysqldump -d database > database.dmp </pre>
 <em>**Oracle**</em>
 <pre> # exp userid=mailadm/mailadm \ 
 file=database_exp.dmp \ 
@@ -46,7 +46,7 @@ rows=no
 <strong>Datenbank imporieren</strong> 
 <em>**MySQL**</em>
 <pre> # mysqladmin create database </pre>
-<pre># mysql database &lt; database.dmp </pre>
+<pre># mysql database < database.dmp </pre>
 <em>**Oracle**</em>
 <pre> 
 # imp userid=\'sys/manager as sysdba\' \ 
@@ -64,17 +64,17 @@ log=full_imp.log \
 full=yes \ ignore=yes \ feedback=50 </pre>
 <strong>Zeige alle laufenden Prozesse/Statements</strong>
 <em>**MySQL**</em>
-<pre> # mysql &gt; SHOW PROCESSLIST; </pre>
+<pre> # mysql > SHOW PROCESSLIST; </pre>
 <em> **Oracle**</em>
-<pre> # sqlplus / as sysdba &gt; SELECT sql_id,sql_text FROM v$sqlarea; </pre> 
+<pre> # sqlplus / as sysdba > SELECT sql_id,sql_text FROM v$sqlarea; </pre> 
 waites 
-<pre> &gt; SELECT sw.sid sid , p.spid spid , s.username username , \
+<pre> > SELECT sw.sid sid , p.spid spid , s.username username , \
 s.osuser osuser , sw.state state , sw.wait_time wait_time , \
 s.machine machine , depre(sw.event,'db file sequential read', \
 sw.p3, 'db file scattered read', sw.p3, NULL) blocks \
 FROM v$session_wait sw , v$session s , v$process p \
 WHERE s.paddr = p.addr AND sw.state != 'Idle' \
-AND sw.sid = s.sid AND sw.wait_time &gt; 0; </pre> 
+AND sw.sid = s.sid AND sw.wait_time > 0; </pre> 
 <strong>Zeige alle Tabellen an</strong>
 <em>**MySQL**</em>
 <pre> # mysql SHOW TABLES; 

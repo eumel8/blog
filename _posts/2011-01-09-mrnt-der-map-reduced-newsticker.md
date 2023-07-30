@@ -13,7 +13,7 @@ author: eumel8
 <blockquote>javac -cp /usr/local/share/java/gnumail.jar:/usr/local/share/java/gnumail-provider<br />s.jar:/usr/local/share/java/inetlib.jar:/usr/local/apache-tomcat-6.0.26/lib/servlet-api.jar NNTP.java</blockquote>
 <p> </p>
 <p><br />Aber dann muessten wir gnumail.jar und inetlib.jar als CLASSPATH in die catalina.sh schreiben, aber es geht auch<br />anders: Die benoetigten jars einfach ins Tomcat-Lib-Verzeichnis unter /usr/local/apache-tomcat-6.0.26/lib/ kopieren.<br />In /usr/local/apache-tomcat-6.0.26/webapps/cloud/WEB-INF/web.xml machen wir das Servlet fuer den Browser sichtbar:</p>
-<pre>&lt;servlet&gt;<br />&lt;servlet-name&gt;NNTP&lt;/servlet-name&gt;<br />&lt;servlet-class&gt;NNTP&lt;/servlet-class&gt;<br />&lt;/servlet&gt;<br />&lt;servlet-mapping&gt;<br />&lt;servlet-name&gt;NNTP&lt;/servlet-name&gt;<br />&lt;url-pattern&gt;/NNTP&lt;/url-pattern&gt;<br />&lt;/servlet-mapping&gt;<br /><br /></pre>
+<pre><servlet><br /><servlet-name>NNTP</servlet-name><br /><servlet-class>NNTP</servlet-class><br /></servlet><br /><servlet-mapping><br /><servlet-name>NNTP</servlet-name><br /><url-pattern>/NNTP</url-pattern><br /></servlet-mapping><br /><br /></pre>
 <p>Nach dem Tomcatneustart koennte das Servlet schon funktionieren, wenn wir es mit den Parametern direkt fuettern.<br />Stattdessen bauen wir noch eine schicke Java-Server-Page fuer die Eingabe:<br />http://www.eumelnet.de:8080/cloud/mrnt.jsp.html</p>
 <p>Die Ausgabe holen wir uns von dieser Server-Page ab:http://www.eumelnet.de:8080/cloud/load.jsp.html</p>
 <p>Wir haben also Daten-Eingabe/-Ausgabe und -Verarbeitung gut<br />entkoppelt. Jedoch krankt unsere Webanwendung gleich an mehreren Stellen:</p>
