@@ -61,6 +61,8 @@ Festplatte in VM zu klein (LVM/EXT4/Ubuntu):
 VM herunterfahren
 Diskspace der Disk im XentCenter fuer VM erwweitern.
 VM starten und per root mit ssh einloggen:
+</li>
+</ul>
 
 ```bash
 fdisk /dev/xvda
@@ -84,9 +86,8 @@ lvm lvresize /dev/ubuntu-vg/root -l+100%FREE
 lvdisplay
 resize2fs /dev/ubuntu-vg/root
 ```
-</li>
-</ul>
+
 
 Nach jahrelangen und dauerhaften Betrieb ist Citrix XenCenter uneingeschraenkt empfehlenswert.
 
-Bezugsquellen: http://www.citrix.de/downloads/xenserver/evaluations-and-trial-software.html</xencenter>
+Bezugsquellen: http://www.citrix.de/downloads/xenserver/evaluations-and-trial-software.html (veraltet)
