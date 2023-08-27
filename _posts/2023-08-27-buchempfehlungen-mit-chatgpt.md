@@ -37,7 +37,7 @@ Die `index.html` hält neben der Eingabezeile für Buchtitel und Author eine kle
     <div class="header">
       <p>Frage ChatGPT nach alternativen Buchtiteln</p>
       <p><label><a href="https://platform.openai.com/account/api-keys">API Key: </a></label>
-      <input type="text" id="api-key"</p>
+      <input type="text" id="api-key"></p>
       <script>
         var apiKey = document.getElementById("api-key"),
             storage_key = "chatgpttoken";
