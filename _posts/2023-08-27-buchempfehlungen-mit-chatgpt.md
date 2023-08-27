@@ -111,7 +111,9 @@ An der Stelle könnte man zur Onleihe verweisen, aber dessen Sucheingabe ist abe
 
 Die gute Nachricht an dieser Stelle: ChatGPT hat heute (2023) einen Datenbestand bis 2021. Neuere Bücher werden also (noch) nicht empohlen. Als Manko könnte man kritisieren, dass es keine weitere Eingabevalidierung gibt. Wenn der Nutzer also Müll eingibt, wird ChatGPT auch mit Müll antworten. Es wurde aber auch schon einmal beobachtet, dass ChatGPT selber Müll generiert, indem es einfach ISBN erfindet.
 
-Das ganze Programm findet man auf dem Fork [https://github.com/eumel8/ebook-chatgpt/tree/ebook](https://github.com/eumel8/ebook-chatgpt/tree/ebook).
+Das ganze Programm findet man auf dem Fork 
+
+[https://github.com/eumel8/ebook-chatgpt/tree/ebook](https://github.com/eumel8/ebook-chatgpt/tree/ebook).
 
 Viel Spass beim Stöbern.
 
