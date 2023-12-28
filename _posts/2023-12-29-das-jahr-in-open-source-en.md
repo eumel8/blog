@@ -76,7 +76,7 @@ Vcluster was also on the agenda this year and integrating the technology into th
 - When was the last commit?
 - How many open PRs and issues are there?
 - How old are these?
-- How many maintainers are there and how active are they?
+- How many maintainers are there and how active they are?
 
 Maybe you will also read that help is needed and you can contribute something permanently to this project. I've also decided to permanently fork the project and live on with my fork. Of course, the intention is not to continue maintaining the software yourself, but sometimes there is no other option.
 
