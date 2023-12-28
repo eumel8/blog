@@ -80,7 +80,7 @@ Vcluster was also on the agenda this year and integrating the technology into th
 
 Maybe you will also read that help is needed and you can contribute something permanently to this project. I've also decided to permanently fork the project and live on with my fork. Of course, the intention is not to continue maintaining the software yourself, but sometimes there is no other option.
 
-The important thing is not to give up and not to get discouraged. A majority of people are happy when they get help or find a [comment](https://github.com/traefik/traefik/issues/7112#issuecomment-1870903221) about the solution on Github. Sometimes [the horse is simply dead](https://github.com/b2evolution/b2evolution/issues/105), so it doesn't help to get back in the saddle again and again. I switched my blogs from B2evolution to Github Pages (https://unsupported.eumel.de/2023/07/17/b2evo-unsupported-2.html).
+The important thing is not to give up and not to get discouraged. A majority of people are happy when they get help or find a [comment](https://github.com/traefik/traefik/issues/7112#issuecomment-1870903221) about the solution on Github. Sometimes [the horse is simply dead](https://github.com/b2evolution/b2evolution/issues/105), so it doesn't help to get back in the saddle again and again. I switched my blogs from B2evolution to [Github Pages](https://unsupported.eumel.de/2023/07/17/b2evo-unsupported-2.html).
 
 There you can also find the article about [Vcluster](https://k8sblog.eumel.de/2022/12/14/vcluster-in-rancher-mit-crossplane.html). The implementation in Rancher is pretty cool. It began a study at the end of 2022 before being used productively this year.
 
