@@ -2,20 +2,20 @@
 layout: post
 tag: general
 title: Bahnprojekt Brieselang - Big Data on the Village
-subtitle: "Bahnfahren ist wieder in. Wegen der Umwelt. Knapp 4,7% der Berrufspendler fahren jeden Tag mit Bahn oder S-Bahn. Es sollen noch voel mehr werden, denn knapp 70% der Pendler fahren derzeit mit dem Auto. Wie stehts also mit der Qualitaet des Bahnverkehr"
+subtitle: "Bahnfahren ist wieder in. Wegen der Umwelt. Knapp 4,7% der Berufspendler fahren jeden Tag mit Bahn oder S-Bahn. Es sollen noch viel mehr werden, denn knapp 70% der Pendler fahren derzeit mit dem Auto. Wie stehts also mit der Qualitaet des Bahnverkehrs"
 date: 2020-02-15
 author: eumel8
 ---
 
-Bahnfahren ist wieder in. Wegen der Umwelt. Knapp 4,7% der Berrufspendler fahren jeden Tag mit Bahn oder S-Bahn. Es sollen noch voel mehr werden, denn knapp 70% der Pendler fahren derzeit mit dem Auto. Wie stehts also mit der Qualitaet des Bahnverkehr in Deutschland?
-<br/>
+Bahnfahren ist wieder in. Wegen der Umwelt. Knapp 4,7% der Berufspendler fahren jeden Tag mit Bahn oder S-Bahn. Es sollen noch viel mehr werden, denn knapp 70% der Pendler fahren derzeit mit dem Auto. Wie stehts also mit der Qualitaet des Bahnverkehrs in Deutschland?
+
 Die Bahn ist auch im Internet moderner geworden. Die Portale https://developer.deutschebahn.com/ und https://data.deutschebahn.com/ bieten eine Menge APIs und Datensaetze zu Bahnanlagen wie <a href="https://data.deutschebahn.com/dataset/data-stationsdaten-regio">Stationsdaten</a> an. Fahrplaene kann man aucb ueber APIs im Json-Format abrufen, aber es handelt sich immer um den SOLL-Fahrplan. Fuer den IST-Plan gibt es dort derzeit keine Schnittstellen, da muss man die Webseiten https://reiseauskunft.bahn.de/ oder https://mobile.bahn.de bemuehen.
 
 <strong>Bahn-API</strong>
-Bevor es richtig losgeht, brauchen wir erstmal die EVA Nummer vom Bahnhof Brieselang. Die gibts auf https://developer.deutschebahn.com. Nach der Registerierung muss man die StaDa-Station_Data - v2 API abonnieren. Mit einem erstellten Bearer-Token kann man die Daten abrufen:
+Bevor es richtig losgeht, brauchen wir erstmal die EVA Nummer vom Bahnhof Brieselang. Die gibts auf https://developer.deutschebahn.com. Nach der Registrierung muss man die StaDa-Station_Data - v2 API abonnieren. Mit einem erstellten Bearer-Token kann man die Daten abrufen:
 
 ```bash
-curl -X GET --header "Accept: application/json" --header "Authorization: Bearer 34fffsa2f792e5b779b3432432wd1f3d071d" "https://api.deutschebahn.com/stada/v2/stations?searchstring=Brieselang"
+curl -X GET --header "Accept: application/json" --header "Authorization: Bearer xxxxxxxxxxx" "https://api.deutschebahn.com/stada/v2/stations?searchstring=Brieselang"
 ```
 
 ```
@@ -96,7 +96,7 @@ def parse_departures1(html,dt):
  return
 ```
 
-Es ist sehr gut zu sehen, wie man mitz find_all nach bestimmten Tags suchen kann, um da die Informationen rauszuziehen. Die brauchen wir auch, denn um Informationen ueber einen Zug zu bekommen, brauchen wir eine weitere Abfrage.
+Es ist sehr gut zu sehen, wie man mit find_all nach bestimmten Tags suchen kann, um da die Informationen rauszuziehen. Die brauchen wir auch, denn um Informationen ueber einen Zug zu bekommen, brauchen wir eine weitere Abfrage.
 
 ```python
 def traindetails(date,trainnumber,trainurl):
@@ -109,13 +109,13 @@ def traindetails(date,trainnumber,trainurl):
 
 Also fast dieselbe Abfrage, aber auf einem anderen Endpunkt. Die Seite sieht dann so aus:
 
-<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan2.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan2.png"/>
 
 Wir sind interessiert an den Besonderheiten des Zuges. Das sind entweder fehlende Wagen, fehlendes Mehrzweckabteil, fehlende Einsteigehilfe fuer Rollstuhlfahrer ... es ist ein Freitext, dort kann alles moegliche drinstehen. Wir definieren das spaeter einfach als Stoerung:
 
-<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan4.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan4.png"/>
 
-Auch diese Ausgabe wird mit BeautifulSoup geparsed. Wir haben jetzt aich alle Informationen zusammen und koennen diese in einer Google-Exceltabelle abspeichern. DIe Tabelle koennen wir bei Google Drive von Hand erstellen. Dann brauchen wir einen <a href="https://console.developers.google.com/apis/api/sheets.googleapis.com/">Service-Account von der Google Spreadsheet API</a>, der Schreibrechte in die Tabelle hat.
+Auch diese Ausgabe wird mit BeautifulSoup geparsed. Wir haben jetzt auch alle Informationen zusammen und koennen diese in einer Google-Exceltabelle abspeichern. Die Tabelle koennen wir bei Google Drive von Hand erstellen. Dann brauchen wir einen <a href="https://console.developers.google.com/apis/api/sheets.googleapis.com/">Service-Account von der Google Spreadsheet API</a>, der Schreibrechte in die Tabelle hat.
 
 ```python
 def gspread_data(date,trainnumber,traindeparture,traintarget,traindelay,traintext,trainnote):
@@ -131,9 +131,9 @@ def gspread_data(date,trainnumber,traindeparture,traintarget,traindelay,traintex
 
 Eigentlich ganz einfach. Der Service-Account meldet sich bei der API an. Das Secret-File mit den Credentials liefert Google fuer cut&paste. Ins Arbeitsblatt 1 der Exceltabelle werde die Daten geschrieben. 
 
-<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan1.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/dbfahrplan1.png"/>
 
-Nun ist es aber so, dass wir den Fahrplan ohne gesten Bezugspunkt aufrufen. Wenn wir das Programm stuendlich laufen lassen, wissen wir nur ungefaehr, wieviel Datensaetze also Fahrten zurueckgeliefert werden. Die Gefahr fuer doppelte Datensaetze ist also ziemlich gross. DIese koennen wir durch removeDuplicates loeschen:
+Nun ist es aber so, dass wir den Fahrplan ohne festen Bezugspunkt aufrufen. Wenn wir das Programm stuendlich laufen lassen, wissen wir nur ungefaehr, wieviel Datensaetze als Fahrten zurueckgeliefert werden. Die Gefahr fuer doppelte Datensaetze ist also ziemlich gross. Diese koennen wir durch removeDuplicates loeschen:
 
 ```python
 def removeDuplicates(sheet):
@@ -174,22 +174,21 @@ public interface QuestionsSpreadsheetWebService {
  );
 ```
 
-Die Feld-ID bekommen wir aus dem HTML-Sourccode des Webformulars. DIe Post-ID ist die Formular-ID aus der URL desselbigen.
+Die Feld-ID bekommen wir aus dem HTML-Sourccode des Webformulars. Die Post-ID ist die Formular-ID aus der URL desselbigen.
 Aequivalente Felder bekommen wir in Android mit <a href="https://github.com/eumel8/trainqa/blob/master/android/app/src/main/res/layout-v17/questions_activity.xml#L92">dieser xml</a>. Dazu gehoert dann eine <a href="https://github.com/eumel8/trainqa/blob/master/android/app/src/main/java/com/eumelnet/bahn/spreadsheetinput/QuestionsActivity.java#L42">onCreate-class</a>, in der dann auch das onClick des Webformulars verarbeitet wird und zu dem Webservice oben weiterleitet.
 Nachtraeglich reingefummelt ist noch eine Liste von Zuegen, die zur Bewertung ausgewaehlt werden koennen. Dazu gibts einen <a href="https://github.com/eumel8/trainqa/blob/master/android/app/src/main/java/com/eumelnet/bahn/spreadsheetinput/QuestionsActivity.java#L99">zweiten Click-Button</a>, mit der eine ListView aufgerufen wird. Jetzt braeuchten wir wieder die ServiceAccount Credentials zum Zugriff auf die Excel-Tabelle, wenn wir auf dieselben Daten zugreifen wollen die wir oben im Python-Script erstellt haben. Hier hilft uns ein <a href="https://github.com/eumel8/trainqa/blob/master/android/app/src/main/java/com/eumelnet/bahn/spreadsheetinput/JSONParser.java#L16">Json-Parser</a>, welches als App bei Google gehostet ist. Man gibt der Excel-Tabelle Lesezugriff fuer die Welt und verfuettern die Excel-ID aus der URL als Parameter an das Script. Als Ausgabe erhalten wir die Excell-Tabelle als Json, was wir in der App als Liste verarbeiten koennen. 
 Mhm, alles bischen tricky und schwer zu erklaeren. Es gibt aber eine sehr grosse Community und so ziemlich jedes Problem ist im Netz schon mal beschrieben und geloest. Vielleicht leistet der Blog auch einen kleinen Beitrag.
-DIe App wird im Android Studio kompiliert, signiert und dann im https://play.google.com hochgeladen. Dazu muss man sich als Entwickler registrieren, 25 Dollar einwerfen und paar Tage warten, bis die App freigeschalten ist.
+Die App wird im Android Studio kompiliert, signiert und dann im https://play.google.com hochgeladen. Dazu muss man sich als Entwickler registrieren, 25 Dollar einwerfen und paar Tage warten, bis die App freigeschalten ist.
 
 
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/bahnapp1.png"/>
 
-<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/bahnapp1.png" width="585" height="386"/>
-
-<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/bahnapp2.png" width="585" height="386"/>
+<img src="/images/quick-uploads/bahnprojekt-brieselang-big-data-on-the-village/bahnapp2.png"/>
 
 
 <strong>Public Tableau</strong>
 
-<a href="https://public.tableau.com/profile/eumel#!/">Public Tableau</a> ist ein Dienst, mit dem man Daten visualisieren kann. Das Programm gibts auch als Serverinstallation, mit derm man bestimmte Datenbanken auslesen kann, es gibt aber auch den Onlinedienst, der sich mit Google Excel verbinden kann, um die Daten von dort abzugreifen. Es gibt auch einen Tableau-Client, den man sich ruinterladen kann, und eine Menge Vorlagen an Tabellenformationen und Diagrammen. Die Verbindung zu Google wird ueber einen Auth-Token aufrecht erhalten. Sicherheitshalber koennte man noch einen extra Google-Account erstellen, um nicht seine persoenlichen Credentials an dieser Stelle zu verwenden. Aber etwa einmal am Tag werden die Daten automatisch aktualisiert.
+<a href="https://public.tableau.com/profile/eumel#!/">Public Tableau</a> ist ein Dienst, mit dem man Daten visualisieren kann. Das Programm gibts auch als Serverinstallation, mit derm man bestimmte Datenbanken auslesen kann, es gibt aber auch den Onlinedienst, der sich mit Google Excel verbinden kann, um die Daten von dort abzugreifen. Es gibt auch einen Tableau-Client, den man sich runterladen kann, und eine Menge Vorlagen an Tabellenformationen und Diagrammen. Die Verbindung zu Google wird ueber einen Auth-Token aufrecht erhalten. Sicherheitshalber koennte man noch einen extra Google-Account erstellen, um nicht seine persoenlichen Credentials an dieser Stelle zu verwenden. Aber etwa einmal am Tag werden die Daten automatisch aktualisiert.
 Fallstrick: Man darf bei dieser Methode nicht mehrere Google Sheet Tabellennblaetter mischen und auch keine zwei Tabellen miteinander verbinden - auch nicht in einem gemeinsamen Dashboard in einem Projekt! Sonst werden die Daten nicht mehr automatisch aktualisiert.
 
 <strong>Ausblick</strong>
