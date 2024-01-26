@@ -12,13 +12,16 @@ S3 Objektspeicher erfreut sich immer groesserer Beliebtheit. Die Daten sind redu
 <br/>
 
 <strong>Name: s3-sync</strong>
+
 Link: https://github.com/chilts/s3tools
+
 Funktion: basiert auf aws-s3-sdk, S3 Hostname kann nicht geaendert werden, relativ wertlos fuer Nicht-AWS-S3-Speicher
 
 <strong>Name: s3fs</strong>
+
 Link/Installation: 
 
-`` bash
+```bash
 $ sudo apt install s3fs
 $ cat ~/.passwd-s3fs
 ACCESS_KEY:SECRET_KEY
@@ -30,7 +33,9 @@ $ cp /etc/motd /bucket-test
 Funktion: S3 Buckets als Dateisystem lokal mounten ueber FUSE
 
 <strong>Name: s3cmd</strong>
+
 Link/Installation: 
+
 ```bash
 $ sudo apt install python3-pip && pip3 install s3cmd
 $ s3cmd --configure
@@ -38,6 +43,7 @@ $ s3cmd --configure
 # host_bucket = %(bucket)s.obs.otc.t-systems.com
 # review .s3cfg
 ```
+
 Funktion
 
 <strong>Name: ceph-bucket-sync</strong>
