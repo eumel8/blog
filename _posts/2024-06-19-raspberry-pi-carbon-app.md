@@ -27,7 +27,7 @@ Wir benötigen hierzu:
 
 Um Prometheus-Metriken graphisch anzuzeigen, dazu gibt es Grafana. Um den ganzen Stack auf dem Raspberry laufen zu lassen, ist der Aufwand schon ziemlich hoch. Eigentlich wollen wir bloss eine Zahl graphisch darstellen, das LCD-Display ist auch nicht so gross. Eigentlich soll das Display auch nur 3 Farben anzeigen: rot = wenig Ökostrom, gelb = ein bisschen Ökostron, grün = viel Ökostrom, quasi eine Energieampel.
 
-Diese Aufgabe erfüllt die [Carbon App](https://github.com/eumel8/carbon-app), eine Go-Applikation, die betriebssystem unabhängig ein Fenster startet (brauch also mindestens unter Linux X) und dort dann die Farbe darstellt. Im Hintergrund wird zyklisch Prometheus abgefragt, die Umgebungsvariable `PROMETHEUS_URL` zeigt auf diesen Endpunkt. In der Version 0.0.20 läuft die App im Vollbildmodus und lässt sich abgesehen von der Prometheus-URL und dem Abfrage-Timer nicht weiter konfigurieren.
+Diese Aufgabe erfüllt die [Carbon App](https://github.com/eumel8/carbon-app), eine Go-Applikation, die Betriebssystem unabhängig ein Fenster startet (brauch also mindestens unter Linux X) und dort dann die Farbe darstellt. Im Hintergrund wird zyklisch Prometheus abgefragt, die Umgebungsvariable `PROMETHEUS_URL` zeigt auf diesen Endpunkt. In der Version 0.0.20 läuft die App im Vollbildmodus und lässt sich abgesehen von der Prometheus-URL und dem Abfrage-Timer nicht weiter konfigurieren.
 
 # Energieampel Software (Fast Track)
 
@@ -35,7 +35,7 @@ Für den Fast Track haben wir schon irgendwo einen Prometheus laufen, der uns di
 
 Ausgehend vom verwendeten LCD-Display findet man [hier](http://www.lcdwiki.com/3.5inch_RPi_Display) fertig konfigurierte Images für den Raspberry, bei dem das LCD-Display direkt angesprochen wird. Ansonsten müsste man das extra konfigurieren (siehe unten). Ich entschied mich für das `MPI3501-3.5inch-ubuntu-mate-22.04-desktop-armhf+raspi.img`, da es für mein LCD Display entwickelt wurde. Mit einem USB-Diskwriter kann man es auf die SD-Karte kopieren und in den Raspberry reinschieben. Nach dem Booten wird automatisch X gestartet mit Autologin vom user `pi`. Was wir noch brauchen, sind die Netzwerkeinstellungen für WLAN, wenn wir keine LAN-Verbindung verwenden wollen. Fertig.
 
-Jetzt müsste nur noch die [Carbon-App] nach dem Booten starten. Dazu verbinden wir uns mit ssh mit dem Raspberry und legen folgende Datei an:
+Jetzt müsste nur noch die [Carbon-App](https://github.com/eumel8/carbon-app) nach dem Booten starten. Dazu verbinden wir uns mit ssh mit dem Raspberry und legen folgende Datei an:
 
 /home/pi/.config/autostart/carbonapp.desktop
 
@@ -69,7 +69,7 @@ export PROMETHEUS_URL=http://<prometheus-server>
 ./carbonapp
 ```
 
-Wir haben hier ein 32-bit-Betriebssystem, es gibt aber auch App-Versionen für amd64 und arm64 - da muss man das enstsprechend anpassen.
+Wir haben hier ein 32-bit-Betriebssystem, es gibt aber auch App-Versionen für amd64 und arm64 - da muss man das enstsprechend anpassen. Schaut einfach auf die [Release](https://github.com/eumel8/carbon-app/releases) Seite
 
 Jetzt noch die Datei ausfürbar machen:
 
@@ -83,6 +83,21 @@ In den Gnome-Settings kann man das auch in der Gnome-Datenbank des pi-Users veri
 
 ```bash
 dconf read /org/mate/power-manager/sleep-display-ac
+```
+
+Das zweite Störelement ist der Screensaver. Hier kann man mit 
+
+```bash
+apt-get install xscreensaver
+```
+
+das passende Paket installieren und in den Menüeinstellungen den Screensaver Mode auf `Disable Screen Saver` stellen.
+
+
+Alle anderen Screensaver sollte man deinstallieren:
+
+```bash
+apt purge mate-screensaver
 ```
 
 Vielleicht noch Datum/Uhrzeit/Zeitzone einstellen, etwa mit `raspi-config`, reboot, fertig. Danach sieht es dann so aus:
@@ -117,6 +132,8 @@ Es gibt auch einige Anleitungen dafür im Netz:
 - (https://www.waveshare.com/wiki/3.5inch_RPi_LCD_(A)
 - [xrandr](https://wiki.ubuntu.com/X/Config/Resolution#Resetting_an_out-of-range_resolution)
 - [xinput_calibrator](https://manpages.ubuntu.com/manpages/xenial/man1/xinput_calibrator.1.html)
+
+Es kommt natürlich auch darauf an, welche Typ von Display man verwendet.
 
 Als nächstes erstellen wir eine Autostart-Datei:
 
@@ -170,7 +187,7 @@ export KUBECONFIG=/var/lib/rancher/k3s/server/cred/admin.kubeconfig
 helm -n carbon upgrade -i carbon . --create-namespace --set entsoe.entsoe_api_key=xxxx --set grafana.adminPassword=carbon-station
 ```
 
-Zu beachten sind die Installationsanweisungen der Carbon Footprint App, inbesondere das Besorgen des Entsoe-API-Keys.
+Zu beachten sind die Installationsanweisungen der [Carbon Footprint App](https://github.com/eumel8/carbon-footprint/), insbesondere das Besorgen des Entsoe-API-Keys.
 
 Mit `kubectl -n carbon get services` kann man die Service-IP von Grafana abfragen und oben in der autostart.sh anpassen.
 
@@ -178,10 +195,10 @@ Fortan sollte nach dem nächsten Reboot der K3S starten, mittels Prometheus/Graf
 
 <img src="/images/2024-06-19_4.jpg" width="585" height="386"/>
 
-Man muss sagen, das K3S mit dem Prometheus, zusammen mit dem X und dem Firefox Browser schlaucht den Raspberry schon mächtig. 4 GB Ram sind hier zu wenig, man sollte hier mehr investieren. Dann gibt es Probleme mit dem Auto-Refresh, ansonsten ist die Anzeige relativ statisch. Auch die Anzeige ist relativ klein, das Dashboard wird trotz Kiosk-Mode nicht richtig dargestellt und ist aus grösserer Entfernung schwer zu lesen. Am beste verzichtet man auf den Browser-Anteil und die die Carbon-App wie im Fast Track beschrieben. Als `PROMETHEUS_URL` verwendet man einfach den Service-Endpunkt für Prometheus im carbon Namespace unseres Clusters.
+Man muss sagen, das K3S mit dem Prometheus, zusammen mit dem X und dem Firefox Browser schlaucht den Raspberry schon mächtig. 4 GB Ram sind hier zu wenig, man sollte hier mehr investieren. Dann gibt es Probleme mit dem Auto-Refresh, ansonsten ist die Anzeige relativ statisch. Auch die Anzeige ist relativ klein, das Dashboard wird trotz Kiosk-Mode nicht richtig dargestellt und ist aus grösserer Entfernung schwer zu lesen. Am beste verzichtet man auf den Browser-Anteil und verwendet die [Carbon-App](https://github.com/eumel8/carbon-app/) wie im Fast Track beschrieben. Als `PROMETHEUS_URL` verwendet man einfach den Service-Endpunkt für Prometheus im carbon Namespace unseres Clusters.
 
 # Ziel erreicht
 
-Ich habe sichtbar, etwa im Hauswirtschaftsraum oder der Küche Informationen über den Anteil des Ökostroms in Echtzeit. Dieser Wert existiert derzeit nur deutschlandweit, in Zukunft wird sowas per Stadt/Strasse/Hausnummer funktionieren und ich kann meinen Energieverbrauch auf die Zeiten mit Ökostrom-Erzeugung anpassen.
+Ich habe sichtbar, etwa im Hauswirtschaftsraum oder der Küche, Informationen über den Anteil des Ökostroms in Echtzeit. Dieser Wert existiert derzeit nur deutschlandweit, in Zukunft wird sowas per Stadt/Strasse/Hausnummer funktionieren und ich kann meinen Energieverbrauch auf die Zeiten mit Ökostrom-Erzeugung anpassen.
 
 Happy Planet!
