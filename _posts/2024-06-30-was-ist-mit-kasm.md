@@ -21,8 +21,8 @@ sudo bash kasm_release/install.sh
 
 In der Ausgabe werden verschiedene Credentials generiert, mit der man sich über die Weboberfläche einloggen kann. Über einen Katalog kann man dann Instanzen installieren:
 
-<img src="/images/kasm_1.jpg" width="585" height="386"/>
+<img src="/images/kasm_1.png" width="585" height="386"/>
 
-<img src="/images/kasm_2.jpg" width="585" height="386"/>
+<img src="/images/kasm_2.png" width="585" height="386"/>
 
 Ganz praktisch, aber Obacht: Bei Inaktivität werden die Instanzen auch mal schnell gestoppt und gelöscht. Kann man sicher auch irgendwo einstellen.
