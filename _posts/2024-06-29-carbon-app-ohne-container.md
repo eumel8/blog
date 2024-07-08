@@ -19,19 +19,20 @@ Wie in den oben erwähnten Blog-Beiträgen beschrieben ist ein Raspberry mit 3,5
 
 ```bash
 sudo su -
-apt install python3-pip prometheus
+apt install prometheus
 cd /usr/local
 git clone https://github.com/caas-team/caas-carbon-footprint.git carbonapp
 cd carbonapp
-pip3 install -r requirements.txt
+python3 -m venv venv
+./venv/bin/pip3 install -r requirements.txt
 ```
 
 /usr/local/carbonapp/env
 
 ```
 entsoe_api_key=xxxxx
-entsoe_start=1
-entsoe_end=0
+entsoe_start=2
+entsoe_end=1
 ```
 
 /etc/systemd/system/carbonapp.service
@@ -46,7 +47,7 @@ WantedBy=multi-user.target
 [Service]
 Type=simple
 Restart=always
-ExecStart=/usr/bin/python3 /usr/local/carbonapp/flask/app.py
+ExecStart=/usr/local/carbonapp/venv/bin/python3 /usr/local/carbonapp/flask/app.py
 EnvironmentFile=-/usr/local/carbonapp/env
 ```
 
@@ -64,6 +65,8 @@ scrape_configs:
 ```
 
 ```bash
+systemctl enable carbonapp.service
+systemctl enable prometheus
 systemctl start carbonapp.service
 systemctl start prometheus
 ```

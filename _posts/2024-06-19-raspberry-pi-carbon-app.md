@@ -37,6 +37,11 @@ Ausgehend vom verwendeten LCD-Display findet man [hier](http://www.lcdwiki.com/3
 
 Jetzt müsste nur noch die [Carbon-App](https://github.com/eumel8/carbon-app) nach dem Booten starten. Dazu verbinden wir uns mit ssh mit dem Raspberry und legen folgende Datei an:
 
+```bash
+ssh pi@<raspberry-ip>
+mkdir -p /home/pi/.config/autostart/carbonapp.desktop
+```
+
 /home/pi/.config/autostart/carbonapp.desktop
 
 ```
@@ -57,6 +62,10 @@ cat /etc/X11/default-display-manager
 
 Jetzt legen wir noch diese Datei an:
 
+```bash
+mkdir /home/pi/bin/
+```
+
 /home/pi/bin/autostart.sh
 
 ```
@@ -69,7 +78,9 @@ export PROMETHEUS_URL=http://<prometheus-server>
 ./carbonapp
 ```
 
-Wir haben hier ein 32-bit-Betriebssystem, es gibt aber auch App-Versionen für amd64 und arm64 - da muss man das enstsprechend anpassen. Schaut einfach auf die [Release](https://github.com/eumel8/carbon-app/releases) Seite
+Wir haben hier ein 32-bit-Betriebssystem, es gibt aber auch App-Versionen für amd64 und arm64 - da muss man das enstsprechend anpassen. Schaut einfach auf die [Release](https://github.com/eumel8/carbon-app/releases) Seite.
+
+Als Prometheus-Server brauchen wir einen gültigen Endpunkt für die Metriken, etwa 127.0.0.1:9090
 
 Jetzt noch die Datei ausfürbar machen:
 
@@ -82,13 +93,14 @@ Beim Raspberry gibt es die Eigenart, dass nach 30 Minuten das Power-Management d
 In den Gnome-Settings kann man das auch in der Gnome-Datenbank des pi-Users verifizieren.
 
 ```bash
+sudo su -
 dconf read /org/mate/power-manager/sleep-display-ac
 ```
 
 Das zweite Störelement ist der Screensaver. Hier kann man mit 
 
 ```bash
-apt-get install xscreensaver
+apt install xscreensaver
 ```
 
 das passende Paket installieren und in den Menüeinstellungen den Screensaver Mode auf `Disable Screen Saver` stellen.
@@ -98,6 +110,12 @@ Alle anderen Screensaver sollte man deinstallieren:
 
 ```bash
 apt purge mate-screensaver
+```
+
+Auch unattended upgrade mögen wir nicht:
+
+```bash
+rm /etc/apt/apt.conf.d/50unattended-upgrades
 ```
 
 Vielleicht noch Datum/Uhrzeit/Zeitzone einstellen, etwa mit `raspi-config`, reboot, fertig. Danach sieht es dann so aus:
