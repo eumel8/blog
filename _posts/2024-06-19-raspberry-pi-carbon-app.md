@@ -9,7 +9,7 @@ author: eumel8
 
 # Einstieg
 
-Im [K8S Blog](https://k8sblog.eumel.de/2023/11/14/sustainable-computing.html) haben wir uns schon mal mit Nachhaltigem Computern und Green-IT auseinandergesetzt. Dabei haben wir den Strommix in Deutschland in Echtzeit gemessen und daraus Massnahmen für unsere Kubernetes-Workload abgeleitet. Nun wollen wir diese Daten, ganz privat, zu Hause nutzen, um etwa das Einschalten der Waschmaschine nachhaltig zu bestimmen oder die Bügel-Session in eine Zeit zu verlagern, in der Ökostrom ausreichend vorliegt. Um jetzt nicht das ganze Haus mit Smart-Home-Kram zu verkabeln, genügt uns eine Visualisierung wie etwa eine Uhr oder ein Therometer, um die Ökobilanz zu bestimmen, konkret: die Energieampel!
+Im [K8S Blog](https://k8sblog.eumel.de/2023/11/14/sustainable-computing.html) haben wir uns schon mal mit Nachhaltigem Computern und Green-IT auseinandergesetzt. Dabei haben wir den Strommix in Deutschland in Echtzeit gemessen und daraus Massnahmen für unsere Kubernetes-Workload abgeleitet. Nun wollen wir diese Daten, ganz privat, zu Hause nutzen, um etwa das Einschalten der Waschmaschine nachhaltig zu bestimmen oder die Bügel-Session in eine Zeit zu verlagern, in der Ökostrom ausreichend vorliegt. Um jetzt nicht das ganze Haus mit Smart-Home-Kram zu verkabeln, genügt uns eine Visualisierung wie etwa eine Uhr oder ein Thermometer, um die Ökobilanz zu bestimmen, konkret: die Energieampel!
 
 # Energieampel Hardware
 
@@ -82,7 +82,7 @@ Wir haben hier ein 32-bit-Betriebssystem, es gibt aber auch App-Versionen für a
 
 Als Prometheus-Server brauchen wir einen gültigen Endpunkt für die Metriken, etwa 127.0.0.1:9090
 
-Jetzt noch die Datei ausfürbar machen:
+Jetzt noch die Datei ausführbar machen:
 
 ```bash
 chmod +x /home/pi/bin/autostart.sh
