@@ -5,6 +5,7 @@ title: Carbon App ohne Container
 subtitle: Grüner Strom in Echtzeit messen
 date: 2024-06-29
 author: eumel8
+twitter: 'images/blog-eumel-de.png'
 ---
 
 # Einstieg

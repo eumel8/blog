@@ -5,6 +5,7 @@ title: Icinga-to-prometheus auf LXD
 subtitle: Umstieg auf ein zeitgemässes Monitoring-System
 date: 2025-01-13
 author: eumel8
+twitter: 'images/blog-eumel-de.png'
 ---
 
 # Einstieg

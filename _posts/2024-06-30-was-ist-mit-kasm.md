@@ -5,6 +5,7 @@ title: Was ist mit Kasm?
 subtitle: Grafische Benutzeroberflächen parallel betrieben
 date: 2024-06-30
 author: eumel8
+twitter: 'images/blog-eumel-de.png'
 ---
 
 # Kurzvorstellung
