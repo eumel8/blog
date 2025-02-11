@@ -123,7 +123,7 @@ The attention mask and the pad token id were not set. As a consequence, you may 
 Setting `pad_token_id` to `eos_token_id`:32021 for open-end generation.
 The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
 To list all Pods in a Kubernetes cluster using Go, you need to use the Kubernetes client-go library. Here is a simple example:
-`` 
+```
 
 ```go
 package main
@@ -165,7 +165,7 @@ func main() {
 }
 ```
 
-`` 
+```
 In this program, we first import the necessary packages. Then we set up the kubeconfig file path using the flag package. We use the BuildConfigFromFlags function to create the config object. We then create a new clientset using the NewForConfig function.
 
 We use the List function of the Pods interface to get a list of all Pods in the cluster. We then loop over the list and print the namespace and name of each Pod.
@@ -173,7 +173,7 @@ We use the List function of the Pods interface to get a list of all Pods in the 
 Please replace "your-path-to-kubeconfig" with the actual path to your kubeconfig file.
 
 Note: This code assumes that you have the kubeconfig file and the kubernetes client-go library installed. If you haven't installed
-`` 
+```
 
 Das Programm funktioniert auf Anhieb und die Ausgabe dauerte 27 Sekunden. Der User hat länger gebraucht, um den Code zu kopieren, wie angegben die Kubernetes client-go Libs zu installieren, eine passende kubeconfig Datei zu suchen, den Pfad anzupassen und das Programm zu starten.
 
