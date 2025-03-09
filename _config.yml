@@ -4,6 +4,7 @@ email: eumel@eumel.de
 baseurl: ""
 background: '/images/blog-polar-eumel.png'
 encoding: utf-8
+repository: eumel8/blog
 url: "https://blog.eumel.de"
 twitter_username: eumel_8
 github_username: eumel8
