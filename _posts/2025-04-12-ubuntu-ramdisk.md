@@ -282,4 +282,13 @@ Ubuntu 24.04 hat diesen [Bug](https://bugs.launchpad.net/ubuntu/+source/base-fil
 
 In 24.10 gab es wiederum [debirf](https://packages.ubuntu.com/search?suite=all&searchon=names&keywords=debirf) nicht mehr. Das wäre noch ein weiteres Shell-Script gewesen, was die Ubuntu-Distro erstellt. Es geht aber auch auf diesem Weg.
 
+Fehlende Treiber: Wenn die passenden Kernel-Module fehlen, kann es passieren, dass keine Netzwerkkarte erkannt wird. Das bedarf as Laden von `linux-modules-<kernel-version>`. Das wiederum hängt vom Laden des ursprünglichen Kernels vmlinuz zusammen.
+Heraus kam irgendwie sowas:
+
+```
+    LINUX_KERNEL=linux-image-"$(uname -r | cut -d- -f3-)" | grep '^Depends: ' | sed 's/^Depends: //' | tr ',' '\n' | tr -d ' ' | grep ^linux-image | sort -r | head -n1
+    DEBIAN_FRONTEND=noninteractive apt -y install --no-install-recommends $LINUX_KERNEL
+```
+UEFI Boot: Eine Ramdisk funktioniert grundsätzlich auch mit UEFI statt herkömmlichen Bios. Es wird derselbe Bootloader verwendet (Grub). Zu beachten sind nur die Console-Umleitungen, etwa auf `serial`, wenn man im Netzwerksegment unterwegs ist.
+
 Viel Spass!
