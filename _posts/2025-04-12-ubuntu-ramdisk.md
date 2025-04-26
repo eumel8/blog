@@ -1,7 +1,7 @@
 ---
 layout: post
 tag: inet
-title: Ubuntu Ramdisk
+title: Linux Ramdisk
 subtitle: Geheimnisse der initrd
 date: 2025-04-12
 author: eumel8
@@ -273,6 +273,60 @@ find . | cpio -H newc -o | pigz -9 > ../initrd.cxz || exit 1
 ```
 
 Jetzt kann man wieder mit `qemu` testen. Es sollte das Minimalsystem aus initrd gestartet werden, dieses mounted /proc und /sys, erstellt eine Ramdisk, ein aus dem Speicher eingehängtes Dateisystem (sik!), entpackt das rootfs.cxz dahin und ruft init auf. Unser Sytem ist fertig gebootet.
+
+# IPA - Ironic Python Agent
+
+Wozu der viele Aufwand? Weil man mit kleinen Dingen etwas Grosses vorhat. Etwa mit OpenStack Ironic einen Server booten, um den dann mit einem richtigen Betriebssystem zu bestücken, etwa über Metal3. Dazu muss man den Server in Ironic registrieren. Dies erreicht man mit dem [Ironic Python Agent](https://docs.openstack.org/ironic-python-agent). Das Projekt stellt je OpenStack Release in [diesem](https://tarballs.opendev.org/openstack/ironic-python-agent/) interessantem Repo eine zusammengepackte Version der Software bereit, die aus einer Ramdisk und einem Kernel besteht. Alles schon fertig eingerichtet. Für die neueste OpenStack Version ist [tinyipa-stable-2024.2.gz](https://tarballs.opendev.org/openstack/ironic-python-agent/tinyipa/files/tinyipa-stable-2024.2.gz) die Ramdisk und [tinyipa-stable-2024.2.vmlinuz](https://tarballs.opendev.org/openstack/ironic-python-agent/tinyipa/files/tinyipa-stable-2024.2.vmlinuz) der dazugehörige Kernel. 
+
+Das Betriebssystem besteht aus [TinyCore](http://tinycorelinux.net/). Die Webseite macht zwar nicht viel her, dennoch ist das Projekt gepflegt und gibt einmal im Jahr ein neues Release heraus. Für den Produktinseinsatz mag das freillig nicht reichen, deswegen ist TinyIPA auch für Entwicklung und Tests deklariert und für Prod gibt es CentOS-Pakete im selben Repo. Die sind allerdings auch knapp 500MB gross.
+
+Bleiben wir beim TinyIPA und schauen uns die Verwendung an. Einsetzen kann man es sofort, es ist erstaunlich viel Software in dem kleinen Ding. Aber wie geht das, wenn wir etwas erweitern? Etwa FRR für dynamischen Routingdienst? Dann müssen wir TinyIPA runterladen, auspacken, erweitern und wieder einpacken. Los gehts:
+
+```
+#!/bin/sh
+echo "starting rootfs creating"
+rm -rf rootfs
+mkdir rootfs
+cd rootfs
+echo "fetch tinyipa"
+curl -s https://tarballs.opendev.org/openstack/ironic-python-agent/tinyipa/files/tinyipa-stable-2024.2.gz | gzip -d  | cpio dm
+mkdir -p etc/frr usr/local/bin
+echo "copy install files"
+cp ../ipa-install.sh . || exit 1
+cp ../files/frr.conf etc/frr/ || exit 1
+echo "chroot install"
+chroot . /ipa-install.sh || exit 1
+echo "build ramdisk"
+find . | cpio -H newc -o | gzip -9 > ../initramfs-ubuntu.gz
+echo "fetch kernel"
+curl -s https://tarballs.opendev.org/openstack/ironic-python-agent/tinyipa/files/tinyipa-stable-2024.2.vmlinuz > ../vmlinuz
+```
+
+Das Script kümmert sich also um die RamDisk und den Download des Kernel. Das Install-Script ist minimalistisch und sieht so aus:
+
+```
+#!/bin/sh
+mount proc
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+ln -s /tmp/tce /etc/sysconfig/tcedir
+mkdir -p /home/tc
+chown tc /home/tc
+su tc -c "mkdir -p /tmp/tce;tce-load -w -i frr python3.9 python3.9-jinja2" || exit 1
+echo "/usr/local/sbin/bgpd -d -f /etc/frr/frr.conf" >> /opt/bootlocal.sh
+umount proc
+exit
+```
+
+Wir installieren FRR aus dem TinyCore Addon Repo und starten den `bgpd` über das TinyCore Standard-Startscript. Dort finden sich schon viele Dinge drin.
+
+Leider haben wir vergessen, ein Passwort für den `rescue` User zu vergeben, den ipa haben möchte. Das Passwort brauchen wir verschlüsselt und können es im TinyCore konfigurieren:
+
+```
+mkdir -p /etc/ipa-rescue-config
+echo $y$j9T$QLQU3gvCTsvTRqY1wl/PM.$dKMZJW5x/0ZQOA/xXmb4T7Zc/bQA4z2BiyFatZSGfN1 > /etc/ipa-rescue-config/ipa-rescue-password
+```
+
+Dann können wir uns auch mit `rescue:rescue` einloggen.
 
 # Fallstricke
 
