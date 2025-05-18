@@ -41,7 +41,18 @@ e2373fb1 2022-06-17 09:26:19 LAPTOP-A65JAK0U C:\
 Restore einer einzelnen Datei von einem bestimmten Snapshot auf ein neues Ziel:
 
 ```
-restic -r T:\Backup\restic restore 48061035 -t T:\Backup\restore -i "C\Users\user\Documents\migrationsplan.pdf"
+restic -r T:\Backup\restic restore 48061035 -t T:\Backup\restore -i "/C/Users/user/Documents/migrationsplan.pdf"
+```
+
+Restore eines ganzen Ordners:
+
+```
+restic -r T:\Backup\restic restore 48061035 -t C:\Users\user\restore -i "/C/Users/user/"
 ```
 
 Dokumentation: https://restic.readthedocs.io/
+
+Noch zwei sinnvolle Programme mit graphischer Benutzeroberfläche für Windows, Linux und Mac:
+
+Resticguugx: [Release Downloads](https://gitlab.com/stormking/resticguigx/-/releases)
+Resticbrowser: [Release Downloads](https://github.com/emuell/restic-browser/releases)
