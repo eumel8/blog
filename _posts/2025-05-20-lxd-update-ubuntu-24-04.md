@@ -1,6 +1,6 @@
 ---
 layout: post
-tag: general
+tag: inet
 title: LXD Update Ubuntu 24.04
 subtitle: "Nighmare on Elm Street"
 date: 2025-05-20

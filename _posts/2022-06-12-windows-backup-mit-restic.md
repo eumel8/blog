@@ -54,5 +54,5 @@ Dokumentation: https://restic.readthedocs.io/
 
 Noch zwei sinnvolle Programme mit graphischer Benutzeroberfläche für Windows, Linux und Mac:
 
-Resticguugx: [Release Downloads](https://gitlab.com/stormking/resticguigx/-/releases)
-Resticbrowser: [Release Downloads](https://github.com/emuell/restic-browser/releases)
+* Resticguigx: [Release Downloads](https://gitlab.com/stormking/resticguigx/-/releases)
+* Resticbrowser: [Release Downloads](https://github.com/emuell/restic-browser/releases)
