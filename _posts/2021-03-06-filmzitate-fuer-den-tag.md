@@ -19,4 +19,10 @@ Wieviel Uhr ist es? Der Tag läuft schon. (Lethal Weapon, Marton Ricks)
 
 Manchmal sind Kinder einfach wundervoll (Rachel, Dantes Peak)
 
+Erheitern Sie mich mit Details
+
 siehe auch: http://www.filmzitate.info
+
+Wir sind mit mehreren Teams unterwegs
+
+Wir gehen von einem Einzeltäter aus (Eskalatation, Nora Benrath)
