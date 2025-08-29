@@ -1,6 +1,6 @@
 ---
 layout: post
-tag: inet
+tag: ai
 title: AI Homelab
 subtitle: LLM zu Hause nutzen mit Ollama und OpenWebUI
 date: 2025-03-08
