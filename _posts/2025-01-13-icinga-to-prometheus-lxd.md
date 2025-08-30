@@ -101,6 +101,7 @@ alertmanager.yaml - diese Datei beinhaltet die Konfiguration des Alertmanagers u
 
 <details>
 {% highlight yaml %}
+{% raw %}
 route:
   group_by: ['alertname']
   group_wait: 30s
@@ -126,6 +127,7 @@ inhibit_rules:
     target_match:
       severity: 'warning'
     equal: ['alertname', 'instance']
+{% endraw %}
 {% endhighlight %}
 </details>
 
@@ -133,6 +135,7 @@ blackbox.yaml - das ist die default Konfigurationsdatei des Blackbox-Exporters. 
 
 <details>
 {% highlight yaml %}
+{% raw %}
 # https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md
 modules:
   http_2xx:
@@ -199,6 +202,7 @@ modules:
       ip_protocol_fallback: false
       validate_answer_rrs:
         fail_if_matches_regexp: [test]
+{% endraw %}
 {% endhighlight %}
 </details>
 
@@ -206,6 +210,7 @@ eumelnet_rules.yaml - hier sind spezielle Alarmrules definiert, also Prometheus 
 
 <details>
 {% highlight yaml %}
+{% raw %}
 groups:
 - name: eumelnet
   labels:
@@ -299,6 +304,7 @@ hooks.yaml - das ist die Konfigurationsdatei für den Webhook vom Alertmanager
   pass-arguments-to-command:
   - source: entire-payload
     name: alerts
+{% endraw %}
 {% endhighlight %}
 </details>
 
@@ -306,6 +312,7 @@ twilio.sh - das ist die Datei, die vom Webhook ausgeführt wird. Seit Jahren im 
 
 <details>
 {% highlight powershell %}
+{% raw %}
 #!/bin/bash
 
 type curl >/dev/null 2>&1 || { echo >&2 "I require curl but it's not installed.  Aborting."; exit 1; }
@@ -332,6 +339,7 @@ curl -X POST $gateway_uri \
            -d $to \
            --data-urlencode "Body=$message" > /dev/null 2>&1
 done
+{% endraw %}
 {% endhighlight %}
 </details>
 
@@ -342,6 +350,7 @@ Den Node-Exporter haben wir auf dem LXD-Container installiert. Er könnte natür
 
 <details>
 {% highlight yaml %}
+{% raw %}
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
@@ -485,6 +494,7 @@ scrape_configs:
         target_label: instance
       - target_label: __address__
         replacement: 127.0.0.1:9115
+{% endraw %}
 {% endhighlight %}
 </details>
 
@@ -492,6 +502,7 @@ install.sh - diese Datei führen wir im LXD-Container aus
 
 <details>
 {% highlight powershell %}
+{% raw %}
 #!/bin/sh
 # https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
 PROM_VERSION=3.1.0
@@ -650,6 +661,7 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable prometheus-dashboard.service
 sudo systemctl start prometheus-dashboard.service
+{% endraw %}
 {% endhighlight %}
 </details>
 
@@ -657,6 +669,7 @@ host.sh - Diese Datei führen wir auf dem LXD-Server aus
 
 <details>
 {% highlight powershell %}
+{% raw %}
 #!/bin/sh
 #
 LXD_EXPORTER_VERSION=1.0.0
@@ -715,6 +728,7 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable zfs_exporter.service
 sudo systemctl start zfs_exporter.service
+{% endraw %}
 {% endhighlight %}
 </details>
 
