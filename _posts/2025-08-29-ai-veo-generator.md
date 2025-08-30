@@ -48,6 +48,6 @@ Im Prinzip werden folgende Aufgaben umgesetzt:
 * Abfrage des Operation-Jobs
 * Download des Videos wenn fertig
 
-Fertig! Die Abrechnung erfolgt über unser Google Cloud Projekt.
+Fertig! Die Abrechnung erfolgt über unser Google Cloud Projekt. Die Preise dazu befinden sich [hier](https://cloud.google.com/vertex-ai/generative-ai/pricing?hl=de) und bewegen sich derzeit bei 0.75 $ pro Sekunde. Das 8 Sekunden Video kostet also 6 Dollar bzw. knapp 5,13 Euro. Jetzt könnte man meinen, das ist viel teurer als der veo3.ai Dienst. Die Lösung steckt natürlich im ausgewähltem Model. Bei generierten Videos mit der hohen Qualität kommt man bei veo3.ai auf 12 Euro, also das doppelte als bei Google. Wenn man das veo-3.0-fast-generate-001 Model verwendet, wird nur ein Video statt 4 in weniger hohen Qualität erzeugt,  was bei Google 3,20 Dollar kostet. Da die Rechnungsstellung in der Google Cloud immer einen Tag hinterherhinkt und die Preise sich ständig ändern, kann man vielleicht erst mal ein Video generieren lassen und am nächsten Tag schauen, was das gekostet hat. Es gibt auch in der Google Cloud die Möglichkeit, Budgets zu setzen im jeweiligen Rechnungskonto. Da ist man auch vor Leeräumen der Kreditkarte geschützt.
 
 Viel Spass
