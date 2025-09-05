@@ -5,6 +5,7 @@ title: Homelab Proxmox Openmediavault
 subtitle: Filme streamen mit altem Fernseher
 date: 2025-03-12
 author: eumel8
+background: '/images/hollywood2.png?4362984378'
 twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 

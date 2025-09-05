@@ -5,6 +5,7 @@ title: DeepSeek-Coder mit Ubuntu GPU
 subtitle: DeepSeek-R1 & Co auf dem Heimcomputer im Eigentest (Teil2)
 date: 2025-02-11
 author: eumel8
+background: '/images/chatbot-gpu.png?4362984378'
 twitter: 'images/blog-eumel-de.png'
 ---
 

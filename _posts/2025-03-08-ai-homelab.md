@@ -5,6 +5,7 @@ title: AI Homelab
 subtitle: LLM zu Hause nutzen mit Ollama und OpenWebUI
 date: 2025-03-08
 author: eumel8
+background: '/images/ai-homelab2.png?4362984378'
 twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 

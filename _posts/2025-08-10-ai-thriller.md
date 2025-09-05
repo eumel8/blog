@@ -5,6 +5,7 @@ title: AI Thriller
 subtitle: Die KI schreibt jetzt auch Bücher
 date: 2025-08-10
 author: eumel8
+background: '/images/thriller.jpg?4362984378'
 twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 

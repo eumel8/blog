@@ -5,6 +5,7 @@ title: AI VEO Generator
 subtitle: Die KI filmt
 date: 2025-08-29
 author: eumel8
+background: '/images/hollywood.jpg?4362984378'
 twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 

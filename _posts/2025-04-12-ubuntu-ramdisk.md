@@ -5,6 +5,7 @@ title: Linux Ramdisk
 subtitle: Geheimnisse der initrd
 date: 2025-04-12
 author: eumel8
+background: '/images/ramdisk.png?4362984378'
 twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 

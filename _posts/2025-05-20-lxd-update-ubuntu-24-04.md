@@ -5,6 +5,7 @@ title: LXD Update Ubuntu 24.04
 subtitle: "Nighmare on Elm Street"
 date: 2025-05-20
 author: eumel8
+background: '/images/nightmare.png?4362984378'
 ---
 
 Ubuntu 20.04. kommt zum Ende seiner Lebenszeit, und genau zum Ende diesen Monats. Höchste Zeit also, bestehende Rechnerlandschaften upzudaten.
