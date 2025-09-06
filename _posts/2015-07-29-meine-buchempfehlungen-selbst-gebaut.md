@@ -5,6 +5,8 @@ title: Meine Buchempfehlungen, selbst gebaut
 subtitle: "Seit einiger Zeit gehoert der Tolino als treuer Begleiter ins Reisegepaeck. Praktisch, leicht, egal ob daemmriges Licht, ich hab immer was zum Lesen dabei, ohne kiloschwere Buecher mit mir rumzuschleppen. Das einzige Problem war bis jetzt, wenn ein Buch zu Ende ist - was lese ich als Naechstes"
 date: 2015-07-29
 author: eumel8
+background: '/images/ki-book-propose.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 <p>Seit einiger Zeit gehoert der Tolino als treuer Begleiter ins Reisegepaeck. Praktisch, leicht, egal ob daemmriges Licht, ich hab immer was zum Lesen dabei, ohne kiloschwere Buecher mit mir rumzuschleppen. Das einzige Problem war bis jetzt, wenn ein Buch zu Ende ist: Was lese ich als naechstes?</p>
