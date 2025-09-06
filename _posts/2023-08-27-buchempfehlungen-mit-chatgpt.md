@@ -5,6 +5,8 @@ title: Buchempfehlungen mit ChatGPT
 subtitle: Noch immer steht die Frage, was lese ich als Nächstes. Fragen wir dazu jetzt ChatGPT
 date: 2023-08-27
 author: eumel8
+background: '/images/ki-book-propose.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 # Es war einmal

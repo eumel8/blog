@@ -5,7 +5,8 @@ title: Raspberry PI Carbon App
 subtitle: Green energy in realtime
 date: 2024-06-19
 author: eumel8
-twitter: 'images/blog-eumel-de.png'
+background: '/images/carbon-measure.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 this is the english version of [Raspberry PI Carbon App](https://blog.eumel.de/2024/06/19/raspberry-pi-carbon-app.html)

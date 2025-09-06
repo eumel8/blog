@@ -5,6 +5,8 @@ title: 2023 - The year in Open Source
 subtitle: The annual review to take part
 date: 2023-12-29
 author: eumel8
+background: '/images/open-source-recap.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 # Entry

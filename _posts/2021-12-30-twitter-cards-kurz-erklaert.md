@@ -5,6 +5,8 @@ title: Twitter Cards kurz erklärt
 subtitle: "Manche Sachen passieren einfach so. Man hält sie schon für selbstverständlich. Doch wenn man genauer hinguckt, ist alles ganz anders. Heute wird Twitter Cards kurz erklärt."
 date: 2021-12-30
 author: eumel8
+background: '/images/twitter-cards.jpeg?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 Manche Sachen passieren einfach so. Man hält sie schon für selbstverständlich. Doch wenn man genauer hinguckt, ist alles ganz anders. Heute wird Twitter Cards kurz erklärt.

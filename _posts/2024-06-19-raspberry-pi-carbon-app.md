@@ -5,7 +5,8 @@ title: Raspberry PI Carbon App
 subtitle: Grüner Strom in Echtzeit messen
 date: 2024-06-19
 author: eumel8
-twitter: 'images/blog-eumel-de.png'
+background: '/images/carbon-measure.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 # Einstieg

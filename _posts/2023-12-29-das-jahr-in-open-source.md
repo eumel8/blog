@@ -5,6 +5,8 @@ title: 2023 - Das Jahr in Open Source
 subtitle: Der Jahresrückblick zum Mitmachen
 date: 2023-12-29
 author: eumel8
+background: '/images/open-source-recap.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 # Einstieg
