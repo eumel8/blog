@@ -5,6 +5,8 @@ title: Go - Container bauen ohne Docker
 subtitle: "Das Erstellen eines Container-Images für Kubernetes kann schon mal recht aufwendig sein. Man brauch ein Base-Image, ein Dockerfile und eine Docker-Runtime, die man entweder nicht installieren will oder darf. Google bietet da jetzt eine Loesung."
 date: 2022-08-09
 author: eumel8
+background: '/images/go-container-build.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 Das Erstellen eines Container-Images für Kubernetes kann schon mal recht aufwendig sein. Man brauch ein Base-Image, ein Dockerfile und eine Docker-Runtime, die man entweder nicht installieren will oder darf. Google bietet da jetzt eine Loesung. Und die heisst: Ko.

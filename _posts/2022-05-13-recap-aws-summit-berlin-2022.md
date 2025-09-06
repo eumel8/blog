@@ -5,6 +5,8 @@ title: Recap - AWS Summit Berlin 2022
 subtitle: "Die Veranstaltungsbranche traf es in der Pandemie mit am härtesten, keine Messen, Tagungen, Grossveranstaltungen seit mehr als 2 Jahren. Nun sind wieder viele Präsenzveranstaltungen geplant. Auftakt mach der AWS Summit Berlin, wieder in der Station"
 date: 2022-05-13
 author: eumel8
+background: '/images/aws-summit-berlin.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 Die Veranstaltungsbranche traf es in der Pandemie mit am härtesten, keine Messen, Tagungen, Grossveranstaltungen seit mehr als 2 Jahren. Nun sind wieder viele Präsenzveranstaltungen geplant. Auftakt mach der AWS Summit Berlin, wieder in der Station, eine grosse Veranstaltungsfläche mit mehreren Hallen am Gleisdreieck, wo man sich 2019 zum letzten Mal getroffen hat.

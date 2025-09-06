@@ -5,6 +5,8 @@ title: Recap - The week in OpenStack
 subtitle: "The week after Pentecost was the week for OpenStack in Berlin. After two years on the pandemic with many canceled events, the first in-person OpenInfrastructure Summit appeared in Berlin Congress Center (bcc), close Alexanderplatz."
 date: 2022-06-12
 author: eumel8
+background: '/images/openstack-summit-berlin.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 The week after Pentecost was the week for OpenStack in Berlin. After two years on the pandemic with many canceled events, the first in-person OpenInfrastructure Summit appeared in Berlin Congress Center (bcc), close Alexanderplatz.

@@ -5,6 +5,8 @@ title: Bahnprojekt Brieselang - Big Data on the Village
 subtitle: "Bahnfahren ist wieder in. Wegen der Umwelt. Knapp 4,7% der Berufspendler fahren jeden Tag mit Bahn oder S-Bahn. Es sollen noch viel mehr werden, denn knapp 70% der Pendler fahren derzeit mit dem Auto. Wie stehts also mit der Qualitaet des Bahnverkehrs"
 date: 2020-02-15
 author: eumel8
+background: '/images/bahn-data.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 Bahnfahren ist wieder in. Wegen der Umwelt. Knapp 4,7% der Berufspendler fahren jeden Tag mit Bahn oder S-Bahn. Es sollen noch viel mehr werden, denn knapp 70% der Pendler fahren derzeit mit dem Auto. Wie stehts also mit der Qualitaet des Bahnverkehrs in Deutschland?

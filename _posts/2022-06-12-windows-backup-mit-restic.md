@@ -5,6 +5,8 @@ title: Windows Backup mit Restic
 subtitle: "Backups sind unter Windows immer noch ein Trauerspiel - Windows 10, wie Windows 11. Dabei sind Backups doch so wichtig!"
 date: 2022-06-12
 author: eumel8
+background: '/images/windows-backup-restic.png?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 Backups sind unter Windows immer noch ein Trauerspiel - Windows 10, wie Windows 11. Dabei sind Backups doch so wichtig! 
