@@ -26,11 +26,11 @@ cd /usr/local
 git clone https://github.com/caas-team/caas-carbon-footprint.git carbonapp
 cd carbonapp
 python3 -m venv venv
+. venv/bin/activate
 ./venv/bin/pip3 install -r requirements.txt
 ```
 
 /usr/local/carbonapp/env
-
 ```
 entsoe_api_key=xxxxx
 entsoe_start=2
@@ -38,7 +38,6 @@ entsoe_end=1
 ```
 
 /etc/systemd/system/carbonapp.service
-
 ```
 [Unit]
 Description=Carbon app service
