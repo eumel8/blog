@@ -222,3 +222,32 @@ Man muss sagen, das K3S mit dem Prometheus, zusammen mit dem X und dem Firefox B
 Ich habe sichtbar, etwa im Hauswirtschaftsraum oder der Küche, Informationen über den Anteil des Ökostroms in Echtzeit. Dieser Wert existiert derzeit nur deutschlandweit, in Zukunft wird sowas per Stadt/Strasse/Hausnummer funktionieren und ich kann meinen Energieverbrauch auf die Zeiten mit Ökostrom-Erzeugung anpassen.
 
 Happy Planet!
+
+# Bekannte Fehler
+
+## Beim Fehler `RuntimeError: object at ... of type FolderColorMenu is not initialized` kann man folgendes versuchen:
+
+```bash
+sudo apt purge folder-color*
+```
+
+## Verhindern von Update Meldungen
+
+```bash
+sudo apt remove update-notifier
+```
+
+In `/etc/apt/apt.conf.d/20auto-upgrades`
+
+```bash
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Unattended-Upgrade "0";
+```
+
+In `/etc/apt/apt.conf.d/10periodic`
+
+```bash
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Download-Upgradeable-Packages "0";
+APT::Periodic::AutocleanInterval "0";
+```
