@@ -1,6 +1,6 @@
 ---
 layout: post
-tag: inet
+tag: ai
 title: DeepSeek-Coder mit Ubuntu GPU
 subtitle: DeepSeek-R1 & Co auf dem Heimcomputer im Eigentest (Teil2)
 date: 2025-02-11
