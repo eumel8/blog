@@ -18,13 +18,18 @@ AOMEI Backuper konnte keine einzelnen Files zurueckspielen ... herrje! Dabei ist
 Bevor man jetzt in Go etwas selber programmiert, habe ich <a href="https://restic.net/">Restic</a> ausprobiert. Ein Command Line Tool, was in der Powershell zu bedienen ist. Man kann das WD MyCloud mit Netzwerklaufwerk einbinden, ein neues Backup mit Passwort initialisieren und dann werden einzelne Backupsets (Snapshots) angelegt. In einer internen Datenbank wird aehnlich wie im Git verglichen, welche Files schon gesichert sind und welche nicht. Das initiale Backup mag 6-8 Stunden dauern, das Delta ist deutlich kuerzer. Und so kann man es installieren:
 
 ```
+# Einmaliges Mappen eines Netzwerk-Storage auf ein Laufwerksbuchstaben
 New-SmbMapping -LocalPath 'T:' -RemotePath '\\MYCLOUD-16708\Public'
+# Einmalige Installation von restic für den derzeigen Benutzer
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
 scoop install restic
+# Setzen des Restic-Passworts als Umgebungsvariable (in jeder Session)
 [Environment]::SetEnvironmentVariable('RESTIC_PASSWORD','A12345678+')
+# Einmaliges Initialisieren des Backupverzeichnis als Restic Repo
 restic init --repo T:\Backup\restic mycloud
-restic -r T:\Backup\restic --verbose backup C:\
+# Backup von Laufwerk C ohne Onedrive
+restic -r T:\Backup\restic --verbose backup C:\ -e OneDrive
 ```
 
 Backups listen:
@@ -50,6 +55,12 @@ Restore eines ganzen Ordners:
 
 ```
 restic -r T:\Backup\restic restore 48061035 -t C:\Users\user\restore -i "/C/Users/user/"
+```
+
+Durch einen eingebauten Schutzmechanismus wird man aber verschachtelte Ordner als Ausgabe bekommen. Die Dateien kann man dann an den Originalort schieben mit
+
+```
+robocopy C:\Users\C\user\restore C:\Users /E /MOVE
 ```
 
 Dokumentation: https://restic.readthedocs.io/
