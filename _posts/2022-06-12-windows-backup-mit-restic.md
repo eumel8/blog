@@ -63,6 +63,12 @@ Durch einen eingebauten Schutzmechanismus wird man aber verschachtelte Ordner al
 robocopy C:\Users\C\user\restore C:\Users /E /MOVE
 ```
 
+Beim Homedir des Benutzers muss man auch die NTFS-Permissions mit setzen und Junction Points ausschliessen:
+
+```
+robocopy "C:\restore_tmp\C\Users\user" "C:\Users\user" /E /COPYALL /XJ /R:2 /W:5
+```
+
 Dokumentation: https://restic.readthedocs.io/
 
 Noch zwei sinnvolle Programme mit graphischer Benutzeroberfläche für Windows, Linux und Mac:
