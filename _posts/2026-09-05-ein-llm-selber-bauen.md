@@ -347,3 +347,7 @@ Für den Einstieg reichen ein kleiner Text, eine CPU und ein paar hundert Zeilen
 * **Parameter** - Trainierbare Zahlen im neuronalen Netz, beispielsweise Gewichte von Matrizen.
 * **Fine-Tuning** - Nachtraining eines vortrainierten Modells auf einem speziellen Datensatz oder Verhalten.
 * **RAG** - Retrieval-Augmented Generation, die Ergänzung eines Sprachmodells durch zur Laufzeit gesuchte Dokumente.
+
+# Disclaimer
+
+Der Beitrag wurde von KI erstellt.
