@@ -5,6 +5,8 @@ title: Sendung mit der Maus: LLM erklärt
 subtitle: "Oder: Erklär mir mal KI, als wäre ich 5 Jahre alt"
 date: 2026-09-11
 author: eumel8
+background: '/images/llm-lid.webp?4362984378'
+twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
 # Einstieg
