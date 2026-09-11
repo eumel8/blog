@@ -1,11 +1,11 @@
 ---
 layout: post
 tag: ai
-title: Sendung mit der Maus: LLM erklärt
+title: "Sendung mit der Maus: LLM erklärt"
 subtitle: "Oder: Erklär mir mal KI, als wäre ich 5 Jahre alt"
 date: 2026-09-11
 author: eumel8
-background: '/images/llm-lid.webp?4362984378'
+background: '/images/llm-kid.webp?4362984378'
 twitter: 'images/blog-eumel-de.png?4362984378'
 ---
 
@@ -59,7 +59,7 @@ dann sagen wir:
 
 Und dann versuchen wir es wieder.
 
-🧩 1. Zuerst müssen wir Sprache in kleine Stückchen zerlegen
+## 🧩 1. Zuerst müssen wir Sprache in kleine Stückchen zerlegen
 
 Der Computer kann mit
 
@@ -94,7 +94,7 @@ Donau | dampf | schiff | fahrts | gesellschaft
 
 Das ist praktisch, weil das Modell nicht für jedes einzelne Wort einen eigenen Eintrag braucht.
 
-🧸 2. Aber eine Nummer bedeutet noch gar nichts
+## 🧸 2. Aber eine Nummer bedeutet noch gar nichts
 
 Jetzt haben wir beispielsweise:
 
@@ -121,18 +121,20 @@ Das nennt man Embedding.
 
 Du kannst dir das wie einen großen Schrank mit Schubladen vorstellen:
 
+<pre>
           EMBEDDING-SCHRANK
 
 Hund  ──────► 🗃️ [viele Zahlen]
 Sofa  ──────► 🗃️ [viele Zahlen]
 Katze ──────► 🗃️ [viele Zahlen]
 Auto  ──────► 🗃️ [viele Zahlen]
+</pre>
 
 Diese Zahlen werden nicht von einem Menschen eingetragen.
 
 Das Modell lernt sie selbst.
 
-👀 3. Jetzt kommt der wichtigste Trick: Attention
+## 👀 3. Jetzt kommt der wichtigste Trick: Attention
 
 Und hier wird's interessant.
 
@@ -144,12 +146,14 @@ Wenn das Modell gerade über „sitzt“ nachdenkt, sind nicht alle anderen Wör
 
 Es sollte merken:
 
+<pre>
 Der     🟡
 Hund    🟢🟢🟢
 sitzt   🔵
 auf     🟡
 dem     🟡
 Sofa    🟢🟢
+</pre>
 
 Also:
 
@@ -157,13 +161,15 @@ Also:
 
 Das ist Attention.
 
-👀👀 4. Warum Q, K und V?
+## 👀👀 4. Warum Q, K und V?
 
 Der Artikel schreibt:
 
+<pre>
 Q = x Wq
 K = x Wk
 V = x Wv
+</pre>
 
 Das sieht erstmal furchtbar aus.
 
@@ -197,16 +203,18 @@ Wenn etwas gut zusammenpasst:
 
 bekommt dieses Wort mehr Aufmerksamkeit.
 
-👨‍👩‍👧 5. Multi-Head Attention
+## 👨‍👩‍👧 5. Multi-Head Attention
 
 Jetzt kommt ein genialer Trick.
 
 Wir lassen nicht nur ein Kind aufpassen, sondern beispielsweise vier:
 
+<pre>
 👧 Kopf 1 → achtet auf Personen
 👦 Kopf 2 → achtet auf Beziehungen
 👧 Kopf 3 → achtet auf Satzstruktur
 👦 Kopf 4 → achtet auf andere Muster
+</pre>
 
 Das sind die Attention Heads.
 
@@ -218,7 +226,7 @@ Multi-Head Attention
 
 Also mehrere kleine „Aufmerksamkeits-Brillen“ gleichzeitig.
 
-🚫 6. Das Modell darf nicht schummeln
+## 🚫 6. Das Modell darf nicht schummeln
 
 Das ist extrem wichtig.
 
@@ -237,11 +245,13 @@ Sonst wäre die Prüfung viel zu einfach.
 
 Also bekommt es eine Art Scheuklappe:
 
+<pre>
 Der       👀
 Hund      👀 👀
 sitzt     👀 👀 👀
 auf       👀 👀 👀 👀
 dem       👀 👀 👀 👀 👀
+</pre>
 
 Es darf immer nur nach links, also in die Vergangenheit schauen.
 
@@ -249,7 +259,7 @@ Das nennt man:
 
 Causal Masking.
 
-🧠 7. Und dann kommt das eigentliche Lernen
+## 🧠 7. Und dann kommt das eigentliche Lernen
 
 Jetzt kommt der wichtigste Teil.
 
@@ -283,7 +293,7 @@ Und wieder.
 
 Und wieder.
 
-🔧 8. Backpropagation
+## 🔧 8. Backpropagation
 
 Jetzt kommt ein Wort, das kompliziert klingt:
 
@@ -303,20 +313,23 @@ Dann kommt jemand und sagt:
 
 Die Maschine schaut:
 
+<pre>
 Knopf 1   → ein bisschen ändern
 Knopf 2   → fast nichts ändern
 Knopf 3   → stark ändern
 Knopf 4   → gar nicht ändern
 ...
+</pre>
 
 Und dann probiert sie es erneut.
 
 Das passiert sehr, sehr oft.
 
-🔁 9. Und jetzt kommt der eigentliche Zauber
+## 🔁 9. Und jetzt kommt der eigentliche Zauber
 
 Der Artikel macht daraus:
 
+<pre>
 Text
  ↓
 Tokens
@@ -338,6 +351,7 @@ wiederholen
 wiederholen
  ↓
 wiederholen
+</pre>
 
 Millionen oder Milliarden Male.
 
@@ -345,7 +359,7 @@ Und irgendwann ist das Modell ziemlich gut darin:
 
 „Was kommt wahrscheinlich als Nächstes?“
 
-🤯 10. Und jetzt kommt eine wichtige Überraschung
+## 🤯 10. Und jetzt kommt eine wichtige Überraschung
 
 Das Modell hat keine Liste mit Antworten.
 
@@ -356,6 +370,7 @@ Antwort: Berlin
 
 Stattdessen hat es sehr viele Zahlen:
 
+<pre>
 Parameter 1
 Parameter 2
 Parameter 3
@@ -363,6 +378,7 @@ Parameter 3
 Parameter 1.000.000
 Parameter 1.000.001
 ...
+</pre>
 
 Diese Zahlen bilden gemeinsam ein riesiges mathematisches Netzwerk.
 
@@ -396,7 +412,7 @@ sondern eher:
 
 Der Artikel nennt deshalb auch RAG, Tools und Suchmaschinen als Ergänzungen, wenn aktuelle oder überprüfbare Fakten gebraucht werden.
 
-🧸 11. Was baut der Artikel nun tatsächlich?
+## 🧸 11. Was baut der Artikel nun tatsächlich?
 
 Das Schöne ist:
 
@@ -417,11 +433,13 @@ Und dieser Text wird 200-mal wiederholt.
 
 Das Modell hat:
 
+<pre>
 96 Zahlen pro Embedding
 3 Transformer-Schichten
 4 Attention Heads
 32 Zeichen Kontext
 3000 Trainingsschritte
+</pre>
 
 und läuft sogar auf einer CPU, wenn keine GPU vorhanden ist.
 
@@ -441,11 +459,13 @@ Es hat nicht wirklich verstanden, was ein Hund ist.
 
 Es hat gelernt:
 
+<pre>
 Der → Hund
 Hund → sitzt
 sitzt → auf
 auf → dem
 dem → Sofa
+</pre>
 
 und noch viele kompliziertere Zusammenhänge.
 
@@ -463,8 +483,10 @@ Statt:
 
 bekommen wir:
 
+<pre>
 📚📚📚📚📚📚📚📚📚
 sehr viele Texte
+</pre>
 
 Statt:
 
@@ -488,8 +510,11 @@ Und statt:
 
 kommen:
 
+<pre>
 🖥️🖥️🖥️🖥️🖥️
 viele GPUs
+</pre>
+
 🚂 Und genau deshalb gefällt mir die Grundidee des Artikels
 
 Der Artikel sagt im Grunde:
@@ -498,6 +523,7 @@ Ein modernes LLM ist weniger Magie, als es aussieht.
 
 Ganz grob:
 
+<pre>
            VIEL TEXT
               │
               ▼
@@ -525,6 +551,7 @@ Ganz grob:
        Zahlen verändern
               │
               └───────🔄
+</pre>
 
 Und diese Schleife ist das Herzstück.
 
